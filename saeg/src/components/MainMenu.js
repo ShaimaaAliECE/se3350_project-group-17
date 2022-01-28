@@ -106,7 +106,7 @@ export default class MainMenu extends Component {
                 </Link>
                 <br />
                 <Link to ="/levels">
-                    <Button style={{marginTop: "2%"}} variant="primary">Levels (player)</Button>
+                    <Button style={{marginTop: "2%"}} variant="primary">Levels (Play As Guest)</Button>
                 </Link>
                 <br />
                 {signInAdmin}
