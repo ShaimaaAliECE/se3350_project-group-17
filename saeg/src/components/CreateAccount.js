@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {     
             ToggleButton, 
-            ButtonGroup, 
+            ToggleButtonGroup, 
             Button, 
             InputGroup, 
             FormControl 
@@ -12,7 +12,7 @@ export default class CreateAccount extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            userType: '2',
+            isAdmin: false,
             username: null,
             password: null,
             retypePassword: null,
@@ -20,37 +20,41 @@ export default class CreateAccount extends Component {
     }
     
     render() {
-        let radios = [
-            { name: 'Admin', value: '1' }, 
-            { name: 'Player', value: '2' }
-        ]
         const radioButtons = (
-            <ButtonGroup className="mb-2">
-                    {radios.map((radio, idx) => (
-                        // TODO: FIX THE STATE FOR THE TOGGLEBUTTONS
-                        <ToggleButton
-                            key={idx}
-                            id={`radio-${idx}`}
-                            type="radio"
-                            variant={idx % 2 ? 'outline-success' : 'outline-danger'}
-                            name="radio"
-                            value={radio.value}
-                            checked={true}
-                            onClick={
-                                (event) => {
-                                this.setState(
-                                    {
-                                        userType: event.target.value,
-                                    }
-                                );
-                                // console.log(this.state.userType);
+            <ToggleButtonGroup type="radio" name="options" defaultValue={1}>
+                <ToggleButton id="tbg-radio-1" value={1} variant='outline-success'
+                    onClick={
+                        () => {
+                            if (this.state.isAdmin===true) {
+                                this.setState({
+                                    isAdmin: false,
+                                });
                             }
+                            // console.log(this.state.isAdmin)
+                        }
+                    }
+                >
+                Player
+                </ToggleButton>
+                <ToggleButton id="tbg-radio-2" value={2} variant='outline-danger'
+                /*
+                    there's a bug here that makes you double click the admin button 
+                    to make isAdmin=true
+                */
+                    onClick={
+                        () => {
+                            if (this.state.isAdmin===false) {
+                                this.setState({
+                                    isAdmin: true,
+                                });
                             }
-                        >
-                            {radio.name}
-                        </ToggleButton>
-                    ))}
-                </ButtonGroup>
+                            // console.log(this.state.isAdmin)
+                        }
+                    }
+                >
+                Admin
+                </ToggleButton>
+            </ToggleButtonGroup>
         )
 
         const accountCreation = (
@@ -102,7 +106,7 @@ export default class CreateAccount extends Component {
                             }
                         }
                     >
-                        Create Account
+                        Submit
                     </Button>
                 </label>
             </div>
@@ -122,7 +126,6 @@ export default class CreateAccount extends Component {
                 </h1>
                 <div style={{marginLeft: "30%", marginTop: "2%"}}>
                     {radioButtons}
-                    {/* TODO: add form to create account (3 inputs + submit) */}
                     <br />
                     {accountCreation}
                 </div>
