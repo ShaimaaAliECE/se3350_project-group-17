@@ -107,18 +107,18 @@ export default class LevelOne extends Component {
         // TODO: following 2 elements are bad practice (too long) => fix
         const arrayFour = (
             <div>
-                {arrayFour1} <Button variant="outline-info">{nums3Left1[2]}</Button> <Button variant="outline-info">{nums3Left2[0]}</Button> <Button variant="outline-info">{nums3Left2[1]}</Button> {arrayFour2} <Button variant="outline-info">{nums3Right1[2]}</Button> <Button variant="outline-info">{nums3Right2[0]}</Button> <Button variant="outline-info">{nums3Right2[1]}</Button>
+                {arrayFour1} <Button variant="info">{nums3Left1[2]}</Button> <Button variant="info">{nums3Left2[0]}</Button> <Button variant="info">{nums3Left2[1]}</Button> {arrayFour2} <Button variant="info">{nums3Right1[2]}</Button> <Button variant="info">{nums3Right2[0]}</Button> <Button variant="info">{nums3Right2[1]}</Button>
             </div>
         )
         const arrayFive = (
             <div>
-                <Button variant="outline-info">{nums2Left[0]}</Button> <Button variant="outline-info">{nums2Left[1]}</Button> <Button variant="outline-info">{nums2Left[2]}</Button> <Button variant="outline-info">{nums2Left[3]}</Button> <Button variant="outline-info">{nums2Left[4]}</Button> <Button variant="outline-info">{nums2Right[0]}</Button> <Button variant="outline-info">{nums2Right[1]}</Button> <Button variant="outline-info">{nums2Right[2]}</Button> <Button variant="outline-info">{nums2Right[3]}</Button> <Button variant="outline-info">{nums2Right[4]}</Button>
+                <Button variant="info">{nums2Left[0]}</Button> <Button variant="info">{nums2Left[1]}</Button> <span style={{marginLeft: "13.5%"}}><Button variant="info">{nums2Right[0]}</Button> <Button variant="info">{nums2Right[1]}</Button></span>
             </div>
         )
         // button to show next step
         const nextButton = (
             <Button 
-                variant="info"
+                variant="secondary"
                 style={{
                     marginTop: "2%"
                 }}
