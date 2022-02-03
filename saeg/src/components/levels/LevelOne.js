@@ -15,7 +15,8 @@ export default class LevelOne extends Component {
             arrayEight: null,
             arrayNine: null,
             message: 'Click next to see first move',
-            buttonMsg: 'Next',
+            nextButtonMsg: 'Next',
+            previousButtonMsg: 'Return To Level Select',
             nums: [],
         }
         for (let i=0; i<10; i++) {
@@ -223,6 +224,7 @@ export default class LevelOne extends Component {
                                 arrayTwo: arrayTwo,
                                 counter: 1,
                                 message: 'Recursively split array(s) in half until size=1',
+                                previousButtonMsg: 'Previous'
                             });
                         } else if (this.state.counter===1) {
                             this.setState({
@@ -260,7 +262,7 @@ export default class LevelOne extends Component {
                                 arrayNine: arrayNine,
                                 counter: 8,
                                 message: 'Sorting is complete!',
-                                buttonMsg: 'Return to Level Select'
+                                nextButtonMsg: 'Return to Level Select'
                             });
                         } else {
                             window.location.href = "http://localhost:3000/levels";
@@ -268,7 +270,71 @@ export default class LevelOne extends Component {
                     }
                 }
             >
-                {this.state.buttonMsg}
+                {this.state.nextButtonMsg}
+            </Button>
+        );
+
+        // button to show previous step
+        const previousButton = (
+            <Button 
+                variant="secondary"
+                style={{
+                    marginTop: "2%",
+                    marginBottom: "2%",
+                }}
+                onClick={
+                    () => {
+                        // animate previous move using this.state.counter
+                        if (this.state.counter===8) {
+                            this.setState({
+                                arrayNine: null,
+                                counter: 7,
+                                message: '',
+                            });
+                        } else if (this.state.counter===7) {
+                            this.setState({
+                                arrayEight: null,
+                                counter: 6,
+                            });
+                        } else if (this.state.counter===6) {
+                            this.setState({
+                                arraySeven: null,
+                                counter: 5,
+                            });
+                        } else if (this.state.counter===5) {
+                            this.setState({
+                                arraySix: null,
+                                counter: 4,
+                            });
+                        } else if (this.state.counter===4) {
+                            this.setState({
+                                arrayFive: null,
+                                counter: 3,
+                                message: 'From the bottom up, rebuild the arrays sorted from lowest to highest',
+                            });
+                        } else if (this.state.counter===3) {
+                            this.setState({
+                                arrayFour: null,
+                                counter: 2,
+                            });
+                        } else if (this.state.counter===2) {
+                            this.setState({
+                                arrayThree: null,
+                                counter: 1,
+                            });
+                        } else if (this.state.counter===1) {
+                            this.setState({
+                                arrayTwo: null,
+                                counter: 0,
+                                previousButtonMsg: 'Previous'
+                            });
+                        }  else {
+                            window.location.href = "http://localhost:3000/levels";
+                        }
+                    }
+                }
+            >
+                {this.state.previousButtonMsg}
             </Button>
         );
 
@@ -295,6 +361,7 @@ export default class LevelOne extends Component {
                 <p>{this.state.arrayNine}</p>
                 <br />
                 {nextButton}
+                {previousButton}
             </div>
         )
     }
