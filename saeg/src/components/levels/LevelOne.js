@@ -15,6 +15,7 @@ export default class LevelOne extends Component {
             arrayEight: null,
             arrayNine: null,
             message: 'Click next to see first move',
+            buttonMsg: 'Next',
             nums: [],
         }
         for (let i=0; i<10; i++) {
@@ -258,13 +259,16 @@ export default class LevelOne extends Component {
                             this.setState({
                                 arrayNine: arrayNine,
                                 counter: 8,
-                                message: 'Sorting is complete!'
+                                message: 'Sorting is complete!',
+                                buttonMsg: 'Return to Level Select'
                             });
+                        } else {
+                            window.location.href = "http://localhost:3000/levels";
                         }
                     }
                 }
             >
-                Next
+                {this.state.buttonMsg}
             </Button>
         );
 
@@ -288,7 +292,7 @@ export default class LevelOne extends Component {
                 <br />
                 {this.state.arrayEight}
                 <br />
-                {this.state.arrayNine}
+                <p>{this.state.arrayNine}</p>
                 <br />
                 {nextButton}
             </div>
