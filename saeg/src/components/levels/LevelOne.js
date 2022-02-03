@@ -14,7 +14,7 @@ export default class LevelOne extends Component {
             arraySeven: null,
             arrayEight: null,
             arrayNine: null,
-            message: 'Click next to see first move',
+            message: 'Click Next to see first step to sort this array.',
             nextButtonMsg: 'Next',
             previousButtonMsg: 'Return To Level Select',
             nums: [],
@@ -223,39 +223,44 @@ export default class LevelOne extends Component {
                             this.setState({
                                 arrayTwo: arrayTwo,
                                 counter: 1,
-                                message: 'Recursively split array(s) in half until size=1',
+                                message: 'First, split the array as evenly as possible.',
                                 previousButtonMsg: 'Previous'
                             });
                         } else if (this.state.counter===1) {
                             this.setState({
                                 arrayThree: arrayThree,
                                 counter: 2,
+                                message: 'Split both the subarrays as evenly as possible again.',
                             });
                         } else if (this.state.counter===2) {
                             this.setState({
                                 arrayFour: arrayFour,
                                 counter: 3,
+                                message: 'Continue to split the subarrays as evenly as possible. Arrays of length 1 cannot be split and are ready to merge.',
                             });
                         } else if (this.state.counter===3) {
                             this.setState({
                                 arrayFive: arrayFive,
                                 counter: 4,
+                                message: 'Continue to split the subarrays as evenly as possible. Arrays of length 1 cannot be split and are ready to merge.',
                             });
                         } else if (this.state.counter===4) {
                             this.setState({
                                 arraySix: arraySix,
                                 counter: 5,
-                                message: 'From the bottom up, rebuild the arrays sorted from lowest to highest',
+                                message: 'Now we rebuild the arrays. Select the minimum of the values and add it to the new sorted array.',
                             });
                         } else if (this.state.counter===5) {
                             this.setState({
                                 arraySeven: arraySeven,
                                 counter: 6,
+                                message: 'Select the minimum of the values from the front of the subarray and add it to the new sorted subarray. When one list becomes empty copy all values of the reamining array into the sorted array.',
                             });
                         } else if (this.state.counter===6) {
                             this.setState({
                                 arrayEight: arrayEight,
                                 counter: 7,
+                                message: 'Select the minimum of the values from the front of the subarray and add it to the new sorted array. When one list becomes empty copy all values of the reamining array into the sorted array.',
                             });
                         } else if (this.state.counter===7) {
                             this.setState({
@@ -289,44 +294,50 @@ export default class LevelOne extends Component {
                             this.setState({
                                 arrayNine: null,
                                 counter: 7,
-                                message: '',
+                                message: 'Select the minimum of the values from the front of the subarray and add it to the new sorted array. When one list becomes empty copy all values of the reamining array into the sorted array.',
                             });
                         } else if (this.state.counter===7) {
                             this.setState({
                                 arrayEight: null,
                                 counter: 6,
+                                message: 'Select the minimum of the values from the front of the subarray and add it to the new sorted subarray. When one list becomes empty copy all values of the reamining array into the sorted array.',
                             });
                         } else if (this.state.counter===6) {
                             this.setState({
                                 arraySeven: null,
                                 counter: 5,
+                                message: 'Now we rebuild the arrays. Select the minimum of the values and add it to the new sorted array.',
                             });
                         } else if (this.state.counter===5) {
                             this.setState({
                                 arraySix: null,
                                 counter: 4,
+                                message: 'Continue to split the subarrays as evenly as possible. Arrays of length 1 cannot be split and are ready to merge.',
                             });
                         } else if (this.state.counter===4) {
                             this.setState({
                                 arrayFive: null,
                                 counter: 3,
-                                message: 'From the bottom up, rebuild the arrays sorted from lowest to highest',
+                                message: 'Continue to split the subarrays as evenly as possible. Arrays of length 1 cannot be split and are ready to merge.',
                             });
                         } else if (this.state.counter===3) {
                             this.setState({
                                 arrayFour: null,
                                 counter: 2,
+                                message: 'Split both the subarrays as evenly as possible again.',
                             });
                         } else if (this.state.counter===2) {
                             this.setState({
                                 arrayThree: null,
                                 counter: 1,
+                                message: 'First, split the array as evenly as possible.',
                             });
                         } else if (this.state.counter===1) {
                             this.setState({
                                 arrayTwo: null,
                                 counter: 0,
-                                previousButtonMsg: 'Previous'
+                                message: 'Click Next to see first step to sort this array.',
+                                previousButtonMsg: 'Return to Level Select'
                             });
                         }  else {
                             window.location.href = "http://localhost:3000/levels";
@@ -341,6 +352,7 @@ export default class LevelOne extends Component {
         return (
             <div style={{marginLeft: "30%", marginTop: "2%", height: "80%"}}>
                 <h1>Level One</h1>
+                <h2>MergeSort Algorithm</h2>
                 <h3>{this.state.message}</h3>
                 <p>{arrayOne}</p>
                 <br />
