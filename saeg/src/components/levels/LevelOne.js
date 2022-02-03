@@ -254,13 +254,13 @@ export default class LevelOne extends Component {
                             this.setState({
                                 arraySeven: arraySeven,
                                 counter: 6,
-                                message: 'Select the minimum of the values from the front of the subarray and add it to the new sorted subarray. When one list becomes empty copy all values of the reamining array into the sorted array.',
+                                message: 'Select the minimum of the values from the front of the subarray and add it to the new sorted subarray. When one list becomes empty copy all values of the remaining array into the sorted array.',
                             });
                         } else if (this.state.counter===6) {
                             this.setState({
                                 arrayEight: arrayEight,
                                 counter: 7,
-                                message: 'Select the minimum of the values from the front of the subarray and add it to the new sorted array. When one list becomes empty copy all values of the reamining array into the sorted array.',
+                                message: 'Select the minimum of the values from the front of the subarray and add it to the new sorted array. When one list becomes empty copy all values of the remaining array into the sorted array.',
                             });
                         } else if (this.state.counter===7) {
                             this.setState({
@@ -270,6 +270,7 @@ export default class LevelOne extends Component {
                                 nextButtonMsg: 'Return to Level Select'
                             });
                         } else {
+                            // change url if we host somewhere else
                             window.location.href = "http://localhost:3000/levels";
                         }
                     }
@@ -294,13 +295,14 @@ export default class LevelOne extends Component {
                             this.setState({
                                 arrayNine: null,
                                 counter: 7,
-                                message: 'Select the minimum of the values from the front of the subarray and add it to the new sorted array. When one list becomes empty copy all values of the reamining array into the sorted array.',
+                                message: 'Select the minimum of the values from the front of the subarray and add it to the new sorted array. When one list becomes empty copy all values of the remaining array into the sorted array.',
+                                nextButtonMsg: 'Next',
                             });
                         } else if (this.state.counter===7) {
                             this.setState({
                                 arrayEight: null,
                                 counter: 6,
-                                message: 'Select the minimum of the values from the front of the subarray and add it to the new sorted subarray. When one list becomes empty copy all values of the reamining array into the sorted array.',
+                                message: 'Select the minimum of the values from the front of the subarray and add it to the new sorted subarray. When one list becomes empty copy all values of the remaining array into the sorted array.',
                             });
                         } else if (this.state.counter===6) {
                             this.setState({
@@ -340,6 +342,7 @@ export default class LevelOne extends Component {
                                 previousButtonMsg: 'Return to Level Select'
                             });
                         }  else {
+                            // change url if we host somewhere else
                             window.location.href = "http://localhost:3000/levels";
                         }
                     }
