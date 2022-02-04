@@ -375,8 +375,7 @@ export default class LevelOne extends Component {
                 <br />
                 <p>{this.state.arrayNine}</p>
                 <br />
-                {nextButton}
-                {previousButton}
+                {previousButton} {nextButton}
             </div>
         )
     }
