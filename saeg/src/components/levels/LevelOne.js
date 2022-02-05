@@ -270,7 +270,7 @@ export default class LevelOne extends Component {
                                 nextButtonMsg: 'Return to Level Select'
                             });
                         } else {
-                            // change url if we host somewhere else
+                            // TODO: change url if we host somewhere else
                             window.location.href = "http://localhost:3000/levels";
                         }
                     }
@@ -342,7 +342,7 @@ export default class LevelOne extends Component {
                                 previousButtonMsg: 'Return to Level Select'
                             });
                         }  else {
-                            // change url if we host somewhere else
+                            // TODO: change url if we host somewhere else
                             window.location.href = "http://localhost:3000/levels";
                         }
                     }

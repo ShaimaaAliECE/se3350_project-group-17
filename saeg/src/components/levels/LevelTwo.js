@@ -18,6 +18,8 @@ export default class LevelTwo extends Component {
             stepTwoLeft2: [],
             stepTwoRight1: [],
             stepTwoRight2: [],
+            stepThree1: [],
+            stepThree2: [],
         }
         for (let i=0; i<10; i++) {
             // add 10 random integers between 1 and 20 to nums array
@@ -26,6 +28,8 @@ export default class LevelTwo extends Component {
     }
     render() {
         //TODO: add audio feedback where we have alerts
+        //TODO: handle case where player clicks button in most recent row with a counter that is not handled (wrong if you don't go left-to-right)
+        // above can be handled by reloading w/ alert + audio if you click the wrong array in else block
         const arrayOne = [...this.state.nums].map((value, index) => {
             return (
                 <Draggable>
@@ -64,7 +68,7 @@ export default class LevelTwo extends Component {
                                         }
                                     }
                                     alert("correct");
-                                    const array2Left = [...this.state.nums].slice(0, 5).map((value) => {
+                                    const array2Left = [...this.state.nums].slice(0, 5).map((value, index) => {
                                         return (
                                             <Draggable>
                                                 <Button key={index} 
@@ -119,7 +123,7 @@ export default class LevelTwo extends Component {
                                             </Draggable>
                                         )
                                     });
-                                    const array2Right = [...this.state.nums].slice(5).map((value) => {
+                                    const array2Right = [...this.state.nums].slice(5).map((value, index) => {
                                         return (
                                             <Draggable>
                                                 <Button key={index}
@@ -161,7 +165,7 @@ export default class LevelTwo extends Component {
                                                                     }
                                                                     alert("correct");
                                                                     // TODO: set up the onClick for all button maps included in arrayThree
-                                                                    const array3Left1 = [...this.state.nums].slice(0, 3).map((value) => {
+                                                                    const array3Left1 = [...this.state.nums].slice(0, 3).map((value, index) => {
                                                                         return (
                                                                             <Draggable>
                                                                                 <Button key={index}
@@ -171,7 +175,34 @@ export default class LevelTwo extends Component {
                                                                                     }}
                                                                                     onClick={
                                                                                         () => {
-
+                                                                                            if (this.state.counter===6) {
+                                                                                                this.state.stepThree1.push(value);
+                                                                                                if (this.state.stepThree1.length>=2) {
+                                                                                                    let temp = [...this.state.nums].slice(0, 2);                                                                                                    for (let i = 0; i < 2; i++) {
+                                                                                                        if (!temp.includes(this.state.stepThree1[i])) {
+                                                                                                            alert("wrong");
+                                                                                                            window.location.reload();
+                                                                                                        } else {
+                                                                                                            temp.splice(temp.indexOf(this.state.stepThree1[i]), 1);
+                                                                                                        }
+                                                                                                    }
+                                                                                                    alert("correct");
+                                                                                                    this.setState({
+                                                                                                        counter: 7,
+                                                                                                        message:  'Click or drag the element on the right of the leftmost array on the 3rd row',
+                                                                                                    });
+                                                                                                }
+                                                                                            } else if (this.state.counter===7) {
+                                                                                                if (value !== this.state.nums[2]) {
+                                                                                                    alert("wrong");
+                                                                                                    window.location.reload();
+                                                                                                }
+                                                                                                alert("correct");
+                                                                                                this.setState({
+                                                                                                    counter: 8,
+                                                                                                    message: 'Click or drag the left element on the 2nd leftmost array on the 3rd row',
+                                                                                                });
+                                                                                            }
                                                                                         }
                                                                                     }
                                                                                     >
@@ -180,7 +211,7 @@ export default class LevelTwo extends Component {
                                                                             </Draggable>
                                                                         )
                                                                     });
-                                                                    const array3Left2 = [...this.state.nums].slice(3, 5).map((value) => {
+                                                                    const array3Left2 = [...this.state.nums].slice(3, 5).map((value, index) => {
                                                                         return (
                                                                             <Draggable>
                                                                                 <Button key={index}
@@ -190,7 +221,27 @@ export default class LevelTwo extends Component {
                                                                                     }}
                                                                                     onClick={
                                                                                         () => {
-                                                                                            
+                                                                                            if (this.state.counter===8) {
+                                                                                                if (value !== this.state.nums[3]) {
+                                                                                                    alert("wrong");
+                                                                                                    window.location.reload();
+                                                                                                }
+                                                                                                alert("correct");
+                                                                                                this.setState({
+                                                                                                    counter: 9,
+                                                                                                    message: 'Click or drag the right element on the 2nd leftmost array on the 3rd row',
+                                                                                                });
+                                                                                            } else if (this.state.counter===9) {
+                                                                                                if (value !== this.state.nums[4]) {
+                                                                                                    alert("wrong");
+                                                                                                    window.location.reload();
+                                                                                                }
+                                                                                                alert("correct");
+                                                                                                this.setState({
+                                                                                                    counter: 10,
+                                                                                                    message: 'Click or drag the 2 left elements on the 3rd array from the left on the 3rd row',
+                                                                                                });
+                                                                                            }
                                                                                         }
                                                                                     }
                                                                                     >
@@ -199,7 +250,7 @@ export default class LevelTwo extends Component {
                                                                             </Draggable>
                                                                         )
                                                                     });
-                                                                    const array3Right1 = [...this.state.nums].slice(5, 8).map((value) => {
+                                                                    const array3Right1 = [...this.state.nums].slice(5, 8).map((value, index) => {
                                                                         return (
                                                                             <Draggable>
                                                                                 <Button key={index}
@@ -209,7 +260,34 @@ export default class LevelTwo extends Component {
                                                                                     }}
                                                                                     onClick={
                                                                                         () => {
-                                                                                            
+                                                                                            if (this.state.counter===10) {
+                                                                                                this.state.stepThree2.push(value);
+                                                                                                if (this.state.stepThree2.length>=2) {
+                                                                                                    let temp = [...this.state.nums].slice(5, 7);                                                                                                    for (let i = 0; i < 2; i++) {
+                                                                                                        if (!temp.includes(this.state.stepThree2[i])) {
+                                                                                                            alert("wrong");
+                                                                                                            window.location.reload();
+                                                                                                        } else {
+                                                                                                            temp.splice(temp.indexOf(this.state.stepThree2[i]), 1);
+                                                                                                        }
+                                                                                                    }
+                                                                                                    alert("correct");
+                                                                                                    this.setState({
+                                                                                                        counter: 11,
+                                                                                                        message:  'Click or drag the element on the right of the 3rd array from the left on the 3rd row',
+                                                                                                    });
+                                                                                                }
+                                                                                            } else if (this.state.counter===11) {
+                                                                                                if (value !== this.state.nums[7]) {
+                                                                                                    alert("wrong");
+                                                                                                    window.location.reload();
+                                                                                                }
+                                                                                                alert("correct");
+                                                                                                this.setState({
+                                                                                                    counter: 12,
+                                                                                                    message: 'Click or drag the left element on the rightmost array on the 3rd row',
+                                                                                                });
+                                                                                            }
                                                                                         }
                                                                                     }
                                                                                     >
@@ -218,7 +296,7 @@ export default class LevelTwo extends Component {
                                                                             </Draggable>
                                                                         )
                                                                     });
-                                                                    const array3Right2 = [...this.state.nums].slice(8, 10).map((value) => {
+                                                                    const array3Right2 = [...this.state.nums].slice(8, 10).map((value, index) => {
                                                                         return (
                                                                             <Draggable>
                                                                                 <Button key={index}
@@ -228,7 +306,28 @@ export default class LevelTwo extends Component {
                                                                                     }}
                                                                                     onClick={
                                                                                         () => {
-                                                                                            
+                                                                                            if (this.state.counter===12) {
+                                                                                                if (value !== this.state.nums[8]) {
+                                                                                                    alert("wrong");
+                                                                                                    window.location.reload();
+                                                                                                }
+                                                                                                alert("correct");
+                                                                                                this.setState({
+                                                                                                    counter: 13,
+                                                                                                    message: 'Click or drag the right element on the rightmost array on the 3rd row',
+                                                                                                });
+                                                                                            } else if (this.state.counter===13) {
+                                                                                                if (value !== this.state.nums[9]) {
+                                                                                                    alert("wrong");
+                                                                                                    window.location.reload();
+                                                                                                }
+                                                                                                alert("correct");
+                                                                                                // TODO: make the next row of buttons and continue level
+                                                                                                this.setState({
+                                                                                                    counter: 14,
+                                                                                                    message: 'Click or drag left element on the leftmost array on the 4th row',
+                                                                                                });
+                                                                                            }
                                                                                         }
                                                                                     }
                                                                                     >
@@ -241,12 +340,12 @@ export default class LevelTwo extends Component {
                                                                         <div>
                                                                             {array3Left1} {array3Left2} {array3Right1} {array3Right2}
                                                                             {/* TODO: fix the following lines */}
-                                                                            <h3>_________ ______ _________ ______</h3>
+                                                                            <h3>______ __ ___ ___ ______ ___ ___ ___</h3>
                                                                         </div>
                                                                     );
                                                                     this.setState({
                                                                         counter: 6,
-                                                                        message:  'Click or drag the 2 leftmost elements on the 1st subarray from the left in the 3rd row',
+                                                                        message:  'Click or drag the 2 leftmost elements on the 1st array from the left in the 3rd row',
                                                                         arrayThree: arrayThree,
                                                                     });
                                                                 }
@@ -278,6 +377,7 @@ export default class LevelTwo extends Component {
                 </Draggable>
             )
         });
+        // TODO: change underscores (all of them) with proper CSS line
         return (
             <div style={{
                 marginLeft: "20%",
