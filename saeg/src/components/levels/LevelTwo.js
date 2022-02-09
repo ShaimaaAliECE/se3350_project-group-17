@@ -11,6 +11,7 @@ export default class LevelTwo extends Component {
             message: 'Click or drag onto the line the 5 elements on the left',
             arrayTwo: null,
             arrayThree: null,
+            arrayFour: null,
             nums: [],
             stepOneLeft: [],
             stepOneRight: [],
@@ -322,10 +323,98 @@ export default class LevelTwo extends Component {
                                                                                                     window.location.reload();
                                                                                                 }
                                                                                                 alert("correct");
-                                                                                                // TODO: make the next row of buttons and continue level
+                                                                                                const array4Left = [...this.state.nums].slice(0, 2).map((value, index) => {
+                                                                                                    return (
+                                                                                                        <Draggable>
+                                                                                                        <Button
+                                                                                                            variant="warning"
+                                                                                                            style={{
+                                                                                                                marginTop: "5%",
+                                                                                                            }}
+                                                                                                            key={index}
+                                                                                                            onClick={
+                                                                                                                () => {
+                                                                                                                    if (this.state.counter===14) {
+                                                                                                                        if (value !== this.state.nums[0]) {
+                                                                                                                            alert("wrong");
+                                                                                                                            window.location.reload();
+                                                                                                                        }
+                                                                                                                        alert("correct");
+                                                                                                                        this.setState({
+                                                                                                                            counter: 15,
+                                                                                                                            message: 'Click or drag right element on the left array on the 4th row',
+                                                                                                                        });
+                                                                                                                    } else if (this.state.counter===15) {
+                                                                                                                        if (value !== this.state.nums[1]) {
+                                                                                                                            alert("wrong");
+                                                                                                                            window.location.reload();
+                                                                                                                        }
+                                                                                                                        alert("correct");
+                                                                                                                        this.setState({
+                                                                                                                            counter: 16,
+                                                                                                                            message: 'Click or drag left element on the right array on the 4th row',
+                                                                                                                        });
+                                                                                                                    }
+                                                                                                                }
+                                                                                                            }
+                                                                                                        >
+                                                                                                            {value}
+                                                                                                        </Button>
+                                                                                                    </Draggable>
+                                                                                                )
+                                                                                                });
+                                                                                                const array4Right = [...this.state.nums].slice(5, 7).map((value, index) => {
+                                                                                                    return (
+                                                                                                        <Draggable>
+                                                                                                            <Button
+                                                                                                                key={index}
+                                                                                                                variant="warning"
+                                                                                                                style={{
+                                                                                                                    marginTop: "5%",
+                                                                                                                }}
+                                                                                                                onClick={
+                                                                                                                    () => {
+                                                                                                                        if (this.state.counter===17) {
+                                                                                                                            if (value !== this.state.nums[5]) {
+                                                                                                                                alert("wrong");
+                                                                                                                                window.location.reload();
+                                                                                                                            }
+                                                                                                                            alert("correct");
+                                                                                                                            this.setState({
+                                                                                                                                counter: 18,
+                                                                                                                                message: 'Click or drag right element on the right array on the 4th row',
+                                                                                                                            });
+                                                                                                                        } else if (this.state.counter===18) {
+                                                                                                                            if (value !== this.state.nums[6]) {
+                                                                                                                                alert("wrong");
+                                                                                                                                window.location.reload();
+                                                                                                                            }
+                                                                                                                            alert("correct");
+                                                                                                                            // TODO: make next level
+                                                                                                                            this.setState({
+                                                                                                                                counter: 19,
+                                                                                                                                message: 'Click or drag the lowest element on the left side of the 5th row',
+                                                                                                                            });
+                                                                                                                        }
+                                                                                                                    }
+                                                                                                                }
+                                                                                                            >
+                                                                                                            {value}
+                                                                                                            </Button>
+                                                                                                        </Draggable>
+                                                                                                    )
+                                                                                                });
+                                                                                                const arrayFour = (
+                                                                                                    <div>
+                                                                                                        {/* TODO: fix styling of the below row */}
+                                                                                                        {array4Left} {array4Right}
+                                                                                                        <h3>___ ___ ___ ___</h3>
+                                                                                                    </div>
+                                                                                                )
                                                                                                 this.setState({
                                                                                                     counter: 14,
-                                                                                                    message: 'Click or drag left element on the leftmost array on the 4th row',
+                                                                                                    message: 'Click or drag left element on the left array on the 4th row',
+                                                                                                    arrayFour: arrayFour,
                                                                                                 });
                                                                                             }
                                                                                         }
@@ -339,7 +428,6 @@ export default class LevelTwo extends Component {
                                                                     const arrayThree = (
                                                                         <div>
                                                                             {array3Left1} {array3Left2} {array3Right1} {array3Right2}
-                                                                            {/* TODO: fix the following lines */}
                                                                             <h3>______ __ ___ ___ ______ ___ ___ ___</h3>
                                                                         </div>
                                                                     );
@@ -393,6 +481,7 @@ export default class LevelTwo extends Component {
                 <h3>________________ __________________</h3>
                 {this.state.arrayTwo}
                 {this.state.arrayThree}
+                {this.state.arrayFour}
             </div>
         )
     }
