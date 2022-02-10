@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Button, InputGroup, FormControl } from "react-bootstrap";
-
+//import SoundFunctions from 'src/functions/SoundFunctions'; 
+//let feedback = new SoundFunctions(test);
 export default class MainMenu extends Component {
     constructor(props) {
         super(props);
@@ -111,6 +112,7 @@ export default class MainMenu extends Component {
                 <br />
                 {signInAdmin}
                 {signInPlayer}
+
             </div>
         )
     }
