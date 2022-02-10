@@ -12,6 +12,8 @@ export default class LevelTwo extends Component {
             arrayTwo: null,
             arrayThree: null,
             arrayFour: null,
+            arrayFive: null,
+            arraySix: null,
             nums: [],
             stepOneLeft: [],
             stepOneRight: [],
@@ -21,6 +23,10 @@ export default class LevelTwo extends Component {
             stepTwoRight2: [],
             stepThree1: [],
             stepThree2: [],
+            stepSixLeft1: [],
+            stepSixLeft2: [],
+            stepSixRight1: [],
+            stepSixRight2: [],
         }
         for (let i=0; i<10; i++) {
             // add 10 random integers between 1 and 20 to nums array
@@ -28,9 +34,13 @@ export default class LevelTwo extends Component {
         }
     }
     render() {
+        /*TODO: whole component is bad practice (too many indents), fix if u want */
+
         //TODO: add audio feedback where we have alerts
+
         //TODO: handle case where player clicks button in most recent row with a counter that is not handled (wrong if you don't go left-to-right)
-        // above can be handled by reloading w/ alert + audio if you click the wrong array in else block
+        // above can be handled by reloading w/ alert + audio if you click the wrong array in else if (counter=x || counter=y) block
+        
         const arrayOne = [...this.state.nums].map((value, index) => {
             return (
                 <Draggable>
@@ -165,7 +175,6 @@ export default class LevelTwo extends Component {
                                                                         }
                                                                     }
                                                                     alert("correct");
-                                                                    // TODO: set up the onClick for all button maps included in arrayThree
                                                                     const array3Left1 = [...this.state.nums].slice(0, 3).map((value, index) => {
                                                                         return (
                                                                             <Draggable>
@@ -374,26 +383,276 @@ export default class LevelTwo extends Component {
                                                                                                                 }}
                                                                                                                 onClick={
                                                                                                                     () => {
-                                                                                                                        if (this.state.counter===17) {
+                                                                                                                        if (this.state.counter===16) {
                                                                                                                             if (value !== this.state.nums[5]) {
                                                                                                                                 alert("wrong");
                                                                                                                                 window.location.reload();
                                                                                                                             }
                                                                                                                             alert("correct");
                                                                                                                             this.setState({
-                                                                                                                                counter: 18,
+                                                                                                                                counter: 17,
                                                                                                                                 message: 'Click or drag right element on the right array on the 4th row',
                                                                                                                             });
-                                                                                                                        } else if (this.state.counter===18) {
+                                                                                                                        } else if (this.state.counter===17) {
                                                                                                                             if (value !== this.state.nums[6]) {
                                                                                                                                 alert("wrong");
                                                                                                                                 window.location.reload();
                                                                                                                             }
                                                                                                                             alert("correct");
-                                                                                                                            // TODO: make next level
+                                                                                                                            const array5Left = [...this.state.nums].slice(0, 2).map((value, index) => {
+                                                                                                                                return (
+                                                                                                                                    <Draggable>
+                                                                                                                                        <Button
+                                                                                                                                            key={index}
+                                                                                                                                            variant="outline-danger"
+                                                                                                                                            style={{
+                                                                                                                                                marginTop: "5%",
+                                                                                                                                                marginLeft: "0.25%",
+                                                                                                                                            }}
+                                                                                                                                            onClick={
+                                                                                                                                                () => {
+                                                                                                                                                    let order = [...this.state.nums].slice(0, 2).sort((a, b) => a - b);
+                                                                                                                                                    if (this.state.counter===18) {
+                                                                                                                                                        if (value !== order[0]) {
+                                                                                                                                                            alert("wrong");
+                                                                                                                                                            window.location.reload();
+                                                                                                                                                        }
+                                                                                                                                                        alert("correct");
+                                                                                                                                                        this.setState({
+                                                                                                                                                            counter: 19,
+                                                                                                                                                            message: 'Click or drag the highest element on the left side of the 5th row',
+                                                                                                                                                        });
+                                                                                                                                                    } else if (this.state.counter===19) {
+                                                                                                                                                        if (value !== order[1]) {
+                                                                                                                                                            alert("wrong");
+                                                                                                                                                            window.location.reload();
+                                                                                                                                                        }
+                                                                                                                                                        alert("correct");
+                                                                                                                                                        this.setState({
+                                                                                                                                                            counter: 20,
+                                                                                                                                                            message: 'Click or drag the lowest element on the right side of the 5th row',
+                                                                                                                                                        });
+                                                                                                                                                    }
+                                                                                                                                                }
+                                                                                                                                            }
+                                                                                                                                        >
+                                                                                                                                            {value}
+                                                                                                                                        </Button>
+                                                                                                                                    </Draggable>
+                                                                                                                                )
+                                                                                                                            });
+                                                                                                                            const array5Right = [...this.state.nums].slice(5, 7).map((value, index) => {
+                                                                                                                                return (
+                                                                                                                                    <Draggable>
+                                                                                                                                        <Button
+                                                                                                                                            key={index}
+                                                                                                                                            variant="outline-danger"
+                                                                                                                                            style={{
+                                                                                                                                                marginTop: "5%",
+                                                                                                                                                marginLeft: "0.25%",
+                                                                                                                                            }}
+                                                                                                                                            onClick={
+                                                                                                                                                () => {
+                                                                                                                                                    let order = [...this.state.nums].slice(5, 7).sort((a, b) => a - b);
+                                                                                                                                                    if (this.state.counter===20) {
+                                                                                                                                                        if (value !== order[0]) {
+                                                                                                                                                            alert("wrong");
+                                                                                                                                                            window.location.reload();
+                                                                                                                                                        }
+                                                                                                                                                        alert("correct");
+                                                                                                                                                        this.setState({
+                                                                                                                                                            counter: 21,
+                                                                                                                                                            message: 'Click or drag the highest element on the right side of the 5th row',
+                                                                                                                                                        });
+                                                                                                                                                    } else if (this.state.counter===21) {
+                                                                                                                                                        if (value !== order[1]) {
+                                                                                                                                                            alert("wrong");
+                                                                                                                                                            window.location.reload();
+                                                                                                                                                        }
+                                                                                                                                                        alert("correct");
+                                                                                                                                                        let arraySixLeft1 = [...this.state.nums].slice(0, 2).sort((a, b) => a - b);
+                                                                                                                                                        arraySixLeft1.push(this.state.nums[2]);
+                                                                                                                                                        const array6Left1 = arraySixLeft1.map((value, index) => {
+                                                                                                                                                            return (
+                                                                                                                                                                <Draggable>
+                                                                                                                                                                    <Button
+                                                                                                                                                                        key={index}
+                                                                                                                                                                        variant="outline-warning"
+                                                                                                                                                                        style={{
+                                                                                                                                                                            marginTop: "5%",
+                                                                                                                                                                            marginLeft: "0.25%",
+                                                                                                                                                                        }}
+                                                                                                                                                                        onClick={
+                                                                                                                                                                            () => {
+                                                                                                                                                                                if (this.state.counter===22) {
+                                                                                                                                                                                    this.state.stepSixLeft1.push(value);
+                                                                                                                                                                                    if (this.state.stepSixLeft1.length >= 3) {
+                                                                                                                                                                                        let order = [...this.state.nums].slice(0, 3).sort((a, b) => a - b);
+                                                                                                                                                                                        for (let i = 0; i < order.length; i++) {
+                                                                                                                                                                                            if (order[i] !== this.state.stepSixLeft1[i]) {
+                                                                                                                                                                                                alert("wrong");
+                                                                                                                                                                                                window.location.reload();
+                                                                                                                                                                                            }
+                                                                                                                                                                                        }
+                                                                                                                                                                                        alert("correct");
+                                                                                                                                                                                        this.setState({
+                                                                                                                                                                                            counter: 23,
+                                                                                                                                                                                            message: 'Click or drag the elements on the 2nd leftmost side of the 6th row from lowest to highest',
+                                                                                                                                                                                        });
+                                                                                                                                                                                    }
+                                                                                                                                                                                }
+                                                                                                                                                                            }
+                                                                                                                                                                        }
+                                                                                                                                                                    >
+                                                                                                                                                                        {value}
+                                                                                                                                                                    </Button>
+                                                                                                                                                                </Draggable>
+                                                                                                                                                            )
+                                                                                                                                                        });
+                                                                                                                                                        const array6Left2 = [...this.state.nums].slice(3, 5).map((value, index) => {
+                                                                                                                                                            return (
+                                                                                                                                                                <Draggable>
+                                                                                                                                                                    <Button
+                                                                                                                                                                        key={index}
+                                                                                                                                                                        variant="outline-warning"
+                                                                                                                                                                        style={{
+                                                                                                                                                                            marginTop: "5%",
+                                                                                                                                                                            marginLeft: "0.25%",
+                                                                                                                                                                        }}
+                                                                                                                                                                        onClick={
+                                                                                                                                                                            () => {
+                                                                                                                                                                                if (this.state.counter===23) {
+                                                                                                                                                                                    this.state.stepSixLeft2.push(value);
+                                                                                                                                                                                    if (this.state.stepSixLeft2.length >= 2) {
+                                                                                                                                                                                        let order = [...this.state.nums].slice(3, 5).sort((a, b) => a - b);
+                                                                                                                                                                                        for (let i = 0; i < order.length; i++) {
+                                                                                                                                                                                            if (order[i] !== this.state.stepSixLeft2[i]) {
+                                                                                                                                                                                                alert("wrong");
+                                                                                                                                                                                                window.location.reload();
+                                                                                                                                                                                            }
+                                                                                                                                                                                        }
+                                                                                                                                                                                        alert("correct");
+                                                                                                                                                                                        this.setState({
+                                                                                                                                                                                            counter: 24,
+                                                                                                                                                                                            message: 'Click or drag the elements on the 2nd rightmost side of the 6th row from lowest to highest',
+                                                                                                                                                                                        });
+                                                                                                                                                                                    }
+                                                                                                                                                                                }
+                                                                                                                                                                            }
+                                                                                                                                                                        }
+                                                                                                                                                                    >
+                                                                                                                                                                        {value}
+                                                                                                                                                                    </Button>
+                                                                                                                                                                </Draggable>
+                                                                                                                                                            )
+                                                                                                                                                        });
+                                                                                                                                                        let arraySixRight1 = [...this.state.nums].slice(5, 7).sort((a, b) => a - b);
+                                                                                                                                                        arraySixRight1.push(this.state.nums[7]);
+                                                                                                                                                        const array6Right1 = arraySixRight1.map((value, index) => {
+                                                                                                                                                            return (
+                                                                                                                                                                <Draggable>
+                                                                                                                                                                    <Button
+                                                                                                                                                                        key={index}
+                                                                                                                                                                        variant="outline-warning"
+                                                                                                                                                                        style={{
+                                                                                                                                                                            marginTop: "5%",
+                                                                                                                                                                            marginLeft: "0.25%",
+                                                                                                                                                                        }}
+                                                                                                                                                                        onClick={
+                                                                                                                                                                            () => {
+                                                                                                                                                                                if (this.state.counter===24) {
+                                                                                                                                                                                    this.state.stepSixRight1.push(value);
+                                                                                                                                                                                    if (this.state.stepSixRight1.length >= 3) {
+                                                                                                                                                                                        let order = [...this.state.nums].slice(5, 8).sort((a, b) => a - b);
+                                                                                                                                                                                        for (let i = 0; i < order.length; i++) {
+                                                                                                                                                                                            if (order[i] !== this.state.stepSixRight1[i]) {
+                                                                                                                                                                                                alert("wrong");
+                                                                                                                                                                                                window.location.reload();
+                                                                                                                                                                                            }
+                                                                                                                                                                                        }
+                                                                                                                                                                                        alert("correct");
+                                                                                                                                                                                        this.setState({
+                                                                                                                                                                                            counter: 25,
+                                                                                                                                                                                            message: 'Click or drag the elements on the rightmost side of the 6th row from lowest to highest',
+                                                                                                                                                                                        });
+                                                                                                                                                                                    }
+                                                                                                                                                                                }
+                                                                                                                                                                            }
+                                                                                                                                                                        }
+                                                                                                                                                                    >
+                                                                                                                                                                        {value}
+                                                                                                                                                                    </Button>
+                                                                                                                                                                </Draggable>
+                                                                                                                                                            )
+                                                                                                                                                        });
+                                                                                                                                                        const array6Right2 = [...this.state.nums].slice(8, 10).map((value, index) => {
+                                                                                                                                                            return (
+                                                                                                                                                                <Draggable>
+                                                                                                                                                                    <Button
+                                                                                                                                                                        key={index}
+                                                                                                                                                                        variant="outline-warning"
+                                                                                                                                                                        style={{
+                                                                                                                                                                            marginTop: "5%",
+                                                                                                                                                                            marginLeft: "0.25%",
+                                                                                                                                                                        }}
+                                                                                                                                                                        onClick={
+                                                                                                                                                                            () => {
+                                                                                                                                                                                if (this.state.counter===25) {
+                                                                                                                                                                                    this.state.stepSixRight2.push(value);
+                                                                                                                                                                                    if (this.state.stepSixRight2.length >= 2) {
+                                                                                                                                                                                        let order = [...this.state.nums].slice(8, 10).sort((a, b) => a - b);
+                                                                                                                                                                                        for (let i = 0; i < order.length; i++) {
+                                                                                                                                                                                            if (order[i] !== this.state.stepSixRight2[i]) {
+                                                                                                                                                                                                alert("wrong");
+                                                                                                                                                                                                window.location.reload();
+                                                                                                                                                                                            }
+                                                                                                                                                                                        }
+                                                                                                                                                                                        alert("correct");
+                                                                                                                                                                                        // TODO: continue
+                                                                                                                                                                                        this.setState({
+                                                                                                                                                                                            counter: 26,
+                                                                                                                                                                                            message: 'Click or drag the elements on the left side of the 7th row from lowest to highest',
+                                                                                                                                                                                        });
+                                                                                                                                                                                    }
+                                                                                                                                                                                }
+                                                                                                                                                                            }
+                                                                                                                                                                        }
+                                                                                                                                                                    >
+                                                                                                                                                                        {value}
+                                                                                                                                                                    </Button>
+                                                                                                                                                                </Draggable>
+                                                                                                                                                            )
+                                                                                                                                                        });
+                                                                                                                                                        const arraySix = (
+                                                                                                                                                            <div>
+                                                                                                                                                                {array6Left1} {array6Left2} {array6Right1} {array6Right2}
+                                                                                                                                                                <h3>_________ ______ _________ ______</h3>
+                                                                                                                                                            </div>
+                                                                                                                                                        );
+                                                                                                                                                        this.setState({
+                                                                                                                                                            counter: 22,
+                                                                                                                                                            message: 'Click or drag the elements on the leftmost side of the 6th row from lowest to highest',
+                                                                                                                                                            arraySix: arraySix,
+                                                                                                                                                        });
+                                                                                                                                                    }
+                                                                                                                                                }
+                                                                                                                                            }
+                                                                                                                                        >
+                                                                                                                                            {value}
+                                                                                                                                        </Button>
+                                                                                                                                    </Draggable>
+                                                                                                                                )
+                                                                                                                            });
+                                                                                                                            let arrayFive = (
+                                                                                                                                <div>
+                                                                                                                                    {array5Left} {array5Right}
+                                                                                                                                    <h3>_______ _______</h3>
+                                                                                                                                </div>
+                                                                                                                            );
                                                                                                                             this.setState({
-                                                                                                                                counter: 19,
-                                                                                                                                message: 'Click or drag the lowest element on the left side of the 5th row',
+                                                                                                                                counter: 18,
+                                                                                                                                arrayFive: arrayFive,
+                                                                                                                                message: 'All subarrays are now at size 1.\nClick or drag the lowest element on the left side of the 5th row',
                                                                                                                             });
                                                                                                                         }
                                                                                                                     }
@@ -406,7 +665,6 @@ export default class LevelTwo extends Component {
                                                                                                 });
                                                                                                 const arrayFour = (
                                                                                                     <div>
-                                                                                                        {/* TODO: fix styling of the below row */}
                                                                                                         {array4Left} {array4Right}
                                                                                                         <h3>___ ___ ___ ___</h3>
                                                                                                     </div>
@@ -449,7 +707,6 @@ export default class LevelTwo extends Component {
                                     const arrayTwo = (
                                         <div>
                                             {array2Left} {array2Right}
-                                            {/* TODO: fix the format of the lines below */}
                                             <h3>_________ ______ _________ ______</h3>
                                         </div>
                                     );
@@ -465,7 +722,7 @@ export default class LevelTwo extends Component {
                 </Draggable>
             )
         });
-        // TODO: change underscores (all of them) with proper CSS line
+        // TODO: change underscores (all of them) for proper styling
         return (
             <div style={{
                 marginLeft: "20%",
@@ -482,6 +739,8 @@ export default class LevelTwo extends Component {
                 {this.state.arrayTwo}
                 {this.state.arrayThree}
                 {this.state.arrayFour}
+                {this.state.arrayFive}
+                {this.state.arraySix}
             </div>
         )
     }
