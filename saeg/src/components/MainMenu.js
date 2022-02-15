@@ -111,6 +111,7 @@ export default class MainMenu extends Component {
                 <br />
                 {signInAdmin}
                 {signInPlayer}
+
             </div>
         )
     }
