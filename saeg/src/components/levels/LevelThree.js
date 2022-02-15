@@ -4,6 +4,9 @@ import Draggable from 'react-draggable';
 import { wrongFunction, correctFunction } from '../../functions/SoundFunctions';
 
 export default class LevelThree extends Component {
+    //TODO: handle case where player clicks button in most recent row with a counter that is not handled (wrong if you don't go left-to-right)
+    // above can be handled by reloading w/ alert + audio if you click the wrong array in else if (counter=x || counter=y) block
+    // copy paste everything from LevelTwo component before return block
     constructor(props) {
         super(props);
         this.state = {

@@ -270,8 +270,7 @@ export default class LevelOne extends Component {
                                 nextButtonMsg: 'Return to Level Select'
                             });
                         } else {
-                            // TODO: change url if we host somewhere else
-                            window.location.href = "http://localhost:3000/levels";
+                            window.location.href = window.location.href.split("level_one")[0] + "levels";
                         }
                     }
                 }
@@ -342,8 +341,7 @@ export default class LevelOne extends Component {
                                 previousButtonMsg: 'Return to Level Select'
                             });
                         }  else {
-                            // TODO: change url if we host somewhere else
-                            window.location.href = "http://localhost:3000/levels";
+                            window.location.href = window.location.href.split("level_one")[0] + "levels";
                         }
                     }
                 }
