@@ -41,7 +41,7 @@ export default class LevelTwo extends Component {
     }
     render() {
         /*TODO: whole component is bad practice (too many indents), fix if u want */
-        
+
         //TODO: handle case where player clicks button in most recent row with a counter that is not handled (wrong if you don't go left-to-right)
         // above can be handled by reloading w/ alert + audio if you click the wrong array in else if (counter=x || counter=y) block
         
@@ -129,6 +129,8 @@ export default class LevelTwo extends Component {
                                                                         message:  'Click or drag the 3 elements on the left half of the right array',
                                                                     });
                                                                 }
+                                                            } else {
+                                                                wrongFunction();
                                                             }
                                                         }
                                                     }
@@ -216,6 +218,8 @@ export default class LevelTwo extends Component {
                                                                                                     counter: 8,
                                                                                                     message: 'Click or drag the left element on the 2nd leftmost array on the 3rd row',
                                                                                                 });
+                                                                                            } else {
+                                                                                                wrongFunction();
                                                                                             }
                                                                                         }
                                                                                     }
@@ -255,6 +259,8 @@ export default class LevelTwo extends Component {
                                                                                                     counter: 10,
                                                                                                     message: 'Click or drag the 2 left elements on the 3rd array from the left on the 3rd row',
                                                                                                 });
+                                                                                            } else {
+                                                                                                wrongFunction();
                                                                                             }
                                                                                         }
                                                                                     }
@@ -301,6 +307,8 @@ export default class LevelTwo extends Component {
                                                                                                     counter: 12,
                                                                                                     message: 'Click or drag the left element on the rightmost array on the 3rd row',
                                                                                                 });
+                                                                                            } else {
+                                                                                                wrongFunction();
                                                                                             }
                                                                                         }
                                                                                     }
@@ -367,6 +375,8 @@ export default class LevelTwo extends Component {
                                                                                                                             counter: 16,
                                                                                                                             message: 'Click or drag left element on the right array on the 4th row',
                                                                                                                         });
+                                                                                                                    } else {
+                                                                                                                        wrongFunction();
                                                                                                                     }
                                                                                                                 }
                                                                                                             }
@@ -436,6 +446,8 @@ export default class LevelTwo extends Component {
                                                                                                                                                             counter: 20,
                                                                                                                                                             message: 'Click or drag the lowest element on the right side of the 5th row',
                                                                                                                                                         });
+                                                                                                                                                    } else {
+                                                                                                                                                        wrongFunction();
                                                                                                                                                     }
                                                                                                                                                 }
                                                                                                                                             }
@@ -504,6 +516,8 @@ export default class LevelTwo extends Component {
                                                                                                                                                                                             message: 'Click or drag the elements on the 2nd leftmost side of the 6th row from lowest to highest',
                                                                                                                                                                                         });
                                                                                                                                                                                     }
+                                                                                                                                                                                } else {
+                                                                                                                                                                                    wrongFunction();
                                                                                                                                                                                 }
                                                                                                                                                                             }
                                                                                                                                                                         }
@@ -541,6 +555,8 @@ export default class LevelTwo extends Component {
                                                                                                                                                                                             message: 'Click or drag the elements on the 2nd rightmost side of the 6th row from lowest to highest',
                                                                                                                                                                                         });
                                                                                                                                                                                     }
+                                                                                                                                                                                } else {
+                                                                                                                                                                                    wrongFunction();
                                                                                                                                                                                 }
                                                                                                                                                                             }
                                                                                                                                                                         }
@@ -580,6 +596,8 @@ export default class LevelTwo extends Component {
                                                                                                                                                                                             message: 'Click or drag the elements on the rightmost side of the 6th row from lowest to highest',
                                                                                                                                                                                         });
                                                                                                                                                                                     }
+                                                                                                                                                                                } else {
+                                                                                                                                                                                    wrongFunction();
                                                                                                                                                                                 }
                                                                                                                                                                             }
                                                                                                                                                                         }
@@ -643,6 +661,8 @@ export default class LevelTwo extends Component {
                                                                                                                                                                                                                             message: 'Click or drag the elements on the right side of the 7th row from lowest to highest',
                                                                                                                                                                                                                         });
                                                                                                                                                                                                                     }
+                                                                                                                                                                                                                } else {
+                                                                                                                                                                                                                    wrongFunction();
                                                                                                                                                                                                                 }
                                                                                                                                                                                                             }
                                                                                                                                                                                                         }
@@ -735,6 +755,8 @@ export default class LevelTwo extends Component {
                                                                                                                                                                                                                                                             message: 'Array has been sorted using mergesort!'
                                                                                                                                                                                                                                                         });
                                                                                                                                                                                                                                                     }
+                                                                                                                                                                                                                                                } else {
+                                                                                                                                                                                                                                                    wrongFunction();
                                                                                                                                                                                                                                                 }
                                                                                                                                                                                                                                             }
                                                                                                                                                                                                                                         }
@@ -756,6 +778,8 @@ export default class LevelTwo extends Component {
                                                                                                                                                                                                                             message: 'Click or drag the elements on the 8th row from lowest to highest',
                                                                                                                                                                                                                         });
                                                                                                                                                                                                                     }
+                                                                                                                                                                                                                } else {
+                                                                                                                                                                                                                    wrongFunction();
                                                                                                                                                                                                                 }
                                                                                                                                                                                                             }
                                                                                                                                                                                                         }
@@ -777,6 +801,8 @@ export default class LevelTwo extends Component {
                                                                                                                                                                                             message: 'Click or drag the elements on the left side of the 7th row from lowest to highest',
                                                                                                                                                                                         });
                                                                                                                                                                                     }
+                                                                                                                                                                                } else {
+                                                                                                                                                                                    wrongFunction();
                                                                                                                                                                                 }
                                                                                                                                                                             }
                                                                                                                                                                         }
@@ -797,6 +823,8 @@ export default class LevelTwo extends Component {
                                                                                                                                                             message: 'Click or drag the elements on the leftmost side of the 6th row from lowest to highest',
                                                                                                                                                             arraySix: arraySix,
                                                                                                                                                         });
+                                                                                                                                                    } else {
+                                                                                                                                                        wrongFunction();
                                                                                                                                                     }
                                                                                                                                                 }
                                                                                                                                             }
@@ -817,6 +845,8 @@ export default class LevelTwo extends Component {
                                                                                                                                 arrayFive: arrayFive,
                                                                                                                                 message: 'All subarrays are now at size 1.\nClick or drag the lowest element on the left side of the 5th row',
                                                                                                                             });
+                                                                                                                        } else {
+                                                                                                                            wrongFunction();
                                                                                                                         }
                                                                                                                     }
                                                                                                                 }
@@ -837,6 +867,8 @@ export default class LevelTwo extends Component {
                                                                                                     message: 'Click or drag left element on the left array on the 4th row',
                                                                                                     arrayFour: arrayFour,
                                                                                                 });
+                                                                                            } else {
+                                                                                                wrongFunction();
                                                                                             }
                                                                                         }
                                                                                     }
@@ -858,6 +890,8 @@ export default class LevelTwo extends Component {
                                                                         arrayThree: arrayThree,
                                                                     });
                                                                 }
+                                                            } else {
+                                                                wrongFunction();
                                                             }
                                                         }
                                                     }
@@ -879,6 +913,8 @@ export default class LevelTwo extends Component {
                                         message: 'Click or drag the 3 elements on the left half of the left array'
                                     });
                                 }
+                            } else {
+                                wrongFunction();
                             }
                         }
                     }>{value}</Button>
@@ -891,7 +927,7 @@ export default class LevelTwo extends Component {
                 marginLeft: "20%",
             }}
             >
-                <h1>Level One</h1>
+                <h1>Level Two</h1>
                 <h2>MergeSort Algorithm</h2>
                 <h4>Ensure NOT to double click buttons</h4>
                 <h4>Perform each step left-to-right</h4>
