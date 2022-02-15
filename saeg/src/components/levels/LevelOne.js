@@ -356,6 +356,7 @@ export default class LevelOne extends Component {
             <div style={{marginLeft: "30%", marginTop: "2%", height: "80%"}}>
                 <h1>Level One</h1>
                 <h2>MergeSort Algorithm</h2>
+                <h4>ONLY FIREFOX COMPATIBLE</h4>
                 <h3>{this.state.message}</h3>
                 <p>{arrayOne}</p>
                 <br />

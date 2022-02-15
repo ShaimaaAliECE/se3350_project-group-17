@@ -3,7 +3,7 @@ import { Button } from 'react-bootstrap';
 import Draggable from 'react-draggable';
 import { wrongFunction, correctFunction } from '../../functions/SoundFunctions';
 
-export default class LevelTwo extends Component {
+export default class LevelThree extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -893,12 +893,11 @@ export default class LevelTwo extends Component {
                 marginLeft: "20%",
             }}
             >
-                <h1>Level One</h1>
+                <h1>Level Three</h1>
                 <h2>MergeSort Algorithm</h2>
                 <h4>Ensure NOT to double click buttons</h4>
                 <h4>Perform each step left-to-right</h4>
                 <h4>ONLY FIREFOX COMPATIBLE</h4>
-                <h3>{this.state.message}</h3>
                 {arrayOne}
                 <h3>________________ __________________</h3>
                 {this.state.arrayTwo}

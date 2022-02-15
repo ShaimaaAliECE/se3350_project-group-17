@@ -124,6 +124,7 @@ export default class CreateAccount extends Component {
                 <h1 style={{marginLeft: "30%", marginTop: "2%"}}>
                     Create Account
                 </h1>
+                <h4>ONLY FIREFOX COMPATIBLE</h4>
                 <div style={{marginLeft: "30%", marginTop: "2%"}}>
                     {radioButtons}
                     <br />

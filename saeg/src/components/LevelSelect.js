@@ -7,10 +7,11 @@ export default class LevelSelect extends Component {
         return (
             <div style={{marginLeft: "30%", marginTop: "2%"}}>
                 <h1>Level Select</h1>
+                <h4>ONLY FIREFOX COMPATIBLE</h4>
                 <ButtonGroup style={{marginTop: "2%"}}>
                 <Link to="/level_one"><Button variant="primary">Level One</Button></Link>
                 <Link to="/level_two"><Button variant="primary">Level Two</Button></Link>
-                <Button variant="primary">Level Three</Button>
+                <Link to="/level_three"><Button variant="primary">Level Three</Button></Link>
                 <Button variant="primary">Level Four</Button>
                 <Button variant="primary">Level Five</Button>
                 <Button variant="primary">Custom Level</Button>
