@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { Button } from 'react-bootstrap';
 import Draggable from 'react-draggable';
-
-
+import { wrongFunction, correctFunction } from '../../functions/SoundFunctions';
 export default class LevelTwo extends Component {
     constructor(props) {
         super(props);
@@ -59,13 +58,13 @@ export default class LevelTwo extends Component {
                                     // allows zero mistakes for now
                                     for (let i=0; i<5; i++) {
                                         if (!temp.includes(this.state.stepOneLeft[i])) {
-                                            alert("wrong");
+                                            wrongFunction();
                                             window.location.reload();
                                         } else {
                                             temp.splice(temp.indexOf(this.state.stepOneLeft[i]), 1);
                                         }
                                     }
-                                    alert("correct");
+                                    correctFunction();
                                     this.setState({
                                         counter: 1,
                                         message: 'Click or drag onto the line the 5 elements on the right',
@@ -78,13 +77,13 @@ export default class LevelTwo extends Component {
                                     // allows zero mistakes for now
                                     for (let i=0; i<5; i++) {
                                         if (!temp.includes(this.state.stepOneRight[i])) {
-                                            alert("wrong");
+                                            wrongFunction();
                                             window.location.reload();
                                         } else {
                                             temp.splice(temp.indexOf(this.state.stepOneRight[i]), 1);
                                         }
                                     }
-                                    alert("correct");
+                                    correctFunction();
                                     const array2Left = [...this.state.nums].slice(0, 5).map((value, index) => {
                                         return (
                                             <Draggable>
@@ -101,13 +100,13 @@ export default class LevelTwo extends Component {
                                                                     let temp = [...this.state.nums].slice(0, 3);
                                                                     for (let i=0; i<3; i++) {
                                                                         if (!temp.includes(this.state.stepTwoLeft1[i])) {
-                                                                            alert("wrong");
+                                                                            wrongFunction();
                                                                             window.location.reload();
                                                                         } else {
                                                                             temp.splice(temp.indexOf(this.state.stepTwoLeft1[i]), 1);
                                                                         }
                                                                     }
-                                                                    alert("correct");
+                                                                    correctFunction();
                                                                     this.setState({
                                                                         counter: 3,
                                                                         message:  'Click or drag the 2 elements on the right half of the left array',
@@ -119,13 +118,13 @@ export default class LevelTwo extends Component {
                                                                     let temp = [...this.state.nums].slice(3, 5);
                                                                     for (let i=0; i<2; i++) {
                                                                         if (!temp.includes(this.state.stepTwoLeft2[i])) {
-                                                                            alert("wrong");
+                                                                            wrongFunction();
                                                                             window.location.reload();
                                                                         } else {
                                                                             temp.splice(temp.indexOf(this.state.stepTwoLeft2[i]), 1);
                                                                         }
                                                                     }
-                                                                    alert("correct");
+                                                                    correctFunction();
                                                                     this.setState({
                                                                         counter: 4,
                                                                         message:  'Click or drag the 3 elements on the left half of the right array',
@@ -156,13 +155,13 @@ export default class LevelTwo extends Component {
                                                                     let temp = [...this.state.nums].slice(5, 8);
                                                                     for (let i=0; i<3; i++) {
                                                                         if (!temp.includes(this.state.stepTwoRight1[i])) {
-                                                                            alert("wrong");
+                                                                            wrongFunction();
                                                                             window.location.reload();
                                                                         } else {
                                                                             temp.splice(temp.indexOf(this.state.stepTwoRight1[i]), 1);
                                                                         }
                                                                     }
-                                                                    alert("correct");
+                                                                    correctFunction();
                                                                     this.setState({
                                                                         counter: 5,
                                                                         message:  'Click or drag the 2 elements on the right half of the right array',
@@ -174,13 +173,13 @@ export default class LevelTwo extends Component {
                                                                     let temp = [...this.state.nums].slice(8, 10);
                                                                     for (let i=0; i<2; i++) {
                                                                         if (!temp.includes(this.state.stepTwoRight2[i])) {
-                                                                            alert("wrong");
+                                                                            wrongFunction();
                                                                             window.location.reload();
                                                                         } else {
                                                                             temp.splice(temp.indexOf(this.state.stepTwoRight2[i]), 1);
                                                                         }
                                                                     }
-                                                                    alert("correct");
+                                                                    correctFunction();
                                                                     const array3Left1 = [...this.state.nums].slice(0, 3).map((value, index) => {
                                                                         return (
                                                                             <Draggable>
@@ -196,13 +195,13 @@ export default class LevelTwo extends Component {
                                                                                                 if (this.state.stepThree1.length>=2) {
                                                                                                     let temp = [...this.state.nums].slice(0, 2);                                                                                                    for (let i = 0; i < 2; i++) {
                                                                                                         if (!temp.includes(this.state.stepThree1[i])) {
-                                                                                                            alert("wrong");
+                                                                                                            wrongFunction();
                                                                                                             window.location.reload();
                                                                                                         } else {
                                                                                                             temp.splice(temp.indexOf(this.state.stepThree1[i]), 1);
                                                                                                         }
                                                                                                     }
-                                                                                                    alert("correct");
+                                                                                                    correctFunction();
                                                                                                     this.setState({
                                                                                                         counter: 7,
                                                                                                         message:  'Click or drag the element on the right of the leftmost array on the 3rd row',
@@ -210,10 +209,10 @@ export default class LevelTwo extends Component {
                                                                                                 }
                                                                                             } else if (this.state.counter===7) {
                                                                                                 if (value !== this.state.nums[2]) {
-                                                                                                    alert("wrong");
+                                                                                                    wrongFunction();
                                                                                                     window.location.reload();
                                                                                                 }
-                                                                                                alert("correct");
+                                                                                                correctFunction();
                                                                                                 this.setState({
                                                                                                     counter: 8,
                                                                                                     message: 'Click or drag the left element on the 2nd leftmost array on the 3rd row',
@@ -239,20 +238,20 @@ export default class LevelTwo extends Component {
                                                                                         () => {
                                                                                             if (this.state.counter===8) {
                                                                                                 if (value !== this.state.nums[3]) {
-                                                                                                    alert("wrong");
+                                                                                                    wrongFunction();
                                                                                                     window.location.reload();
                                                                                                 }
-                                                                                                alert("correct");
+                                                                                                correctFunction();
                                                                                                 this.setState({
                                                                                                     counter: 9,
                                                                                                     message: 'Click or drag the right element on the 2nd leftmost array on the 3rd row',
                                                                                                 });
                                                                                             } else if (this.state.counter===9) {
                                                                                                 if (value !== this.state.nums[4]) {
-                                                                                                    alert("wrong");
+                                                                                                    wrongFunction();
                                                                                                     window.location.reload();
                                                                                                 }
-                                                                                                alert("correct");
+                                                                                                correctFunction();
                                                                                                 this.setState({
                                                                                                     counter: 10,
                                                                                                     message: 'Click or drag the 2 left elements on the 3rd array from the left on the 3rd row',
@@ -281,13 +280,13 @@ export default class LevelTwo extends Component {
                                                                                                 if (this.state.stepThree2.length>=2) {
                                                                                                     let temp = [...this.state.nums].slice(5, 7);                                                                                                    for (let i = 0; i < 2; i++) {
                                                                                                         if (!temp.includes(this.state.stepThree2[i])) {
-                                                                                                            alert("wrong");
+                                                                                                            wrongFunction();
                                                                                                             window.location.reload();
                                                                                                         } else {
                                                                                                             temp.splice(temp.indexOf(this.state.stepThree2[i]), 1);
                                                                                                         }
                                                                                                     }
-                                                                                                    alert("correct");
+                                                                                                    correctFunction();
                                                                                                     this.setState({
                                                                                                         counter: 11,
                                                                                                         message:  'Click or drag the element on the right of the 3rd array from the left on the 3rd row',
@@ -295,10 +294,10 @@ export default class LevelTwo extends Component {
                                                                                                 }
                                                                                             } else if (this.state.counter===11) {
                                                                                                 if (value !== this.state.nums[7]) {
-                                                                                                    alert("wrong");
+                                                                                                    wrongFunction();
                                                                                                     window.location.reload();
                                                                                                 }
-                                                                                                alert("correct");
+                                                                                                correctFunction();
                                                                                                 this.setState({
                                                                                                     counter: 12,
                                                                                                     message: 'Click or drag the left element on the rightmost array on the 3rd row',
@@ -324,20 +323,20 @@ export default class LevelTwo extends Component {
                                                                                         () => {
                                                                                             if (this.state.counter===12) {
                                                                                                 if (value !== this.state.nums[8]) {
-                                                                                                    alert("wrong");
+                                                                                                    wrongFunction();
                                                                                                     window.location.reload();
                                                                                                 }
-                                                                                                alert("correct");
+                                                                                                correctFunction();
                                                                                                 this.setState({
                                                                                                     counter: 13,
                                                                                                     message: 'Click or drag the right element on the rightmost array on the 3rd row',
                                                                                                 });
                                                                                             } else if (this.state.counter===13) {
                                                                                                 if (value !== this.state.nums[9]) {
-                                                                                                    alert("wrong");
+                                                                                                    wrongFunction();
                                                                                                     window.location.reload();
                                                                                                 }
-                                                                                                alert("correct");
+                                                                                                correctFunction();
                                                                                                 const array4Left = [...this.state.nums].slice(0, 2).map((value, index) => {
                                                                                                     return (
                                                                                                         <Draggable>
@@ -351,20 +350,20 @@ export default class LevelTwo extends Component {
                                                                                                                 () => {
                                                                                                                     if (this.state.counter===14) {
                                                                                                                         if (value !== this.state.nums[0]) {
-                                                                                                                            alert("wrong");
+                                                                                                                            wrongFunction();
                                                                                                                             window.location.reload();
                                                                                                                         }
-                                                                                                                        alert("correct");
+                                                                                                                        correctFunction();
                                                                                                                         this.setState({
                                                                                                                             counter: 15,
                                                                                                                             message: 'Click or drag right element on the left array on the 4th row',
                                                                                                                         });
                                                                                                                     } else if (this.state.counter===15) {
                                                                                                                         if (value !== this.state.nums[1]) {
-                                                                                                                            alert("wrong");
+                                                                                                                            wrongFunction();
                                                                                                                             window.location.reload();
                                                                                                                         }
-                                                                                                                        alert("correct");
+                                                                                                                        correctFunction();
                                                                                                                         this.setState({
                                                                                                                             counter: 16,
                                                                                                                             message: 'Click or drag left element on the right array on the 4th row',
@@ -391,20 +390,20 @@ export default class LevelTwo extends Component {
                                                                                                                     () => {
                                                                                                                         if (this.state.counter===16) {
                                                                                                                             if (value !== this.state.nums[5]) {
-                                                                                                                                alert("wrong");
+                                                                                                                                wrongFunction();
                                                                                                                                 window.location.reload();
                                                                                                                             }
-                                                                                                                            alert("correct");
+                                                                                                                            correctFunction();
                                                                                                                             this.setState({
                                                                                                                                 counter: 17,
                                                                                                                                 message: 'Click or drag right element on the right array on the 4th row',
                                                                                                                             });
                                                                                                                         } else if (this.state.counter===17) {
                                                                                                                             if (value !== this.state.nums[6]) {
-                                                                                                                                alert("wrong");
+                                                                                                                                wrongFunction();
                                                                                                                                 window.location.reload();
                                                                                                                             }
-                                                                                                                            alert("correct");
+                                                                                                                            correctFunction();
                                                                                                                             const array5Left = [...this.state.nums].slice(0, 2).map((value, index) => {
                                                                                                                                 return (
                                                                                                                                     <Draggable>
@@ -420,20 +419,20 @@ export default class LevelTwo extends Component {
                                                                                                                                                     let order = [...this.state.nums].slice(0, 2).sort((a, b) => a - b);
                                                                                                                                                     if (this.state.counter===18) {
                                                                                                                                                         if (value !== order[0]) {
-                                                                                                                                                            alert("wrong");
+                                                                                                                                                            wrongFunction();
                                                                                                                                                             window.location.reload();
                                                                                                                                                         }
-                                                                                                                                                        alert("correct");
+                                                                                                                                                        correctFunction();
                                                                                                                                                         this.setState({
                                                                                                                                                             counter: 19,
                                                                                                                                                             message: 'Click or drag the highest element on the left side of the 5th row',
                                                                                                                                                         });
                                                                                                                                                     } else if (this.state.counter===19) {
                                                                                                                                                         if (value !== order[1]) {
-                                                                                                                                                            alert("wrong");
+                                                                                                                                                            wrongFunction();
                                                                                                                                                             window.location.reload();
                                                                                                                                                         }
-                                                                                                                                                        alert("correct");
+                                                                                                                                                        correctFunction();
                                                                                                                                                         this.setState({
                                                                                                                                                             counter: 20,
                                                                                                                                                             message: 'Click or drag the lowest element on the right side of the 5th row',
@@ -462,20 +461,20 @@ export default class LevelTwo extends Component {
                                                                                                                                                     let order = [...this.state.nums].slice(5, 7).sort((a, b) => a - b);
                                                                                                                                                     if (this.state.counter===20) {
                                                                                                                                                         if (value !== order[0]) {
-                                                                                                                                                            alert("wrong");
+                                                                                                                                                            wrongFunction();
                                                                                                                                                             window.location.reload();
                                                                                                                                                         }
-                                                                                                                                                        alert("correct");
+                                                                                                                                                        correctFunction();
                                                                                                                                                         this.setState({
                                                                                                                                                             counter: 21,
                                                                                                                                                             message: 'Click or drag the highest element on the right side of the 5th row',
                                                                                                                                                         });
                                                                                                                                                     } else if (this.state.counter===21) {
                                                                                                                                                         if (value !== order[1]) {
-                                                                                                                                                            alert("wrong");
+                                                                                                                                                            wrongFunction();
                                                                                                                                                             window.location.reload();
                                                                                                                                                         }
-                                                                                                                                                        alert("correct");
+                                                                                                                                                        correctFunction();
                                                                                                                                                         let arraySixLeft1 = [...this.state.nums].slice(0, 2).sort((a, b) => a - b);
                                                                                                                                                         arraySixLeft1.push(this.state.nums[2]);
                                                                                                                                                         const array6Left1 = arraySixLeft1.map((value, index) => {
@@ -496,11 +495,11 @@ export default class LevelTwo extends Component {
                                                                                                                                                                                         let order = [...this.state.nums].slice(0, 3).sort((a, b) => a - b);
                                                                                                                                                                                         for (let i = 0; i < order.length; i++) {
                                                                                                                                                                                             if (order[i] !== this.state.stepSixLeft1[i]) {
-                                                                                                                                                                                                alert("wrong");
+                                                                                                                                                                                                wrongFunction();
                                                                                                                                                                                                 window.location.reload();
                                                                                                                                                                                             }
                                                                                                                                                                                         }
-                                                                                                                                                                                        alert("correct");
+                                                                                                                                                                                        correctFunction();
                                                                                                                                                                                         this.setState({
                                                                                                                                                                                             counter: 23,
                                                                                                                                                                                             message: 'Click or drag the elements on the 2nd leftmost side of the 6th row from lowest to highest',
@@ -533,11 +532,11 @@ export default class LevelTwo extends Component {
                                                                                                                                                                                         let order = [...this.state.nums].slice(3, 5).sort((a, b) => a - b);
                                                                                                                                                                                         for (let i = 0; i < order.length; i++) {
                                                                                                                                                                                             if (order[i] !== this.state.stepSixLeft2[i]) {
-                                                                                                                                                                                                alert("wrong");
+                                                                                                                                                                                                wrongFunction();
                                                                                                                                                                                                 window.location.reload();
                                                                                                                                                                                             }
                                                                                                                                                                                         }
-                                                                                                                                                                                        alert("correct");
+                                                                                                                                                                                        correctFunction();
                                                                                                                                                                                         this.setState({
                                                                                                                                                                                             counter: 24,
                                                                                                                                                                                             message: 'Click or drag the elements on the 2nd rightmost side of the 6th row from lowest to highest',
@@ -572,11 +571,11 @@ export default class LevelTwo extends Component {
                                                                                                                                                                                         let order = [...this.state.nums].slice(5, 8).sort((a, b) => a - b);
                                                                                                                                                                                         for (let i = 0; i < order.length; i++) {
                                                                                                                                                                                             if (order[i] !== this.state.stepSixRight1[i]) {
-                                                                                                                                                                                                alert("wrong");
+                                                                                                                                                                                                wrongFunction();
                                                                                                                                                                                                 window.location.reload();
                                                                                                                                                                                             }
                                                                                                                                                                                         }
-                                                                                                                                                                                        alert("correct");
+                                                                                                                                                                                        correctFunction();
                                                                                                                                                                                         this.setState({
                                                                                                                                                                                             counter: 25,
                                                                                                                                                                                             message: 'Click or drag the elements on the rightmost side of the 6th row from lowest to highest',
@@ -609,11 +608,11 @@ export default class LevelTwo extends Component {
                                                                                                                                                                                         let order = [...this.state.nums].slice(8, 10).sort((a, b) => a - b);
                                                                                                                                                                                         for (let i = 0; i < order.length; i++) {
                                                                                                                                                                                             if (order[i] !== this.state.stepSixRight2[i]) {
-                                                                                                                                                                                                alert("wrong");
+                                                                                                                                                                                                wrongFunction();
                                                                                                                                                                                                 window.location.reload();
                                                                                                                                                                                             }
                                                                                                                                                                                         }
-                                                                                                                                                                                        alert("correct");
+                                                                                                                                                                                        correctFunction();
                                                                                                                                                                                         let arraySevenLeft = [...this.state.nums].slice(0, 3).sort((a, b) => a - b);
                                                                                                                                                                                         arraySevenLeft.push([...this.state.nums].slice(3, 5).sort((a, b) => a - b)[0]);
                                                                                                                                                                                         arraySevenLeft.push([...this.state.nums].slice(3, 5).sort((a, b) => a - b)[1]);
@@ -635,11 +634,11 @@ export default class LevelTwo extends Component {
                                                                                                                                                                                                                         let order = [...this.state.nums].slice(0, 5).sort((a, b) => a - b);
                                                                                                                                                                                                                         for (let i = 0; i < order.length; i++) {
                                                                                                                                                                                                                             if (order[i] !== this.state.stepSevenLeft[i]) {
-                                                                                                                                                                                                                                alert("wrong");
+                                                                                                                                                                                                                                wrongFunction();
                                                                                                                                                                                                                                 window.location.reload();
                                                                                                                                                                                                                             }
                                                                                                                                                                                                                         }
-                                                                                                                                                                                                                        alert("correct");
+                                                                                                                                                                                                                        correctFunction();
                                                                                                                                                                                                                         this.setState({
                                                                                                                                                                                                                             counter: 27,
                                                                                                                                                                                                                             message: 'Click or drag the elements on the right side of the 7th row from lowest to highest',
@@ -675,11 +674,11 @@ export default class LevelTwo extends Component {
                                                                                                                                                                                                                         let order = [...this.state.nums].slice(5, 10).sort((a, b) => a - b);
                                                                                                                                                                                                                         for (let i = 0; i < order.length; i++) {
                                                                                                                                                                                                                             if (order[i] !== this.state.stepSevenRight[i]) {
-                                                                                                                                                                                                                                alert("wrong");
+                                                                                                                                                                                                                                wrongFunction();
                                                                                                                                                                                                                                 window.location.reload();
                                                                                                                                                                                                                             }
                                                                                                                                                                                                                         }
-                                                                                                                                                                                                                        alert("correct");
+                                                                                                                                                                                                                        correctFunction();
                                                                                                                                                                                                                         let arrayFinal = [...this.state.nums].slice(0, 5).sort((a, b) => a - b);
                                                                                                                                                                                                                         let arrayFinalRight = [...this.state.nums].slice(5, 10).sort((a, b) => a - b);
                                                                                                                                                                                                                         for (let i = 0; i < 5; i++) {
@@ -703,11 +702,11 @@ export default class LevelTwo extends Component {
                                                                                                                                                                                                                                                         let order = [...this.state.nums].sort((a, b) => a - b);
                                                                                                                                                                                                                                                         for (let i = 0; i < 10; i++) {
                                                                                                                                                                                                                                                             if (order[i] !== this.state.stepEight[i]) {
-                                                                                                                                                                                                                                                                alert("wrong");
+                                                                                                                                                                                                                                                                wrongFunction();
                                                                                                                                                                                                                                                                 window.location.reload();
                                                                                                                                                                                                                                                             }
                                                                                                                                                                                                                                                         }
-                                                                                                                                                                                                                                                        alert("correct");
+                                                                                                                                                                                                                                                        correctFunction();
                                                                                                                                                                                                                                                         // continue
                                                                                                                                                                                                                                                         const answerButtons = [...this.state.nums].sort((a, b) => a - b).map((value, index) => {
                                                                                                                                                                                                                                                             return (
