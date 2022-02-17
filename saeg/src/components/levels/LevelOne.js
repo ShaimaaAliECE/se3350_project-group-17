@@ -110,7 +110,7 @@ export default class LevelOne extends Component {
                 <Button variant="outline-info">{value}</Button>
             )
         });
-        // TODO: following 2 elements are bad practice (too long) => fix
+        // TODO: following elements are bad practice (too long) => fix
         const arrayFour = (
             <div>
                 {arrayFour1} <Button variant="info">{nums3Left1[2]}</Button> <Button variant="info">{nums3Left2[0]}</Button> <Button variant="info">{nums3Left2[1]}</Button> {arrayFour2} <Button variant="info">{nums3Right1[2]}</Button> <Button variant="info">{nums3Right2[0]}</Button> <Button variant="info">{nums3Right2[1]}</Button>
