@@ -14,7 +14,7 @@ export default class LevelOne extends Component {
             arraySeven: null,
             arrayEight: null,
             arrayNine: null,
-            message: 'Click Next to see first step to sort this array.',
+            message: 'Click Next to see the first step to sort this array using the MergeSort Algorithm.',
             nextButtonMsg: 'Next',
             previousButtonMsg: 'Return To Level Select',
             nums: [],
@@ -223,44 +223,44 @@ export default class LevelOne extends Component {
                             this.setState({
                                 arrayTwo: arrayTwo,
                                 counter: 1,
-                                message: 'First, split the array as evenly as possible.',
+                                message: 'First, split the array as evenly as possible into two subarrays. This results into two subarray of 5.',
                                 previousButtonMsg: 'Previous'
                             });
                         } else if (this.state.counter===1) {
                             this.setState({
                                 arrayThree: arrayThree,
                                 counter: 2,
-                                message: 'Split both the subarrays as evenly as possible again.',
+                                message: 'Now, split both the subarrays as evenly as possible again. Each subarray of 5 is split into a subarray of 3 and 2.',
                             });
                         } else if (this.state.counter===2) {
                             this.setState({
                                 arrayFour: arrayFour,
                                 counter: 3,
-                                message: 'Continue to split the subarrays as evenly as possible. Arrays of length 1 cannot be split and are ready to merge.',
+                                message: 'Continue to split the subarrays as evenly as possible. Arrays of length 1 (which are shaded in) cannot be split and are ready to merge.',
                             });
                         } else if (this.state.counter===3) {
                             this.setState({
                                 arrayFive: arrayFive,
                                 counter: 4,
-                                message: 'Continue to split the subarrays as evenly as possible. Arrays of length 1 cannot be split and are ready to merge.',
+                                message: 'Continue to split the subarrays as evenly as possible. Arrays of length 1 (which are shaded in) cannot be split and are ready to merge. All arrays should now only have a length of 1.',
                             });
                         } else if (this.state.counter===4) {
                             this.setState({
                                 arraySix: arraySix,
                                 counter: 5,
-                                message: 'Now we rebuild the arrays. Select the minimum of the values and add it to the new sorted array.',
+                                message: 'Now we rebuild the arrays. Select the minimum of the values from the last split subarrays and add it to the beginning of the new sorted subarray. We now have 2 sorted subarrays.',
                             });
                         } else if (this.state.counter===5) {
                             this.setState({
                                 arraySeven: arraySeven,
                                 counter: 6,
-                                message: 'Select the minimum of the values from the front of the subarray and add it to the new sorted subarray. When one list becomes empty copy all values of the remaining array into the sorted array.',
+                                message: 'We now have four sorted subarrays. Select the minimum of the values from the front of the remaining subarray and add it to the correct spot in the new sorted subarray. When one list becomes empty copy all values of the remaining array into the sorted array.',
                             });
                         } else if (this.state.counter===6) {
                             this.setState({
                                 arrayEight: arrayEight,
                                 counter: 7,
-                                message: 'Select the minimum of the values from the front of the subarray and add it to the new sorted array. When one list becomes empty copy all values of the remaining array into the sorted array.',
+                                message: 'We now have two sorted subarrays of length 5. Select the minimum of the values from the front of the subarrays and add it to the new sorted array (this will be the final sorted array). When one array becomes empty copy all values of the remaining array into the sorted array.',
                             });
                         } else if (this.state.counter===7) {
                             this.setState({
@@ -307,7 +307,7 @@ export default class LevelOne extends Component {
                             this.setState({
                                 arraySeven: null,
                                 counter: 5,
-                                message: 'Now we rebuild the arrays. Select the minimum of the values and add it to the new sorted array.',
+                                message: 'Now we rebuild the arrays. Select the minimum of the values from the last split subarrays and add it to the beginning of the new sorted subarray.',
                             });
                         } else if (this.state.counter===5) {
                             this.setState({
@@ -351,11 +351,12 @@ export default class LevelOne extends Component {
         );
 
         return (
-            <div style={{marginLeft: "30%", marginTop: "2%", height: "80%"}}>
-                <h1>Level One</h1>
+            <div style={{marginLeft: "20%", marginRight: "20%", marginTop: "2%", height: "80%"}}>
+                <h1 >Level One</h1>
                 <h2>MergeSort Algorithm</h2>
                 <h4>ONLY FIREFOX COMPATIBLE</h4>
-                <h3>{this.state.message}</h3>
+                <p1>Instructions: </p1>
+                <p2>{this.state.message}</p2> 
                 <p>{arrayOne}</p>
                 <br />
                 {this.state.arrayTwo}

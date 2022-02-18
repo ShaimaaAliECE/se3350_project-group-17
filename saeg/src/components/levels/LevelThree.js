@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Button } from 'react-bootstrap';
 import Draggable from 'react-draggable';
 import { wrongFunction, correctFunction } from '../../functions/SoundFunctions';
+import { Link } from 'react-router-dom';
 
 export default class LevelThree extends Component {
     constructor(props) {
@@ -925,13 +926,13 @@ export default class LevelThree extends Component {
         return (
             <div style={{
                 marginLeft: "20%",
-            }}
-            >
+                marginRight: "20%",
+            }}>
                 <h1>Level Three</h1>
                 <h2>MergeSort Algorithm</h2>
-                <h4>Ensure NOT to double click buttons</h4>
-                <h4>Perform each step left-to-right</h4>
-                <h4>ONLY FIREFOX COMPATIBLE</h4>
+                <h5>Ensure NOT to double click buttons</h5>
+                <h5>ONLY FIREFOX COMPATIBLE</h5>
+                <h4>Perform all steps of the MergeSort Algortim taught to you in Levels 1 and 2 to complete this level. Feedback will be given to help you.</h4>
                 {arrayOne}
                 <h3>________________ __________________</h3>
                 {this.state.arrayTwo}
@@ -942,6 +943,11 @@ export default class LevelThree extends Component {
                 {this.state.arraySeven}
                 {this.state.arrayEight}
                 {this.state.answer}
+                <br />
+                <Link to ="/levels">
+                    <Button style={{marginTop: "2%"}} variant="secondary" >Return to Level Select</Button>
+                </Link>
+                <br />
             </div>
         )
     }

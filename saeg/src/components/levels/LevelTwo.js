@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import { Button } from 'react-bootstrap';
 import Draggable from 'react-draggable';
 import { wrongFunction, correctFunction } from '../../functions/SoundFunctions';
+import { Link } from 'react-router-dom';
 
 export default class LevelTwo extends Component {
     constructor(props) {
         super(props);
         this.state = {
             counter: 0,
-            message: 'Click or drag onto the line the 5 elements on the left',
+            message: 'Step 1. Drag the first 5 elements of the array to the subarray (the line) on the left',
             arrayTwo: null,
             arrayThree: null,
             arrayFour: null,
@@ -66,7 +67,7 @@ export default class LevelTwo extends Component {
                                     correctFunction();
                                     this.setState({
                                         counter: 1,
-                                        message: 'Click or drag onto the line the 5 elements on the right',
+                                        message: 'Step 2. Drag the remaining 5 elements to the subarray (line) on the right',
                                     });
                                 }
                             } else if (this.state.counter===1) {
@@ -108,7 +109,7 @@ export default class LevelTwo extends Component {
                                                                     correctFunction();
                                                                     this.setState({
                                                                         counter: 3,
-                                                                        message:  'Click or drag the 2 elements on the right half of the left array',
+                                                                        message:  'Step 4: Drag the remaining 2 elements on the left subarray to the second most left array ',
                                                                     });
                                                                 }
                                                             } else if (this.state.counter===3) {
@@ -126,7 +127,7 @@ export default class LevelTwo extends Component {
                                                                     correctFunction();
                                                                     this.setState({
                                                                         counter: 4,
-                                                                        message:  'Click or drag the 3 elements on the left half of the right array',
+                                                                        message:  'Step 5: Drag the first 3 elements of the right subarray to the third subarray',
                                                                     });
                                                                 }
                                                             } else {
@@ -165,7 +166,7 @@ export default class LevelTwo extends Component {
                                                                     correctFunction();
                                                                     this.setState({
                                                                         counter: 5,
-                                                                        message:  'Click or drag the 2 elements on the right half of the right array',
+                                                                        message:  'Step 6: Drag the remaining 2 elements on the right subarray to the right most array',
                                                                     });
                                                                 }
                                                             } else if (this.state.counter===5) {
@@ -205,7 +206,7 @@ export default class LevelTwo extends Component {
                                                                                                     correctFunction();
                                                                                                     this.setState({
                                                                                                         counter: 7,
-                                                                                                        message:  'Click or drag the element on the right of the leftmost array on the 3rd row',
+                                                                                                        message:  'Step 8: Drag the remaining element from subarray 1 of 4 to the second most left array.',
                                                                                                     });
                                                                                                 }
                                                                                             } else if (this.state.counter===7) {
@@ -216,7 +217,7 @@ export default class LevelTwo extends Component {
                                                                                                 correctFunction();
                                                                                                 this.setState({
                                                                                                     counter: 8,
-                                                                                                    message: 'Click or drag the left element on the 2nd leftmost array on the 3rd row',
+                                                                                                    message: 'Step 9: Drag the first element from subarray 2 of 4 to the third most left array',
                                                                                                 });
                                                                                             } else {
                                                                                                 wrongFunction();
@@ -247,7 +248,7 @@ export default class LevelTwo extends Component {
                                                                                                 correctFunction();
                                                                                                 this.setState({
                                                                                                     counter: 9,
-                                                                                                    message: 'Click or drag the right element on the 2nd leftmost array on the 3rd row',
+                                                                                                    message: 'Step 10: Drag the remaining element of subarray 2 of 4 to the fourth most left array',
                                                                                                 });
                                                                                             } else if (this.state.counter===9) {
                                                                                                 if (value !== this.state.nums[4]) {
@@ -257,7 +258,7 @@ export default class LevelTwo extends Component {
                                                                                                 correctFunction();
                                                                                                 this.setState({
                                                                                                     counter: 10,
-                                                                                                    message: 'Click or drag the 2 left elements on the 3rd array from the left on the 3rd row',
+                                                                                                    message: 'Step 11: Drag the first 2 elements of subarray 3 of 4 to the fifth most left array',
                                                                                                 });
                                                                                             } else {
                                                                                                 wrongFunction();
@@ -294,7 +295,7 @@ export default class LevelTwo extends Component {
                                                                                                     correctFunction();
                                                                                                     this.setState({
                                                                                                         counter: 11,
-                                                                                                        message:  'Click or drag the element on the right of the 3rd array from the left on the 3rd row',
+                                                                                                        message:  'Step 12: Drag the remaining element for subarray 3 of 4 to the 6th most left array',
                                                                                                     });
                                                                                                 }
                                                                                             } else if (this.state.counter===11) {
@@ -305,7 +306,7 @@ export default class LevelTwo extends Component {
                                                                                                 correctFunction();
                                                                                                 this.setState({
                                                                                                     counter: 12,
-                                                                                                    message: 'Click or drag the left element on the rightmost array on the 3rd row',
+                                                                                                    message: 'Step 13: Drag the first element of subarray 4 of 4 to the second most right array ',
                                                                                                 });
                                                                                             } else {
                                                                                                 wrongFunction();
@@ -336,7 +337,7 @@ export default class LevelTwo extends Component {
                                                                                                 correctFunction();
                                                                                                 this.setState({
                                                                                                     counter: 13,
-                                                                                                    message: 'Click or drag the right element on the rightmost array on the 3rd row',
+                                                                                                    message: 'Step 14: Drag the remaining element from subarray 4 to the rightmost array',
                                                                                                 });
                                                                                             } else if (this.state.counter===13) {
                                                                                                 if (value !== this.state.nums[9]) {
@@ -363,7 +364,7 @@ export default class LevelTwo extends Component {
                                                                                                                         correctFunction();
                                                                                                                         this.setState({
                                                                                                                             counter: 15,
-                                                                                                                            message: 'Click or drag right element on the left array on the 4th row',
+                                                                                                                            message: 'Step 16: Drag the remaining element of the left subarray to the second most left array on row 4',
                                                                                                                         });
                                                                                                                     } else if (this.state.counter===15) {
                                                                                                                         if (value !== this.state.nums[1]) {
@@ -373,7 +374,7 @@ export default class LevelTwo extends Component {
                                                                                                                         correctFunction();
                                                                                                                         this.setState({
                                                                                                                             counter: 16,
-                                                                                                                            message: 'Click or drag left element on the right array on the 4th row',
+                                                                                                                            message: 'Step 17: Drag the first element of the right subarray to the third most left array of row 4',
                                                                                                                         });
                                                                                                                     } else {
                                                                                                                         wrongFunction();
@@ -405,7 +406,7 @@ export default class LevelTwo extends Component {
                                                                                                                             correctFunction();
                                                                                                                             this.setState({
                                                                                                                                 counter: 17,
-                                                                                                                                message: 'Click or drag right element on the right array on the 4th row',
+                                                                                                                                message: 'Step 18: Drag the remaining element of the right subarray to the rightmost array on row 4',
                                                                                                                             });
                                                                                                                         } else if (this.state.counter===17) {
                                                                                                                             if (value !== this.state.nums[6]) {
@@ -434,7 +435,7 @@ export default class LevelTwo extends Component {
                                                                                                                                                         correctFunction();
                                                                                                                                                         this.setState({
                                                                                                                                                             counter: 19,
-                                                                                                                                                            message: 'Click or drag the highest element on the left side of the 5th row',
+                                                                                                                                                            message: 'Step 20: Drag the remaining element of the left subarray to the next spot on the left array on the 5th row',
                                                                                                                                                         });
                                                                                                                                                     } else if (this.state.counter===19) {
                                                                                                                                                         if (value !== order[1]) {
@@ -444,7 +445,7 @@ export default class LevelTwo extends Component {
                                                                                                                                                         correctFunction();
                                                                                                                                                         this.setState({
                                                                                                                                                             counter: 20,
-                                                                                                                                                            message: 'Click or drag the lowest element on the right side of the 5th row',
+                                                                                                                                                            message: 'Step 21:  Drag the element with the smallest value of the right subarray to the front of the right array on the 5th row',
                                                                                                                                                         });
                                                                                                                                                     } else {
                                                                                                                                                         wrongFunction();
@@ -478,7 +479,7 @@ export default class LevelTwo extends Component {
                                                                                                                                                         correctFunction();
                                                                                                                                                         this.setState({
                                                                                                                                                             counter: 21,
-                                                                                                                                                            message: 'Click or drag the highest element on the right side of the 5th row',
+                                                                                                                                                            message: 'Step 22: Drag the remaining element of the right subarray to the next spot on the right array on the 5th row',
                                                                                                                                                         });
                                                                                                                                                     } else if (this.state.counter===21) {
                                                                                                                                                         if (value !== order[1]) {
@@ -513,7 +514,7 @@ export default class LevelTwo extends Component {
                                                                                                                                                                                         correctFunction();
                                                                                                                                                                                         this.setState({
                                                                                                                                                                                             counter: 23,
-                                                                                                                                                                                            message: 'Click or drag the elements on the 2nd leftmost side of the 6th row from lowest to highest',
+                                                                                                                                                                                            message: 'Step 24: Drag the elements from subarray 2 of 4 onto the second most left array on the 6th row from lowest to highest value',
                                                                                                                                                                                         });
                                                                                                                                                                                     }
                                                                                                                                                                                 } else {
@@ -552,7 +553,7 @@ export default class LevelTwo extends Component {
                                                                                                                                                                                         correctFunction();
                                                                                                                                                                                         this.setState({
                                                                                                                                                                                             counter: 24,
-                                                                                                                                                                                            message: 'Click or drag the elements on the 2nd rightmost side of the 6th row from lowest to highest',
+                                                                                                                                                                                            message: 'Step 25: Drag the elements from subarray 3 of 4 onto the third most left array on the 6th row from lowest to highest value',
                                                                                                                                                                                         });
                                                                                                                                                                                     }
                                                                                                                                                                                 } else {
@@ -593,7 +594,7 @@ export default class LevelTwo extends Component {
                                                                                                                                                                                         correctFunction();
                                                                                                                                                                                         this.setState({
                                                                                                                                                                                             counter: 25,
-                                                                                                                                                                                            message: 'Click or drag the elements on the rightmost side of the 6th row from lowest to highest',
+                                                                                                                                                                                            message: 'Step 26: Drag the elements from subarray 4 of 4 onto the rightmost array on the 6th row from lowest to highest value',
                                                                                                                                                                                         });
                                                                                                                                                                                     }
                                                                                                                                                                                 } else {
@@ -658,7 +659,7 @@ export default class LevelTwo extends Component {
                                                                                                                                                                                                                         correctFunction();
                                                                                                                                                                                                                         this.setState({
                                                                                                                                                                                                                             counter: 27,
-                                                                                                                                                                                                                            message: 'Click or drag the elements on the right side of the 7th row from lowest to highest',
+                                                                                                                                                                                                                            message: 'Step 28: Drag the elements from the right subarray onto the rightmost array on the 7th row from lowest to highest value',
                                                                                                                                                                                                                         });
                                                                                                                                                                                                                     }
                                                                                                                                                                                                                 } else {
@@ -752,7 +753,7 @@ export default class LevelTwo extends Component {
                                                                                                                                                                                                                                                         this.setState({
                                                                                                                                                                                                                                                             counter: 29,
                                                                                                                                                                                                                                                             answer: answer,
-                                                                                                                                                                                                                                                            message: 'Array has been sorted using mergesort!'
+                                                                                                                                                                                                                                                            message: 'Step 30: Array has been sorted using the Mergesort Algorithm!'
                                                                                                                                                                                                                                                         });
                                                                                                                                                                                                                                                     }
                                                                                                                                                                                                                                                 } else {
@@ -775,7 +776,7 @@ export default class LevelTwo extends Component {
                                                                                                                                                                                                                         this.setState({
                                                                                                                                                                                                                             counter: 28,
                                                                                                                                                                                                                             arrayEight: arrayEight,
-                                                                                                                                                                                                                            message: 'Click or drag the elements on the 8th row from lowest to highest',
+                                                                                                                                                                                                                            message: 'Step 29: Drag the elements from the unsorted array onto the new array on the 8th row from lowest to highest value',
                                                                                                                                                                                                                         });
                                                                                                                                                                                                                     }
                                                                                                                                                                                                                 } else {
@@ -792,13 +793,13 @@ export default class LevelTwo extends Component {
                                                                                                                                                                                         const arraySeven = (
                                                                                                                                                                                             <div>
                                                                                                                                                                                                 {array7Left} {array7Right}
-                                                                                                                                                                                                <h3>________________ __________________</h3>
+                                                                                                                                                                                                <h3>________________     __________________</h3>
                                                                                                                                                                                             </div>
                                                                                                                                                                                         )
                                                                                                                                                                                         this.setState({
                                                                                                                                                                                             counter: 26,
                                                                                                                                                                                             arraySeven: arraySeven,
-                                                                                                                                                                                            message: 'Click or drag the elements on the left side of the 7th row from lowest to highest',
+                                                                                                                                                                                            message: 'Step 27: Drag the elements from the left subarray onto the leftmost array on the 7th row from lowest to highest value',
                                                                                                                                                                                         });
                                                                                                                                                                                     }
                                                                                                                                                                                 } else {
@@ -815,12 +816,12 @@ export default class LevelTwo extends Component {
                                                                                                                                                         const arraySix = (
                                                                                                                                                             <div>
                                                                                                                                                                 {array6Left1} {array6Left2} {array6Right1} {array6Right2}
-                                                                                                                                                                <h3>_________ ______ _________ ______</h3>
+                                                                                                                                                                <h3>_________  ______     _________  ______</h3>
                                                                                                                                                             </div>
                                                                                                                                                         );
                                                                                                                                                         this.setState({
                                                                                                                                                             counter: 22,
-                                                                                                                                                            message: 'Click or drag the elements on the leftmost side of the 6th row from lowest to highest',
+                                                                                                                                                            message: 'Step 23: Drag the elements from subarray 1 of 4 onto the leftmost array on the 6th row from lowest to highest value',
                                                                                                                                                             arraySix: arraySix,
                                                                                                                                                         });
                                                                                                                                                     } else {
@@ -837,13 +838,13 @@ export default class LevelTwo extends Component {
                                                                                                                             let arrayFive = (
                                                                                                                                 <div>
                                                                                                                                     {array5Left} {array5Right}
-                                                                                                                                    <h3>_______ _______</h3>
+                                                                                                                                    <h3>_______  _______</h3>
                                                                                                                                 </div>
                                                                                                                             );
                                                                                                                             this.setState({
                                                                                                                                 counter: 18,
                                                                                                                                 arrayFive: arrayFive,
-                                                                                                                                message: 'All subarrays are now at size 1.\nClick or drag the lowest element on the left side of the 5th row',
+                                                                                                                                message: 'Step 19: All subarrays are now at size 1, it is time to merge them. Drag the element with the smallest value of the left subarray to the front of the left array on the 5th row',
                                                                                                                             });
                                                                                                                         } else {
                                                                                                                             wrongFunction();
@@ -859,12 +860,12 @@ export default class LevelTwo extends Component {
                                                                                                 const arrayFour = (
                                                                                                     <div>
                                                                                                         {array4Left} {array4Right}
-                                                                                                        <h3>___ ___ ___ ___</h3>
+                                                                                                        <h3>___  ___  ___  ___</h3>
                                                                                                     </div>
                                                                                                 )
                                                                                                 this.setState({
                                                                                                     counter: 14,
-                                                                                                    message: 'Click or drag left element on the left array on the 4th row',
+                                                                                                    message: 'Step 15: Drag the first element of the left subarray to the leftmost array of row 4',
                                                                                                     arrayFour: arrayFour,
                                                                                                 });
                                                                                             } else {
@@ -881,12 +882,12 @@ export default class LevelTwo extends Component {
                                                                     const arrayThree = (
                                                                         <div>
                                                                             {array3Left1} {array3Left2} {array3Right1} {array3Right2}
-                                                                            <h3>______ __ ___ ___ ______ ___ ___ ___</h3>
+                                                                            <h3>______  __  ___  ___     ______  ___  ___  ___</h3>
                                                                         </div>
                                                                     );
                                                                     this.setState({
                                                                         counter: 6,
-                                                                        message:  'Click or drag the 2 leftmost elements on the 1st array from the left in the 3rd row',
+                                                                        message:  'Step 7: Drag the first 2 elements of subarray 1 of 4 to the leftmost array',
                                                                         arrayThree: arrayThree,
                                                                     });
                                                                 }
@@ -904,13 +905,13 @@ export default class LevelTwo extends Component {
                                     const arrayTwo = (
                                         <div>
                                             {array2Left} {array2Right}
-                                            <h3>_________ ______ _________ ______</h3>
+                                            <h3>_________ ______     _________ ______</h3>
                                         </div>
                                     );
                                     this.setState({
                                         arrayTwo: arrayTwo,
                                         counter: 2,
-                                        message: 'Click or drag the 3 elements on the left half of the left array'
+                                        message: 'Step 3: Drag the first 3 elements of the left subarray to the most left array'
                                     });
                                 }
                             } else {
@@ -925,17 +926,19 @@ export default class LevelTwo extends Component {
         return (
             <div style={{
                 marginLeft: "20%",
+                marginRight: "20%",
             }}
             >
                 <h1>Level Two</h1>
                 <h2>MergeSort Algorithm</h2>
-                <h4>Ensure NOT to double click buttons</h4>
-                <h4>Perform each step left-to-right</h4>
-                <h4>ONLY FIREFOX COMPATIBLE</h4>
-                <h3>{this.state.message}</h3>
+                <h5>Ensure NOT to double click buttons</h5>
+                <h5>ONLY FIREFOX COMPATIBLE</h5>
+                <h3>Instructions: </h3>
+                <h5>{this.state.message}</h5>
+                <h1> </h1>
                 {arrayOne}
-                <h3>________________ __________________</h3>
-                {this.state.arrayTwo}
+                <h3>________________     __________________</h3>
+                {this.state.arrayTwo} 
                 {this.state.arrayThree}
                 {this.state.arrayFour}
                 {this.state.arrayFive}
@@ -943,6 +946,11 @@ export default class LevelTwo extends Component {
                 {this.state.arraySeven}
                 {this.state.arrayEight}
                 {this.state.answer}
+                <br />
+                <Link to ="/levels">
+                    <Button style={{marginTop: "2%"}} variant="secondary" >Return to Level Select</Button>
+                </Link>
+                <br />
             </div>
         )
     }

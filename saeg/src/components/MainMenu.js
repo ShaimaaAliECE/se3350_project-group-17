@@ -98,7 +98,7 @@ export default class MainMenu extends Component {
             </div>
         )
         return (
-            <div style={{marginLeft: "30%", marginTop: "2%"}}>
+            <div style={{marginLeft: "20%", marginTop: "2%"}}>
                 <h1>Sorting Algorithm Game</h1>
                 <h4>ONLY FIREFOX COMPATIBLE</h4>
                 <Link to="/createAccount">

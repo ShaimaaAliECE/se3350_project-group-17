@@ -114,18 +114,18 @@ export default class CreateAccount extends Component {
 
         const returnButton = (
             <Link to="/">
-                <Button style={{marginTop: "10%", marginLeft: "30%"}}>
+                <Button style={{marginTop: "10%", marginLeft: "20%"}}>
                     Return to Login
                 </Button>
             </Link>
         )
         return (
             <div>
-                <h1 style={{marginLeft: "30%", marginTop: "2%"}}>
+                <h1 style={{marginLeft: "20%", marginTop: "2%"}}>
                     Create Account
                 </h1>
-                <h4>ONLY FIREFOX COMPATIBLE</h4>
-                <div style={{marginLeft: "30%", marginTop: "2%"}}>
+                <h4 style={{marginLeft: "20%"}}>ONLY FIREFOX COMPATIBLE</h4>
+                <div style={{marginLeft: "20%", marginTop: "2%"}}>
                     {radioButtons}
                     <br />
                     {accountCreation}

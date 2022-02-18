@@ -5,7 +5,7 @@ import { Button, ButtonGroup } from "react-bootstrap";
 export default class LevelSelect extends Component {
     render() {
         return (
-            <div style={{marginLeft: "30%", marginTop: "2%"}}>
+            <div style={{marginLeft: "20%", marginTop: "2%"}}>
                 <h1>Level Select</h1>
                 <h4>ONLY FIREFOX COMPATIBLE</h4>
                 <ButtonGroup style={{marginTop: "2%"}}>
