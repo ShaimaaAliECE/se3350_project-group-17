@@ -43,9 +43,6 @@ export default class LevelTwo extends Component {
     render() {
         /*TODO: whole component is bad practice (too many indents), fix if u want */
 
-        //TODO: handle case where player clicks button in most recent row with a counter that is not handled (wrong if you don't go left-to-right)
-        // above can be handled by reloading w/ alert + audio if you click the wrong array in else if (counter=x || counter=y) block
-        
         const arrayOne = [...this.state.nums].map((value, index) => {
             return (
                 <Draggable>
