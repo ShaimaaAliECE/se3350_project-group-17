@@ -4,7 +4,7 @@ import LevelOne from '../components/levels/LevelOne';
 import LevelTwo from '../components/levels/LevelTwo';
 import LevelThree from '../components/levels/LevelThree';
 import CreateAccount from '../components/CreateAccount';
-import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import {HashRouter as Router, Route, Routes} from 'react-router-dom';
 
 const AppRouter = () => (
     <Router>
