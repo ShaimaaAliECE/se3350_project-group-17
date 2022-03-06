@@ -4,8 +4,8 @@ import './index.css';
 import AppRouter from './routers/AppRouter';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-
+import firebaseApp from './firebase/firebase';
+console.log(firebaseApp);
 ReactDOM.render(
   <React.StrictMode>
     <AppRouter />

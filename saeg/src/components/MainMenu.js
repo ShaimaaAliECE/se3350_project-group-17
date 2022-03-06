@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Button, InputGroup, FormControl } from "react-bootstrap";
-
-export default class MainMenu extends Component {
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth, database } from '../firebase/firebase';
+import { ref, get, child, getDatabase } from 'firebase/database';
+class MainMenu extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -10,8 +12,52 @@ export default class MainMenu extends Component {
             adminPassword: '',
             playerID: '',
             playerPassword: '',
+            errorMsg: ''
         }
     }
+
+    signinUser = () => {
+        signInWithEmailAndPassword(auth, this.state.playerID + "@null.null", this.state.playerPassword)
+        .then((userCredential) => {
+            const dbRef = ref(getDatabase());
+            get(child(dbRef, `users/${userCredential.user.uid}`)).then((snapshot) => {
+                if (snapshot.exists()) {
+                    if (snapshot.val().isAdmin) {
+                        this.setState({ errorMsg: 'Error: Invalid account type' })
+                    } else {
+                        this.props.navigate('/levels')
+                    }
+                }
+            }).catch((error) => {
+                this.setState({errorMsg: error.message})
+            });
+        })
+        .catch((error) => {
+            this.setState({errorMsg: error.message})
+        });
+    }
+
+    signinAdmin = () => {
+        signInWithEmailAndPassword(auth, this.state.adminID + "@null.null", this.state.adminPassword)
+        .then((userCredential) => {
+            const dbRef = ref(getDatabase());
+            get(child(dbRef, `users/${userCredential.user.uid}`)).then((snapshot) => {
+                if (snapshot.exists()) {
+                    if (!snapshot.val().isAdmin) {
+                        this.setState({ errorMsg: 'Error: Invalid account type' })
+                    } else {
+                        this.props.navigate('/levels') //REPLACE THIS WITH ADMIN PAGE LATER
+                    }
+                }
+            }).catch((error) => {
+                this.setState({errorMsg: error.message})
+            });
+        })
+        .catch((error) => {
+            this.setState({errorMsg: error.message})
+        });
+    }
+
     render() {
         const signInAdmin = (
             <div style={{marginTop: "2%"}}>
@@ -43,12 +89,7 @@ export default class MainMenu extends Component {
                         />
                     </InputGroup>
                     <Button variant="outline-secondary" id="button-addon1"
-                        onClick={
-                            () => {
-                                // log the admin in
-                                // set up route
-                            }
-                        }
+                        onClick={this.signinAdmin}
                     >
                         Continue as Admin
                     </Button>
@@ -78,19 +119,14 @@ export default class MainMenu extends Component {
                         onChange={
                             (event) => {
                                 this.setState({
-                                    playerID: event.target.value,
+                                    playerPassword: event.target.value,
                                 })
                             }
                         }
                         />
                     </InputGroup>
                     <Button variant="outline-secondary" id="button-addon1"
-                        onClick={
-                            () => {
-                                // log the user in
-                                // set up route
-                            }
-                        }
+                        onClick={this.signinUser}
                     >
                         Continue as Player
                     </Button>
@@ -111,8 +147,13 @@ export default class MainMenu extends Component {
                 <br />
                 {signInAdmin}
                 {signInPlayer}
-
+                {this.state.errorMsg}
             </div>
         )
     }
+}
+
+export default function WithNav(props) {
+    let nav = useNavigate();
+    return <MainMenu {...props} navigate={nav} />
 }
