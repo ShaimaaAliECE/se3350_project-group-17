@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import firebaseApp, { auth, database } from '../firebase/firebase';
+import { ref, set } from 'firebase/database';
 import {     
             ToggleButton, 
             ToggleButtonGroup, 
@@ -17,6 +20,17 @@ export default class CreateAccount extends Component {
             password: null,
             retypePassword: null,
         }
+    }
+
+    attemptSignup = () => {
+        createUserWithEmailAndPassword(auth, this.state.username + "@null.null", this.state.password).then((credentials) => {
+            set(ref(database, `users/${credentials.user.uid}`), {
+                isAdmin: this.state.isAdmin
+            });
+            
+        }).catch((error) => {
+            console.log(error);
+        });
     }
     
     render() {
@@ -99,12 +113,7 @@ export default class CreateAccount extends Component {
                         />
                     </InputGroup>
                     <Button variant="outline-secondary" id="button-addon1"
-                        onClick={
-                            () => {
-                                // create the account if passwords match and valid user + pass
-                                // set up route
-                            }
-                        }
+                        onClick={this.attemptSignup}
                     >
                         Submit
                     </Button>

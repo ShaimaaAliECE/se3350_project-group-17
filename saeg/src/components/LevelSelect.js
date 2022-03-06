@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Button, ButtonGroup } from "react-bootstrap";
 
 export default class LevelSelect extends Component {
+
     render() {
         return (
             <div style={{marginLeft: "20%", marginTop: "2%"}}>
