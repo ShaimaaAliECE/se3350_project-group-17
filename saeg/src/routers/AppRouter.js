@@ -3,6 +3,7 @@ import LevelSelect from '../components/LevelSelect';
 import LevelOne from '../components/levels/LevelOne';
 import LevelTwo from '../components/levels/LevelTwo';
 import LevelThree from '../components/levels/LevelThree';
+import LevelFour from '../components/levels/LevelFour';
 import CreateAccount from '../components/CreateAccount';
 import {HashRouter as Router, Route, Routes} from 'react-router-dom';
 
@@ -16,6 +17,7 @@ const AppRouter = () => (
                 <Route path="/level_two" element={<LevelTwo />} />
                 <Route path="/level_three" element={<LevelThree />} />
                 <Route path = "/createAccount" element={<CreateAccount />} />
+                <Route path="/level_four" element={<LevelFour />} />
             </Routes>
         </div>
     </Router>

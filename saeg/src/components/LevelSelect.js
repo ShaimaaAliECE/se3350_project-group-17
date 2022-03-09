@@ -13,7 +13,7 @@ export default class LevelSelect extends Component {
                 <Link to="/level_one"><Button variant="primary">Level One</Button></Link>
                 <Link to="/level_two"><Button variant="primary">Level Two</Button></Link>
                 <Link to="/level_three"><Button variant="primary">Level Three</Button></Link>
-                <Button variant="primary">Level Four</Button>
+                <Link to="/level_four"><Button variant="primary">Level Four</Button></Link>
                 <Button variant="primary">Level Five</Button>
                 <Button variant="primary">Custom Level</Button>
                 </ButtonGroup>
