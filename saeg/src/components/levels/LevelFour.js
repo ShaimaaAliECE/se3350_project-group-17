@@ -29,10 +29,30 @@ export default class LevelFour extends Component {
             stepFour2: [],
             stepFour3: [],
             stepFour4: [],
+            stepSeven1: [],
+            stepSeven2: [],
+            stepSeven3: [],
+            stepSeven4: [],
+            stepSeven5: [],
+            stepSeven6: [],
+            stepSeven7: [],
+            stepSeven8: [],
+            stepEight1: [],
+            stepEight2: [],
+            stepEight3: [],
+            stepEight4: [],
+            stepNine1: [],
+            stepNine2: [],
+            stepTen: [],
             arrayTwo: null,
             arrayThree: null,
             arrayFour: null,
             arrayFive: null,
+            arraySix: null,
+            arraySeven: null,
+            arrayEight: null,
+            arrayNine: null,
+            arrayTen: null,
         }
         for (let i=0; i<20; i++) {
             // add 10 random integers between 1 and 20 to nums array
@@ -731,9 +751,762 @@ export default class LevelFour extends Component {
                                                                                                                                                 wrongFunction();
                                                                                                                                             }
                                                                                                                                             correctFunction();
-                                                                                                                                            // TODO: first merging step
+                                                                                                                                            // first merging step
+                                                                                                                                            let arraySix1 = [...this.state.nums].slice(0, 2).map((value, index) => {
+                                                                                                                                                return (
+                                                                                                                                                    <Draggable>
+                                                                                                                                                    <Button
+                                                                                                                                                    style={{
+                                                                                                                                                        marginTop: "5%",
+                                                                                                                                                        marginLeft: "0.25%",
+                                                                                                                                                    }}
+                                                                                                                                                     key={index} onClick={
+                                                                                                                                                        () => {
+                                                                                                                                                            let order = [...this.state.nums].slice(0, 2).sort((a, b) => a - b);
+                                                                                                                                                            if (this.state.counter===38) {
+                                                                                                                                                                if (value !== order[0]) {
+                                                                                                                                                                    wrongFunction();
+                                                                                                                                                                }
+                                                                                                                                                                correctFunction();
+                                                                                                                                                                this.setState({
+                                                                                                                                                                    counter:39,
+                                                                                                                                                                })
+                                                                                                                                                            } else if (this.state.counter===39) {
+                                                                                                                                                                if (value!== order[1]) {
+                                                                                                                                                                    wrongFunction();
+                                                                                                                                                                }
+                                                                                                                                                                correctFunction();
+                                                                                                                                                                this.setState({
+                                                                                                                                                                    counter: 40,
+                                                                                                                                                                })
+                                                                                                                                                            } else {
+                                                                                                                                                                wrongFunction();
+                                                                                                                                                            }
+                                                                                                                                                        }
+                                                                                                                                                    }>
+                                                                                                                                                        {value}
+                                                                                                                                                    </Button>
+                                                                                                                                                </Draggable>
+                                                                                                                                                )
+                                                                                                                                            })
+                                                                                                                                            let arraySix2 = [...this.state.nums].slice(5, 7).map((value, index) => {
+                                                                                                                                                return (
+                                                                                                                                                    <Draggable>
+                                                                                                                                                    <Button
+                                                                                                                                                    style={{
+                                                                                                                                                        marginTop: "5%",
+                                                                                                                                                        marginLeft: "0.25%",
+                                                                                                                                                    }}
+                                                                                                                                                     key={index} onClick={
+                                                                                                                                                        () => {
+                                                                                                                                                            let order = [...this.state.nums].slice(5, 7).sort((a, b) => a - b);
+                                                                                                                                                            if (this.state.counter===40) {
+                                                                                                                                                                if (value !== order[0]) {
+                                                                                                                                                                    wrongFunction();
+                                                                                                                                                                }
+                                                                                                                                                                correctFunction();
+                                                                                                                                                                this.setState({
+                                                                                                                                                                    counter:41,
+                                                                                                                                                                })
+                                                                                                                                                            } else if (this.state.counter===41) {
+                                                                                                                                                                if (value!== order[1]) {
+                                                                                                                                                                    wrongFunction();
+                                                                                                                                                                }
+                                                                                                                                                                correctFunction();
+                                                                                                                                                                this.setState({
+                                                                                                                                                                    counter: 42,
+                                                                                                                                                                })
+                                                                                                                                                            } else {
+                                                                                                                                                                wrongFunction();
+                                                                                                                                                            }
+                                                                                                                                                        }
+                                                                                                                                                    }>
+                                                                                                                                                        {value}
+                                                                                                                                                    </Button>
+                                                                                                                                                </Draggable>
+                                                                                                                                                )
+                                                                                                                                            })
+                                                                                                                                            let arraySix3 = [...this.state.nums].slice(10, 12).map((value, index) => {
+                                                                                                                                                return (
+                                                                                                                                                    <Draggable>
+                                                                                                                                                    <Button
+                                                                                                                                                    style={{
+                                                                                                                                                        marginTop: "5%",
+                                                                                                                                                        marginLeft: "0.25%",
+                                                                                                                                                    }}
+                                                                                                                                                     key={index} onClick={
+                                                                                                                                                        () => {
+                                                                                                                                                            let order = [...this.state.nums].slice(10, 12).sort((a, b) => a - b);
+                                                                                                                                                            if (this.state.counter===42) {
+                                                                                                                                                                if (value !== order[0]) {
+                                                                                                                                                                    wrongFunction();
+                                                                                                                                                                }
+                                                                                                                                                                correctFunction();
+                                                                                                                                                                this.setState({
+                                                                                                                                                                    counter:43,
+                                                                                                                                                                })
+                                                                                                                                                            } else if (this.state.counter===43) {
+                                                                                                                                                                if (value!== order[1]) {
+                                                                                                                                                                    wrongFunction();
+                                                                                                                                                                }
+                                                                                                                                                                correctFunction();
+                                                                                                                                                                this.setState({
+                                                                                                                                                                    counter: 44,
+                                                                                                                                                                })
+                                                                                                                                                            } else {
+                                                                                                                                                                wrongFunction();
+                                                                                                                                                            }
+                                                                                                                                                        }
+                                                                                                                                                    }>
+                                                                                                                                                        {value}
+                                                                                                                                                    </Button>
+                                                                                                                                                </Draggable>
+                                                                                                                                                )
+                                                                                                                                            })
+                                                                                                                                            let arraySix4 = [...this.state.nums].slice(15, 17).map((value, index) => {
+                                                                                                                                                return (
+                                                                                                                                                    <Draggable>
+                                                                                                                                                    <Button
+                                                                                                                                                    style={{
+                                                                                                                                                        marginTop: "5%",
+                                                                                                                                                        marginLeft: "0.25%",
+                                                                                                                                                    }}
+                                                                                                                                                     key={index} onClick={
+                                                                                                                                                        () => {
+                                                                                                                                                            let order = [...this.state.nums].slice(15, 17).sort((a, b) => a - b);
+                                                                                                                                                            if (this.state.counter===44) {
+                                                                                                                                                                if (value !== order[0]) {
+                                                                                                                                                                    wrongFunction();
+                                                                                                                                                                }
+                                                                                                                                                                correctFunction();
+                                                                                                                                                                this.setState({
+                                                                                                                                                                    counter:45,
+                                                                                                                                                                })
+                                                                                                                                                            } else if (this.state.counter===45) {
+                                                                                                                                                                if (value!== order[1]) {
+                                                                                                                                                                    wrongFunction();
+                                                                                                                                                                }
+                                                                                                                                                                correctFunction();
+                                                                                                                                                                //TODO: 2nd merging step (3, 2, 3, 2, 3, 2, 3, 2)
+                                                                                                                                                                let a7One = [...this.state.nums].slice(0, 2).sort((a, b) => a - b);
+                                                                                                                                                                a7One.push(this.state.nums[2]);
+                                                                                                                                                                let arraySeven1 = a7One.map((value, index) => {
+                                                                                                                                                                    return (
+                                                                                                                                                                        <Draggable>
+                                                                                                                                                                            <Button key={index}
+                                                                                                                                                                            style={{
+                                                                                                                                                                                marginTop: "5%",
+                                                                                                                                                                                marginLeft: "0.25%",
+                                                                                                                                                                            }}
+                                                                                                                                                                            onClick={
+                                                                                                                                                                                () => {
+                                                                                                                                                                                    if (this.state.counter===46) {
+                                                                                                                                                                                        this.state.stepSeven1.push(value);
+                                                                                                                                                                                        if (this.state.stepSeven1.length >= 3) {
+                                                                                                                                                                                            let order = [...this.state.nums].slice(0, 3).sort((a, b) => a - b);
+                                                                                                                                                                                            for (let i = 0; i < order.length; i++) {
+                                                                                                                                                                                                if (order[i] !== this.state.stepSeven1[i]) {
+                                                                                                                                                                                                    wrongFunction();
+                                                                                                                                                                                                }
+                                                                                                                                                                                            }
+                                                                                                                                                                                            correctFunction();
+                                                                                                                                                                                            this.setState({
+                                                                                                                                                                                                counter: 47,
+                                                                                                                                                                                            })
+                                                                                                                                                                                        }
+                                                                                                                                                                                    } else {
+                                                                                                                                                                                        wrongFunction();
+                                                                                                                                                                                    }
+                                                                                                                                                                                }
+                                                                                                                                                                            }
+                                                                                                                                                                            >
+                                                                                                                                                                                {value}
+                                                                                                                                                                            </Button>
+                                                                                                                                                                        </Draggable>
+                                                                                                                                                                    )
+                                                                                                                                                                });
+                                                                                                                                                                let a7Two = [...this.state.nums].slice(3, 5);
+                                                                                                                                                                let arraySeven2 = a7Two.map((value, index) => {
+                                                                                                                                                                    return (
+                                                                                                                                                                        <Draggable>
+                                                                                                                                                                            <Button key={index}
+                                                                                                                                                                            style={{
+                                                                                                                                                                                marginTop: "5%",
+                                                                                                                                                                                marginLeft: "0.25%",
+                                                                                                                                                                            }}
+                                                                                                                                                                            onClick={
+                                                                                                                                                                                () => {
+                                                                                                                                                                                    if (this.state.counter===47) {
+                                                                                                                                                                                        this.state.stepSeven2.push(value);
+                                                                                                                                                                                        if (this.state.stepSeven2.length >= 2) {
+                                                                                                                                                                                            let order = [...this.state.nums].slice(3, 5).sort((a, b) => a - b);
+                                                                                                                                                                                            for (let i = 0; i < order.length; i++) {
+                                                                                                                                                                                                if (order[i] !== this.state.stepSeven2[i]) {
+                                                                                                                                                                                                    wrongFunction();
+                                                                                                                                                                                                }
+                                                                                                                                                                                            }
+                                                                                                                                                                                            correctFunction();
+                                                                                                                                                                                            this.setState({
+                                                                                                                                                                                                counter: 48,
+                                                                                                                                                                                            })
+                                                                                                                                                                                        }
+                                                                                                                                                                                        
+                                                                                                                                                                                    } else {
+                                                                                                                                                                                        wrongFunction();
+                                                                                                                                                                                    }
+                                                                                                                                                                                }
+                                                                                                                                                                            }
+                                                                                                                                                                            >
+                                                                                                                                                                                {value}
+                                                                                                                                                                            </Button>
+                                                                                                                                                                        </Draggable>
+                                                                                                                                                                    )
+                                                                                                                                                                });
+                                                                                                                                                                let a7Three = [...this.state.nums].slice(5, 7).sort((a, b) => a - b);
+                                                                                                                                                                a7Three.push(this.state.nums[7]);
+                                                                                                                                                                let arraySeven3 = a7Three.map((value, index) => {
+                                                                                                                                                                    return (
+                                                                                                                                                                        <Draggable>
+                                                                                                                                                                            <Button key={index}
+                                                                                                                                                                            style={{
+                                                                                                                                                                                marginTop: "5%",
+                                                                                                                                                                                marginLeft: "0.25%",
+                                                                                                                                                                            }}
+                                                                                                                                                                            onClick={
+                                                                                                                                                                                () => {
+                                                                                                                                                                                    if (this.state.counter===48) {
+                                                                                                                                                                                        this.state.stepSeven3.push(value);
+                                                                                                                                                                                        if (this.state.stepSeven3.length >= 3) {
+                                                                                                                                                                                            let order = [...this.state.nums].slice(5, 8).sort((a, b) => a - b);
+                                                                                                                                                                                            for (let i = 0; i < order.length; i++) {
+                                                                                                                                                                                                if (order[i] !== this.state.stepSeven3[i]) {
+                                                                                                                                                                                                    wrongFunction();
+
+                                                                                                                                                                                                }
+                                                                                                                                                                                            }
+                                                                                                                                                                                            correctFunction();
+                                                                                                                                                                                            this.setState({
+                                                                                                                                                                                                counter: 49,
+                                                                                                                                                                                            })
+                                                                                                                                                                                        }
+                                                                                                                                                                                    } else {
+                                                                                                                                                                                        wrongFunction();
+                                                                                                                                                                                    }
+                                                                                                                                                                                }
+                                                                                                                                                                            }
+                                                                                                                                                                            >
+                                                                                                                                                                                {value}
+                                                                                                                                                                            </Button>
+                                                                                                                                                                        </Draggable>
+                                                                                                                                                                    )
+                                                                                                                                                                });
+                                                                                                                                                                let a7Four = [...this.state.nums].slice(8, 10);
+                                                                                                                                                                let arraySeven4 = a7Four.map((value, index) => {
+                                                                                                                                                                    return (
+                                                                                                                                                                        <Draggable>
+                                                                                                                                                                            <Button key={index}
+                                                                                                                                                                            style={{
+                                                                                                                                                                                marginTop: "5%",
+                                                                                                                                                                                marginLeft: "0.25%",
+                                                                                                                                                                            }}
+                                                                                                                                                                            onClick={
+                                                                                                                                                                                () => {
+                                                                                                                                                                                    if (this.state.counter===49) {
+                                                                                                                                                                                        this.state.stepSeven4.push(value);
+                                                                                                                                                                                        if (this.state.stepSeven4.length >= 2) {
+                                                                                                                                                                                            let order = [...this.state.nums].slice(8, 10).sort((a, b) => a - b);
+                                                                                                                                                                                            for (let i = 0; i < order.length; i++) {
+                                                                                                                                                                                                if (order[i] !== this.state.stepSeven4[i]) {
+                                                                                                                                                                                                    wrongFunction();
+                                                                                                                                                                                                }
+                                                                                                                                                                                            }
+                                                                                                                                                                                            correctFunction();
+                                                                                                                                                                                            this.setState({
+                                                                                                                                                                                                counter: 50,
+                                                                                                                                                                                            })
+                                                                                                                                                                                        }
+                                                                                                                                                                                    } else {
+                                                                                                                                                                                        wrongFunction();
+                                                                                                                                                                                    }
+                                                                                                                                                                                }
+                                                                                                                                                                            }
+                                                                                                                                                                            >
+                                                                                                                                                                                {value}
+                                                                                                                                                                            </Button>
+                                                                                                                                                                        </Draggable>
+                                                                                                                                                                    )
+                                                                                                                                                                });
+                                                                                                                                                                let a7Five = [...this.state.nums].slice(10, 12).sort((a, b) => a - b);
+                                                                                                                                                                a7Five.push(this.state.nums[12]);
+                                                                                                                                                                let arraySeven5 = a7Five.map((value, index) => {
+                                                                                                                                                                    return (
+                                                                                                                                                                        <Draggable>
+                                                                                                                                                                            <Button key={index}
+                                                                                                                                                                            style={{
+                                                                                                                                                                                marginTop: "5%",
+                                                                                                                                                                                marginLeft: "0.25%",
+                                                                                                                                                                            }}
+                                                                                                                                                                            onClick={
+                                                                                                                                                                                () => {
+                                                                                                                                                                                    if (this.state.counter===50) {
+                                                                                                                                                                                        this.state.stepSeven5.push(value);
+                                                                                                                                                                                        if (this.state.stepSeven5.length >= 3) {
+                                                                                                                                                                                            let order = [...this.state.nums].slice(10, 13).sort((a, b) => a - b);
+                                                                                                                                                                                            for (let i = 0; i < order.length; i++) {
+                                                                                                                                                                                                if (order[i] !== this.state.stepSeven5[i]) {
+                                                                                                                                                                                                    wrongFunction();
+
+                                                                                                                                                                                                }
+                                                                                                                                                                                            }
+                                                                                                                                                                                            correctFunction();
+                                                                                                                                                                                            this.setState({
+                                                                                                                                                                                                counter: 51,
+                                                                                                                                                                                            })
+                                                                                                                                                                                        }
+                                                                                                                                                                                    } else {
+                                                                                                                                                                                        wrongFunction();
+                                                                                                                                                                                    }
+                                                                                                                                                                                }
+                                                                                                                                                                            }
+                                                                                                                                                                            >
+                                                                                                                                                                                {value}
+                                                                                                                                                                            </Button>
+                                                                                                                                                                        </Draggable>
+                                                                                                                                                                    )
+                                                                                                                                                                });
+                                                                                                                                                                let a7Six = [...this.state.nums].slice(13, 15);
+                                                                                                                                                                let arraySeven6 = a7Six.map((value, index) => {
+                                                                                                                                                                    return (
+                                                                                                                                                                        <Draggable>
+                                                                                                                                                                            <Button key={index}
+                                                                                                                                                                            style={{
+                                                                                                                                                                                marginTop: "5%",
+                                                                                                                                                                                marginLeft: "0.25%",
+                                                                                                                                                                            }}
+                                                                                                                                                                            onClick={
+                                                                                                                                                                                () => {
+                                                                                                                                                                                    if (this.state.counter===51) {
+                                                                                                                                                                                        this.state.stepSeven6.push(value);
+                                                                                                                                                                                        if (this.state.stepSeven6.length>=2) {
+                                                                                                                                                                                            let order = [...this.state.nums].slice(13, 15).sort((a, b) => a - b);
+                                                                                                                                                                                            for (let i = 0; i < order.length; i++) {
+                                                                                                                                                                                                if (order[i] !== this.state.stepSeven6[i]) {
+                                                                                                                                                                                                    wrongFunction();
+                                                                                                                                                                                                }
+                                                                                                                                                                                            }
+                                                                                                                                                                                            correctFunction();
+                                                                                                                                                                                            this.setState({
+                                                                                                                                                                                                counter: 52,
+                                                                                                                                                                                            })
+                                                                                                                                                                                        }
+                                                                                                                                                                                    } else {
+                                                                                                                                                                                        wrongFunction();
+                                                                                                                                                                                    }
+                                                                                                                                                                                }
+                                                                                                                                                                            }
+                                                                                                                                                                            >
+                                                                                                                                                                                {value}
+                                                                                                                                                                            </Button>
+                                                                                                                                                                        </Draggable>
+                                                                                                                                                                    )
+                                                                                                                                                                });
+                                                                                                                                                                let a7Seven = [...this.state.nums].slice(15, 17).sort((a, b) => a - b);
+                                                                                                                                                                a7Seven.push(this.state.nums[17]);
+                                                                                                                                                                let arraySeven7 = a7Seven.map((value, index) => {
+                                                                                                                                                                    return (
+                                                                                                                                                                        <Draggable>
+                                                                                                                                                                            <Button key={index}
+                                                                                                                                                                            style={{
+                                                                                                                                                                                marginTop: "5%",
+                                                                                                                                                                                marginLeft: "0.25%",
+                                                                                                                                                                            }}
+                                                                                                                                                                            onClick={
+                                                                                                                                                                                () => {
+                                                                                                                                                                                    if (this.state.counter===52) {
+                                                                                                                                                                                        this.state.stepSeven7.push(value);
+                                                                                                                                                                                        if (this.state.stepSeven7.length >= 3) {
+                                                                                                                                                                                            let order = [...this.state.nums].slice(15, 18).sort((a, b) => a - b);
+                                                                                                                                                                                            for (let i = 0; i < order.length; i++) {
+                                                                                                                                                                                                if (order[i] !== this.state.stepSeven7[i]) {
+                                                                                                                                                                                                    wrongFunction();
+
+                                                                                                                                                                                                }
+                                                                                                                                                                                            }
+                                                                                                                                                                                            correctFunction();
+                                                                                                                                                                                            this.setState({
+                                                                                                                                                                                                counter: 53,
+                                                                                                                                                                                            })
+                                                                                                                                                                                        }
+                                                                                                                                                                                        
+                                                                                                                                                                                    } else {
+                                                                                                                                                                                        wrongFunction();
+                                                                                                                                                                                    }
+                                                                                                                                                                                }
+                                                                                                                                                                            }
+                                                                                                                                                                            >
+                                                                                                                                                                                {value}
+                                                                                                                                                                            </Button>
+                                                                                                                                                                        </Draggable>
+                                                                                                                                                                    )
+                                                                                                                                                                });
+                                                                                                                                                                let a7Eight = [...this.state.nums].slice(18, 20);
+                                                                                                                                                                let arraySeven8 = a7Eight.map((value, index) => {
+                                                                                                                                                                    return (
+                                                                                                                                                                        <Draggable>
+                                                                                                                                                                            <Button key={index}
+                                                                                                                                                                            style={{
+                                                                                                                                                                                marginTop: "5%",
+                                                                                                                                                                                marginLeft: "0.25%",
+                                                                                                                                                                            }}
+                                                                                                                                                                            onClick={
+                                                                                                                                                                                () => {
+                                                                                                                                                                                    if (this.state.counter===53) {
+                                                                                                                                                                                        this.state.stepSeven8.push(value);
+                                                                                                                                                                                        if (this.state.stepSeven8.length>=2) {
+                                                                                                                                                                                            let order = [...this.state.nums].slice(18, 20).sort((a, b) => a - b);
+                                                                                                                                                                                            for (let i = 0; i < order.length; i++) {
+                                                                                                                                                                                                if (order[i] !== this.state.stepSeven8[i]) {
+                                                                                                                                                                                                    wrongFunction();
+                                                                                                                                                                                                }
+                                                                                                                                                                                            }
+                                                                                                                                                                                        }
+                                                                                                                                                                                        correctFunction();
+                                                                                                                                                                                        // 3rd merging step (5, 5, 5, 5)
+                                                                                                                                                                                        let a8One = [...this.state.nums].slice(0, 3).sort((a, b) => a - b);
+                                                                                                                                                                                        a8One.push([...this.state.nums].slice(3, 5).sort((a, b) => a - b)[0]);
+                                                                                                                                                                                        a8One.push([...this.state.nums].slice(3, 5).sort((a, b) => a - b)[1]);
+                                                                                                                                                                                        let arrayEight1 = a8One.map((value, index) => {
+                                                                                                                                                                                            return (
+                                                                                                                                                                                                <Draggable>
+                                                                                                                                                                                                    <Button
+                                                                                                                                                                                                        key={index}
+                                                                                                                                                                                                        style={{
+                                                                                                                                                                                                            marginTop: "5%",
+                                                                                                                                                                                                            marginLeft: "0.25%",
+                                                                                                                                                                                                        }}
+                                                                                                                                                                                                        onClick={
+                                                                                                                                                                                                            () => {
+                                                                                                                                                                                                                if (this.state.counter===54) {
+                                                                                                                                                                                                                    this.state.stepEight1.push(value);
+                                                                                                                                                                                                                    if (this.state.stepEight1.length >= 5) {
+                                                                                                                                                                                                                        let order = [...this.state.nums].slice(0, 5).sort((a, b) => a-b);
+                                                                                                                                                                                                                        for (let i = 0; i < order.length; i++) {
+                                                                                                                                                                                                                            if (order[i] !== this.state.stepEight1[i]) {
+                                                                                                                                                                                                                                wrongFunction();
+                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                        correctFunction();
+                                                                                                                                                                                                                        this.setState({
+                                                                                                                                                                                                                            counter: 55,
+                                                                                                                                                                                                                        })
+                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                } else {
+                                                                                                                                                                                                                    wrongFunction();
+                                                                                                                                                                                                                }
+                                                                                                                                                                                                            }
+                                                                                                                                                                                                        }
+                                                                                                                                                                                                    >
+                                                                                                                                                                                                        {value}
+                                                                                                                                                                                                    </Button>
+                                                                                                                                                                                                </Draggable>
+                                                                                                                                                                                            )
+                                                                                                                                                                                        })
+                                                                                                                                                                                        let a8Two = [...this.state.nums].slice(5, 8).sort((a, b) => a-b);
+                                                                                                                                                                                        a8Two.push([...this.state.nums].slice(8, 10).sort((a, b) => a - b)[0]);
+                                                                                                                                                                                        a8Two.push([...this.state.nums].slice(8, 10).sort((a, b) => a - b)[1]);
+                                                                                                                                                                                        let arrayEight2 = a8Two.map((value, index) => {
+                                                                                                                                                                                            return (
+                                                                                                                                                                                                <Draggable>
+                                                                                                                                                                                                    <Button
+                                                                                                                                                                                                        key={index}
+                                                                                                                                                                                                        style={{
+                                                                                                                                                                                                            marginTop: "5%",
+                                                                                                                                                                                                            marginLeft: "0.25%",
+                                                                                                                                                                                                        }}
+                                                                                                                                                                                                        onClick={
+                                                                                                                                                                                                            () => {
+                                                                                                                                                                                                                if (this.state.counter===55) {
+                                                                                                                                                                                                                    this.state.stepEight2.push(value);
+                                                                                                                                                                                                                    if (this.state.stepEight2.length >= 5) {
+                                                                                                                                                                                                                        let order = [...this.state.nums].slice(5, 10).sort((a, b) => a-b);
+                                                                                                                                                                                                                        for (let i = 0; i < order.length; i++) {
+                                                                                                                                                                                                                            if (order[i] !== this.state.stepEight2[i]) {
+                                                                                                                                                                                                                                wrongFunction();
+                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                        correctFunction();
+                                                                                                                                                                                                                        this.setState({
+                                                                                                                                                                                                                            counter: 56,
+                                                                                                                                                                                                                        })
+                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                    
+                                                                                                                                                                                                                } else {
+                                                                                                                                                                                                                    wrongFunction();
+                                                                                                                                                                                                                }
+                                                                                                                                                                                                            }
+                                                                                                                                                                                                        }
+                                                                                                                                                                                                    >
+                                                                                                                                                                                                        {value}
+                                                                                                                                                                                                    </Button>
+                                                                                                                                                                                                </Draggable>
+                                                                                                                                                                                            )
+                                                                                                                                                                                        })
+                                                                                                                                                                                        let a8Three = [...this.state.nums].slice(10, 13).sort((a, b) => a - b);
+                                                                                                                                                                                        a8Three.push([...this.state.nums].slice(13, 15).sort((a, b) => a - b)[0]);
+                                                                                                                                                                                        a8Three.push([...this.state.nums].slice(13, 15).sort((a, b) => a - b)[1]);
+                                                                                                                                                                                        let arrayEight3 = a8Three.map((value, index) => {
+                                                                                                                                                                                            return (
+                                                                                                                                                                                                <Draggable>
+                                                                                                                                                                                                    <Button
+                                                                                                                                                                                                        key={index}
+                                                                                                                                                                                                        style={{
+                                                                                                                                                                                                            marginTop: "5%",
+                                                                                                                                                                                                            marginLeft: "0.25%",
+                                                                                                                                                                                                        }}
+                                                                                                                                                                                                        onClick={
+                                                                                                                                                                                                            () => {
+                                                                                                                                                                                                                if (this.state.counter===56) {
+                                                                                                                                                                                                                    this.state.stepEight3.push(value);
+                                                                                                                                                                                                                    if (this.state.stepEight3.length >= 5) {
+                                                                                                                                                                                                                        let order = [...this.state.nums].slice(10, 15).sort((a, b) => a-b);
+                                                                                                                                                                                                                        for (let i = 0; i < order.length; i++) {
+                                                                                                                                                                                                                            if (order[i] !== this.state.stepEight3[i]) {
+                                                                                                                                                                                                                                wrongFunction();
+                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                        correctFunction();
+                                                                                                                                                                                                                        this.setState({
+                                                                                                                                                                                                                            counter: 57,
+                                                                                                                                                                                                                        })
+                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                    
+                                                                                                                                                                                                                } else {
+                                                                                                                                                                                                                    wrongFunction();
+                                                                                                                                                                                                                }
+                                                                                                                                                                                                            }
+                                                                                                                                                                                                        }
+                                                                                                                                                                                                    >
+                                                                                                                                                                                                        {value}
+                                                                                                                                                                                                    </Button>
+                                                                                                                                                                                                </Draggable>
+                                                                                                                                                                                            )
+                                                                                                                                                                                        })
+                                                                                                                                                                                        let a8Four = [...this.state.nums].slice(15, 18).sort((a, b) => a-b);
+                                                                                                                                                                                        a8Four.push([...this.state.nums].slice(18, 20).sort((a, b) => a - b)[0]);
+                                                                                                                                                                                        a8Four.push([...this.state.nums].slice(18, 20).sort((a, b) => a - b)[1]);
+                                                                                                                                                                                        let arrayEight4 = a8Four.map((value, index) => {
+                                                                                                                                                                                            return (
+                                                                                                                                                                                                <Draggable>
+                                                                                                                                                                                                    <Button
+                                                                                                                                                                                                        key={index}
+                                                                                                                                                                                                        style={{
+                                                                                                                                                                                                            marginTop: "5%",
+                                                                                                                                                                                                            marginLeft: "0.25%",
+                                                                                                                                                                                                        }}
+                                                                                                                                                                                                        onClick={
+                                                                                                                                                                                                            () => {
+                                                                                                                                                                                                                if (this.state.counter===57) {
+                                                                                                                                                                                                                    this.state.stepEight4.push(value);
+                                                                                                                                                                                                                    if (this.state.stepEight4.length >= 5) {
+                                                                                                                                                                                                                            let order = [...this.state.nums].slice(15, 20).sort((a, b) => a-b);
+                                                                                                                                                                                                                        for (let i = 0; i < order.length; i++) {
+                                                                                                                                                                                                                            if (order[i] !== this.state.stepEight4[i]) {
+                                                                                                                                                                                                                                wrongFunction();
+                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                        correctFunction();
+                                                                                                                                                                                                                        // 4th merging step (10, 10)
+                                                                                                                                                                                                                        let aNine1 = [...this.state.nums].slice(0, 5).sort((a, b) => a-b);
+                                                                                                                                                                                                                        let tempNine1 = [...this.state.nums].slice(5, 10).sort((a, b) => a-b);
+                                                                                                                                                                                                                        for (let i = 0; i < tempNine1.length; i++) {
+                                                                                                                                                                                                                            aNine1.push(tempNine1[i]);
+                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                        let arrayNine1 = aNine1.map((value, index) => {
+                                                                                                                                                                                                                            return (
+                                                                                                                                                                                                                                <Draggable>
+                                                                                                                                                                                                                                    <Button
+                                                                                                                                                                                                                                        key={index}
+                                                                                                                                                                                                                                        style={{
+                                                                                                                                                                                                                                            marginTop: "5%",
+                                                                                                                                                                                                                                            marginLeft: "0.25%",
+                                                                                                                                                                                                                                        }}
+                                                                                                                                                                                                                                        onClick={
+                                                                                                                                                                                                                                            () => {
+                                                                                                                                                                                                                                                if (this.state.counter===58) {
+                                                                                                                                                                                                                                                    this.state.stepNine1.push(value);
+                                                                                                                                                                                                                                                    if (this.state.stepNine1.length >= 10) {
+                                                                                                                                                                                                                                                        let order = [...this.state.nums].slice(0, 10).sort((a, b) => a-b);
+                                                                                                                                                                                                                                                        for (let i=0; i < 10; i++) {
+                                                                                                                                                                                                                                                            if (order[i]!==this.state.stepNine1[i]) {
+                                                                                                                                                                                                                                                                wrongFunction();
+                                                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                                                        correctFunction();
+                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                    this.setState({
+                                                                                                                                                                                                                                                        counter: 59,
+                                                                                                                                                                                                                                                    })
+                                                                                                                                                                                                                                                } else {
+                                                                                                                                                                                                                                                    wrongFunction();
+                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                                    >
+                                                                                                                                                                                                                                        {value}
+                                                                                                                                                                                                                                    </Button>
+                                                                                                                                                                                                                                </Draggable>
+                                                                                                                                                                                                                            )
+                                                                                                                                                                                                                        })
+                                                                                                                                                                                                                        let aNine2 = [...this.state.nums].slice(10, 15).sort((a, b) => a-b);
+                                                                                                                                                                                                                        let tempNine2 = [...this.state.nums].slice(15, 20).sort((a, b) => a-b);
+                                                                                                                                                                                                                        for (let i = 0; i < tempNine2.length; i++) {
+                                                                                                                                                                                                                            aNine2.push(tempNine2[i]);
+                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                        let arrayNine2 = aNine2.map((value, index) => {
+                                                                                                                                                                                                                            return (
+                                                                                                                                                                                                                                <Draggable>
+                                                                                                                                                                                                                                    <Button
+                                                                                                                                                                                                                                        key={index}
+                                                                                                                                                                                                                                        style={{
+                                                                                                                                                                                                                                            marginTop: "5%",
+                                                                                                                                                                                                                                            marginLeft: "0.25%",
+                                                                                                                                                                                                                                        }}
+                                                                                                                                                                                                                                        onClick={
+                                                                                                                                                                                                                                            () => {
+                                                                                                                                                                                                                                                if (this.state.counter===59) {
+                                                                                                                                                                                                                                                    this.state.stepNine2.push(value);
+                                                                                                                                                                                                                                                    if (this.state.stepNine2.length >= 10) {
+                                                                                                                                                                                                                                                        let order = [...this.state.nums].slice(10, 20).sort((a, b) => a-b);
+                                                                                                                                                                                                                                                        for (let i=0; i < 10; i++) {
+                                                                                                                                                                                                                                                            if (order[i]!==this.state.stepNine2[i]) {
+                                                                                                                                                                                                                                                                wrongFunction();
+                                                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                                                        correctFunction();
+                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                    // final merging step
+                                                                                                                                                                                                                                                    let aTen = [...this.state.nums].slice(0, 10).sort((a,b)=>a-b);
+                                                                                                                                                                                                                                                    let temp10 = [...this.state.nums].slice(10, 20).sort((a, b)=>a-b);
+                                                                                                                                                                                                                                                    for (let i=0; i<10; i++) {
+                                                                                                                                                                                                                                                        aTen.push(temp10[i]);
+                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                    const arrayTen = aTen.map((value, index) => {
+                                                                                                                                                                                                                                                        return (
+                                                                                                                                                                                                                                                            <Draggable>
+                                                                                                                                                                                                                                                                <Button
+                                                                                                                                                                                                                                                                    key={index}
+                                                                                                                                                                                                                                                                    style={{
+                                                                                                                                                                                                                                                                        marginTop: "5%",
+                                                                                                                                                                                                                                                                        marginLeft: "0.25%",
+                                                                                                                                                                                                                                                                    }}
+                                                                                                                                                                                                                                                                    onClick={
+                                                                                                                                                                                                                                                                        () => {
+                                                                                                                                                                                                                                                                            if (this.state.counter===60) {
+                                                                                                                                                                                                                                                                                this.state.stepTen.push(value);
+                                                                                                                                                                                                                                                                                if (this.state.stepTen.length>=20) {
+                                                                                                                                                                                                                                                                                    let order = [...this.state.nums].sort((a,b) => a-b);
+                                                                                                                                                                                                                                                                                    for (let i = 0; i < 20; i++) {
+                                                                                                                                                                                                                                                                                        if (this.state.stepTen[i] !== order[i]) {
+                                                                                                                                                                                                                                                                                            wrongFunction();
+                                                                                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                    correctFunction();
+                                                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                                            } else {
+                                                                                                                                                                                                                                                                                wrongFunction();
+                                                                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                >
+                                                                                                                                                                                                                                                                    {value}
+                                                                                                                                                                                                                                                                </Button>
+                                                                                                                                                                                                                                                            </Draggable>
+                                                                                                                                                                                                                                                        )
+                                                                                                                                                                                                                                                    })
+                                                                                                                                                                                                                                                    this.setState({
+                                                                                                                                                                                                                                                        counter: 60,
+                                                                                                                                                                                                                                                        arrayTen: arrayTen,
+                                                                                                                                                                                                                                                    })
+                                                                                                                                                                                                                                                } else {
+                                                                                                                                                                                                                                                    wrongFunction();
+                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                                    >
+                                                                                                                                                                                                                                        {value}
+                                                                                                                                                                                                                                    </Button>
+                                                                                                                                                                                                                                </Draggable>
+                                                                                                                                                                                                                            )
+                                                                                                                                                                                                                        })
+                                                                                                                                                                                                                        const arrayNine = (
+                                                                                                                                                                                                                            <div>
+                                                                                                                                                                                                                                {arrayNine1} {arrayNine2}
+                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                        )
+                                                                                                                                                                                                                        this.setState({
+                                                                                                                                                                                                                            counter: 58,
+                                                                                                                                                                                                                            arrayNine: arrayNine,
+                                                                                                                                                                                                                        })
+                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                    
+                                                                                                                                                                                                                } else {
+                                                                                                                                                                                                                    wrongFunction();
+                                                                                                                                                                                                                }
+                                                                                                                                                                                                            }
+                                                                                                                                                                                                        }
+                                                                                                                                                                                                    >
+                                                                                                                                                                                                        {value}
+                                                                                                                                                                                                    </Button>
+                                                                                                                                                                                                </Draggable>
+                                                                                                                                                                                            )
+                                                                                                                                                                                        })
+                                                                                                                                                                                        const arrayEight = (
+                                                                                                                                                                                            <div>
+                                                                                                                                                                                                {arrayEight1} {arrayEight2} {arrayEight3} {arrayEight4}
+                                                                                                                                                                                            </div>
+                                                                                                                                                                                        )
+                                                                                                                                                                                        this.setState({
+                                                                                                                                                                                            counter: 54,
+                                                                                                                                                                                            arrayEight: arrayEight,
+                                                                                                                                                                                        })
+                                                                                                                                                                                    } else {
+                                                                                                                                                                                        wrongFunction();
+                                                                                                                                                                                    }
+                                                                                                                                                                                }
+                                                                                                                                                                            }
+                                                                                                                                                                            >
+                                                                                                                                                                                {value}
+                                                                                                                                                                            </Button>
+                                                                                                                                                                        </Draggable>
+                                                                                                                                                                    )
+                                                                                                                                                                });
+                                                                                                                                                                const arraySeven = (
+                                                                                                                                                                    <div>
+                                                                                                                                                                        {arraySeven1} {arraySeven2} {arraySeven3} {arraySeven4} {arraySeven5} {arraySeven6} {arraySeven7} {arraySeven8}
+                                                                                                                                                                    </div>
+                                                                                                                                                                )
+                                                                                                                                                                this.setState({
+                                                                                                                                                                    counter: 46,
+                                                                                                                                                                    arraySeven: arraySeven,
+                                                                                                                                                                })
+                                                                                                                                                            } else {
+                                                                                                                                                                wrongFunction();
+                                                                                                                                                            }
+                                                                                                                                                        }
+                                                                                                                                                    }>
+                                                                                                                                                        {value}
+                                                                                                                                                    </Button>
+                                                                                                                                                </Draggable>
+                                                                                                                                                )
+                                                                                                                                            })
+                                                                                                                                            const arraySix = (
+                                                                                                                                                <div>
+                                                                                                                                                    {arraySix1} {arraySix2} {arraySix3} {arraySix4}
+                                                                                                                                                </div>
+                                                                                                                                            );
                                                                                                                                             this.setState({
                                                                                                                                                 counter: 38,
+                                                                                                                                                arraySix: arraySix,
                                                                                                                                             })
                                                                                                                                         } else {
                                                                                                                                             wrongFunction();
@@ -839,6 +1612,11 @@ export default class LevelFour extends Component {
                 {this.state.arrayThree}
                 {this.state.arrayFour}
                 {this.state.arrayFive}
+                {this.state.arraySix}
+                {this.state.arraySeven}
+                {this.state.arrayEight}
+                {this.state.arrayNine}
+                {this.state.arrayTen}
                 <br />
                 <Link to ="/levels">
                     <Button style={{marginTop: "2%"}} variant="secondary" >Return to Level Select</Button>
