@@ -9,7 +9,6 @@ export default class LevelFour extends Component {
         super(props);
         this.state = {
             counter: 0,
-            answer: [],
             nums: [],
             stepOneLeft: [],
             stepOneRight: [],
@@ -58,8 +57,6 @@ export default class LevelFour extends Component {
             // add 10 random integers between 1 and 20 to nums array
             this.state.nums.push(Math.floor(Math.random() * 21));
         }
-        this.state.answer.push([this.state.nums].sort((a, b) => a - b));
-        console.log(this.state.answer);
     }
 
     render() {
@@ -139,8 +136,6 @@ export default class LevelFour extends Component {
                                                                     counter: 4,
                                                                 });
                                                             }
-                                                        } else {
-                                                            wrongFunction();
                                                         }
                                                     }
                                                 }>
@@ -172,8 +167,8 @@ export default class LevelFour extends Component {
                                                                 });
                                                             }
                                                         } else if (this.state.counter===5) {
-                                                            this.state.stepTwoRight1.push(value);
-                                                            if (this.state.stepTwoRight1.length>=5) {
+                                                            this.state.stepTwoRight2.push(value);
+                                                            if (this.state.stepTwoRight2.length>=5) {
                                                                 let temp = [...this.state.nums].slice(15);
                                                                 for (let i = 0; i < 5; i++) {
                                                                     if (!temp.includes(this.state.stepTwoRight2[i])) {
@@ -223,8 +218,6 @@ export default class LevelFour extends Component {
                                                                                                 counter: 8,
                                                                                             })
                                                                                         }
-                                                                                    } else {
-                                                                                        wrongFunction();
                                                                                     }
                                                                                 }
                                                                             }>
@@ -272,8 +265,6 @@ export default class LevelFour extends Component {
                                                                                                 counter: 10,
                                                                                             })
                                                                                         }
-                                                                                    } else {
-                                                                                        wrongFunction();
                                                                                     }
                                                                                 }
                                                                             }>
@@ -321,8 +312,6 @@ export default class LevelFour extends Component {
                                                                                                 counter: 12,
                                                                                             })
                                                                                         }
-                                                                                    } else {
-                                                                                        wrongFunction();
                                                                                     }
                                                                                 }
                                                                             }>
@@ -385,10 +374,10 @@ export default class LevelFour extends Component {
                                                                                                                             }
                                                                                                                         }
                                                                                                                         correctFunction();
+                                                                                                                        this.setState({
+                                                                                                                            counter: 15,
+                                                                                                                        })
                                                                                                                     }
-                                                                                                                    this.setState({
-                                                                                                                        counter: 15,
-                                                                                                                    })
                                                                                                                 } else if (this.state.counter===15) {
                                                                                                                     if (value !== this.state.nums[2]) {
                                                                                                                         wrongFunction();
@@ -397,8 +386,6 @@ export default class LevelFour extends Component {
                                                                                                                     this.setState({
                                                                                                                         counter: 16,
                                                                                                                     })
-                                                                                                                } else {
-                                                                                                                    wrongFunction();
                                                                                                                 }
                                                                                                             }
                                                                                                         }>
@@ -428,8 +415,6 @@ export default class LevelFour extends Component {
                                                                                                                     this.setState({
                                                                                                                         counter: 18,
                                                                                                                     })
-                                                                                                                } else {
-                                                                                                                    wrongFunction();
                                                                                                                 }
                                                                                                             }
                                                                                                         }>
@@ -456,10 +441,11 @@ export default class LevelFour extends Component {
                                                                                                                             }
                                                                                                                         }
                                                                                                                         correctFunction();
+                                                                                                                        this.setState({
+                                                                                                                            counter: 19,
+                                                                                                                        })
                                                                                                                     }
-                                                                                                                    this.setState({
-                                                                                                                        counter: 19,
-                                                                                                                    })
+                                                                                                                    
                                                                                                                 } else if (this.state.counter===19) {
                                                                                                                     if (value !== this.state.nums[7]) {
                                                                                                                         wrongFunction();
@@ -468,8 +454,6 @@ export default class LevelFour extends Component {
                                                                                                                     this.setState({
                                                                                                                         counter: 20,
                                                                                                                     })
-                                                                                                                } else {
-                                                                                                                    wrongFunction();
                                                                                                                 }
                                                                                                             }
                                                                                                         }>
@@ -499,8 +483,6 @@ export default class LevelFour extends Component {
                                                                                                                     this.setState({
                                                                                                                         counter: 22,
                                                                                                                     })
-                                                                                                                } else {
-                                                                                                                    wrongFunction();
                                                                                                                 }
                                                                                                             }
                                                                                                             }
@@ -528,10 +510,11 @@ export default class LevelFour extends Component {
                                                                                                                             }
                                                                                                                         }
                                                                                                                         correctFunction();
+                                                                                                                        this.setState({
+                                                                                                                            counter: 23,
+                                                                                                                        })
                                                                                                                     }
-                                                                                                                    this.setState({
-                                                                                                                        counter: 23,
-                                                                                                                    })
+                                                                                                                    
                                                                                                                 } else if (this.state.counter===23) {
                                                                                                                     if (value !== this.state.nums[12]) {
                                                                                                                         wrongFunction();
@@ -540,8 +523,6 @@ export default class LevelFour extends Component {
                                                                                                                     this.setState({
                                                                                                                         counter: 24,
                                                                                                                     })
-                                                                                                                } else {
-                                                                                                                    wrongFunction();
                                                                                                                 }
                                                                                                             }
                                                                                                         }>
@@ -571,8 +552,6 @@ export default class LevelFour extends Component {
                                                                                                                     this.setState({
                                                                                                                         counter: 26,
                                                                                                                     })
-                                                                                                                } else {
-                                                                                                                    wrongFunction();
                                                                                                                 }
                                                                                                             }
                                                                                                         }>
@@ -599,10 +578,11 @@ export default class LevelFour extends Component {
                                                                                                                             }
                                                                                                                         }
                                                                                                                         correctFunction();
+                                                                                                                        this.setState({
+                                                                                                                            counter: 27,
+                                                                                                                        })
                                                                                                                     }
-                                                                                                                    this.setState({
-                                                                                                                        counter: 27,
-                                                                                                                    })
+                                                                                                                    
                                                                                                                 } else if (this.state.counter===27) {
                                                                                                                     if (value !== this.state.nums[17]) {
                                                                                                                         wrongFunction();
@@ -611,8 +591,6 @@ export default class LevelFour extends Component {
                                                                                                                     this.setState({
                                                                                                                         counter: 28,
                                                                                                                     })
-                                                                                                                } else {
-                                                                                                                    wrongFunction();
                                                                                                                 }
                                                                                                             }
                                                                                                         }>
@@ -661,8 +639,6 @@ export default class LevelFour extends Component {
                                                                                                                                             this.setState({
                                                                                                                                                 counter: 32,
                                                                                                                                             })
-                                                                                                                                        } else {
-                                                                                                                                            wrongFunction();
                                                                                                                                         }
                                                                                                                                     }
                                                                                                                                 }>
@@ -692,8 +668,6 @@ export default class LevelFour extends Component {
                                                                                                                                             this.setState({
                                                                                                                                                 counter: 34,
                                                                                                                                             })
-                                                                                                                                        } else {
-                                                                                                                                            wrongFunction();
                                                                                                                                         }
                                                                                                                                     }
                                                                                                                                 }>
@@ -702,7 +676,7 @@ export default class LevelFour extends Component {
                                                                                                                             </Draggable>
                                                                                                                         )
                                                                                                                     })
-                                                                                                                    let arrayFive3 = [...this.state.nums].slice(10, 12).slice.map((value, index) => {
+                                                                                                                    let arrayFive3 = [...this.state.nums].slice(10, 12).map((value, index) => {
                                                                                                                         return (
                                                                                                                             <Draggable>
                                                                                                                                 <Button key={index} onClick={
@@ -723,8 +697,6 @@ export default class LevelFour extends Component {
                                                                                                                                             this.setState({
                                                                                                                                                 counter: 36,
                                                                                                                                             })
-                                                                                                                                        } else {
-                                                                                                                                            wrongFunction();
                                                                                                                                         }
                                                                                                                                     }
                                                                                                                                 }>
@@ -769,7 +741,7 @@ export default class LevelFour extends Component {
                                                                                                                                                                 }
                                                                                                                                                                 correctFunction();
                                                                                                                                                                 this.setState({
-                                                                                                                                                                    counter:39,
+                                                                                                                                                                    counter: 39,
                                                                                                                                                                 })
                                                                                                                                                             } else if (this.state.counter===39) {
                                                                                                                                                                 if (value!== order[1]) {
@@ -779,8 +751,6 @@ export default class LevelFour extends Component {
                                                                                                                                                                 this.setState({
                                                                                                                                                                     counter: 40,
                                                                                                                                                                 })
-                                                                                                                                                            } else {
-                                                                                                                                                                wrongFunction();
                                                                                                                                                             }
                                                                                                                                                         }
                                                                                                                                                     }>
@@ -816,8 +786,6 @@ export default class LevelFour extends Component {
                                                                                                                                                                 this.setState({
                                                                                                                                                                     counter: 42,
                                                                                                                                                                 })
-                                                                                                                                                            } else {
-                                                                                                                                                                wrongFunction();
                                                                                                                                                             }
                                                                                                                                                         }
                                                                                                                                                     }>
@@ -853,8 +821,6 @@ export default class LevelFour extends Component {
                                                                                                                                                                 this.setState({
                                                                                                                                                                     counter: 44,
                                                                                                                                                                 })
-                                                                                                                                                            } else {
-                                                                                                                                                                wrongFunction();
                                                                                                                                                             }
                                                                                                                                                         }
                                                                                                                                                     }>
@@ -887,7 +853,7 @@ export default class LevelFour extends Component {
                                                                                                                                                                     wrongFunction();
                                                                                                                                                                 }
                                                                                                                                                                 correctFunction();
-                                                                                                                                                                //TODO: 2nd merging step (3, 2, 3, 2, 3, 2, 3, 2)
+                                                                                                                                                                // 2nd merging step (3, 2, 3, 2, 3, 2, 3, 2)
                                                                                                                                                                 let a7One = [...this.state.nums].slice(0, 2).sort((a, b) => a - b);
                                                                                                                                                                 a7One.push(this.state.nums[2]);
                                                                                                                                                                 let arraySeven1 = a7One.map((value, index) => {
@@ -914,8 +880,6 @@ export default class LevelFour extends Component {
                                                                                                                                                                                                 counter: 47,
                                                                                                                                                                                             })
                                                                                                                                                                                         }
-                                                                                                                                                                                    } else {
-                                                                                                                                                                                        wrongFunction();
                                                                                                                                                                                     }
                                                                                                                                                                                 }
                                                                                                                                                                             }
@@ -951,8 +915,6 @@ export default class LevelFour extends Component {
                                                                                                                                                                                             })
                                                                                                                                                                                         }
                                                                                                                                                                                         
-                                                                                                                                                                                    } else {
-                                                                                                                                                                                        wrongFunction();
                                                                                                                                                                                     }
                                                                                                                                                                                 }
                                                                                                                                                                             }
@@ -989,8 +951,6 @@ export default class LevelFour extends Component {
                                                                                                                                                                                                 counter: 49,
                                                                                                                                                                                             })
                                                                                                                                                                                         }
-                                                                                                                                                                                    } else {
-                                                                                                                                                                                        wrongFunction();
                                                                                                                                                                                     }
                                                                                                                                                                                 }
                                                                                                                                                                             }
@@ -1025,8 +985,6 @@ export default class LevelFour extends Component {
                                                                                                                                                                                                 counter: 50,
                                                                                                                                                                                             })
                                                                                                                                                                                         }
-                                                                                                                                                                                    } else {
-                                                                                                                                                                                        wrongFunction();
                                                                                                                                                                                     }
                                                                                                                                                                                 }
                                                                                                                                                                             }
@@ -1063,8 +1021,6 @@ export default class LevelFour extends Component {
                                                                                                                                                                                                 counter: 51,
                                                                                                                                                                                             })
                                                                                                                                                                                         }
-                                                                                                                                                                                    } else {
-                                                                                                                                                                                        wrongFunction();
                                                                                                                                                                                     }
                                                                                                                                                                                 }
                                                                                                                                                                             }
@@ -1099,8 +1055,6 @@ export default class LevelFour extends Component {
                                                                                                                                                                                                 counter: 52,
                                                                                                                                                                                             })
                                                                                                                                                                                         }
-                                                                                                                                                                                    } else {
-                                                                                                                                                                                        wrongFunction();
                                                                                                                                                                                     }
                                                                                                                                                                                 }
                                                                                                                                                                             }
@@ -1138,8 +1092,6 @@ export default class LevelFour extends Component {
                                                                                                                                                                                             })
                                                                                                                                                                                         }
                                                                                                                                                                                         
-                                                                                                                                                                                    } else {
-                                                                                                                                                                                        wrongFunction();
                                                                                                                                                                                     }
                                                                                                                                                                                 }
                                                                                                                                                                             }
@@ -1169,7 +1121,7 @@ export default class LevelFour extends Component {
                                                                                                                                                                                                     wrongFunction();
                                                                                                                                                                                                 }
                                                                                                                                                                                             }
-                                                                                                                                                                                        }
+                                                                                                                                                                                        
                                                                                                                                                                                         correctFunction();
                                                                                                                                                                                         // 3rd merging step (5, 5, 5, 5)
                                                                                                                                                                                         let a8One = [...this.state.nums].slice(0, 3).sort((a, b) => a - b);
@@ -1200,8 +1152,6 @@ export default class LevelFour extends Component {
                                                                                                                                                                                                                             counter: 55,
                                                                                                                                                                                                                         })
                                                                                                                                                                                                                     }
-                                                                                                                                                                                                                } else {
-                                                                                                                                                                                                                    wrongFunction();
                                                                                                                                                                                                                 }
                                                                                                                                                                                                             }
                                                                                                                                                                                                         }
@@ -1240,8 +1190,6 @@ export default class LevelFour extends Component {
                                                                                                                                                                                                                         })
                                                                                                                                                                                                                     }
                                                                                                                                                                                                                     
-                                                                                                                                                                                                                } else {
-                                                                                                                                                                                                                    wrongFunction();
                                                                                                                                                                                                                 }
                                                                                                                                                                                                             }
                                                                                                                                                                                                         }
@@ -1280,8 +1228,6 @@ export default class LevelFour extends Component {
                                                                                                                                                                                                                         })
                                                                                                                                                                                                                     }
                                                                                                                                                                                                                     
-                                                                                                                                                                                                                } else {
-                                                                                                                                                                                                                    wrongFunction();
                                                                                                                                                                                                                 }
                                                                                                                                                                                                             }
                                                                                                                                                                                                         }
@@ -1342,12 +1288,10 @@ export default class LevelFour extends Component {
                                                                                                                                                                                                                                                             }
                                                                                                                                                                                                                                                         }
                                                                                                                                                                                                                                                         correctFunction();
+                                                                                                                                                                                                                                                        this.setState({
+                                                                                                                                                                                                                                                            counter: 59,
+                                                                                                                                                                                                                                                        })
                                                                                                                                                                                                                                                     }
-                                                                                                                                                                                                                                                    this.setState({
-                                                                                                                                                                                                                                                        counter: 59,
-                                                                                                                                                                                                                                                    })
-                                                                                                                                                                                                                                                } else {
-                                                                                                                                                                                                                                                    wrongFunction();
                                                                                                                                                                                                                                                 }
                                                                                                                                                                                                                                             }
                                                                                                                                                                                                                                         }
@@ -1383,8 +1327,7 @@ export default class LevelFour extends Component {
                                                                                                                                                                                                                                                             }
                                                                                                                                                                                                                                                         }
                                                                                                                                                                                                                                                         correctFunction();
-                                                                                                                                                                                                                                                    }
-                                                                                                                                                                                                                                                    // final merging step
+                                                                                                                                                                                                                                                         // final merging step
                                                                                                                                                                                                                                                     let aTen = [...this.state.nums].slice(0, 10).sort((a,b)=>a-b);
                                                                                                                                                                                                                                                     let temp10 = [...this.state.nums].slice(10, 20).sort((a, b)=>a-b);
                                                                                                                                                                                                                                                     for (let i=0; i<10; i++) {
@@ -1412,8 +1355,6 @@ export default class LevelFour extends Component {
                                                                                                                                                                                                                                                                                     }
                                                                                                                                                                                                                                                                                     correctFunction();
                                                                                                                                                                                                                                                                                 }
-                                                                                                                                                                                                                                                                            } else {
-                                                                                                                                                                                                                                                                                wrongFunction();
                                                                                                                                                                                                                                                                             }
                                                                                                                                                                                                                                                                         }
                                                                                                                                                                                                                                                                     }
@@ -1427,8 +1368,8 @@ export default class LevelFour extends Component {
                                                                                                                                                                                                                                                         counter: 60,
                                                                                                                                                                                                                                                         arrayTen: arrayTen,
                                                                                                                                                                                                                                                     })
-                                                                                                                                                                                                                                                } else {
-                                                                                                                                                                                                                                                    wrongFunction();
+                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                   
                                                                                                                                                                                                                                                 }
                                                                                                                                                                                                                                             }
                                                                                                                                                                                                                                         }
@@ -1449,8 +1390,6 @@ export default class LevelFour extends Component {
                                                                                                                                                                                                                         })
                                                                                                                                                                                                                     }
                                                                                                                                                                                                                     
-                                                                                                                                                                                                                } else {
-                                                                                                                                                                                                                    wrongFunction();
                                                                                                                                                                                                                 }
                                                                                                                                                                                                             }
                                                                                                                                                                                                         }
@@ -1468,9 +1407,7 @@ export default class LevelFour extends Component {
                                                                                                                                                                                         this.setState({
                                                                                                                                                                                             counter: 54,
                                                                                                                                                                                             arrayEight: arrayEight,
-                                                                                                                                                                                        })
-                                                                                                                                                                                    } else {
-                                                                                                                                                                                        wrongFunction();
+                                                                                                                                                                                        }) }
                                                                                                                                                                                     }
                                                                                                                                                                                 }
                                                                                                                                                                             }
@@ -1489,8 +1426,6 @@ export default class LevelFour extends Component {
                                                                                                                                                                     counter: 46,
                                                                                                                                                                     arraySeven: arraySeven,
                                                                                                                                                                 })
-                                                                                                                                                            } else {
-                                                                                                                                                                wrongFunction();
                                                                                                                                                             }
                                                                                                                                                         }
                                                                                                                                                     }>
@@ -1508,8 +1443,6 @@ export default class LevelFour extends Component {
                                                                                                                                                 counter: 38,
                                                                                                                                                 arraySix: arraySix,
                                                                                                                                             })
-                                                                                                                                        } else {
-                                                                                                                                            wrongFunction();
                                                                                                                                         }
                                                                                                                                     }
                                                                                                                                 }>
@@ -1527,8 +1460,6 @@ export default class LevelFour extends Component {
                                                                                                                         counter: 30,
                                                                                                                         arrayFive: arrayFive,
                                                                                                                     })
-                                                                                                                } else {
-                                                                                                                    wrongFunction();
                                                                                                                 }
                                                                                                             }
                                                                                                         }>
@@ -1565,9 +1496,7 @@ export default class LevelFour extends Component {
                                                                     arrayThree: arrayThree,
                                                                 });
                                                             }
-                                                        } else {
-                                                            wrongFunction();
-                                                        }
+                                                        } 
                                                     }
                                                 }>
                                                     {value}
@@ -1584,9 +1513,7 @@ export default class LevelFour extends Component {
                                         counter: 2,
                                         arrayTwo: arrayTwo,
                                     });
-                            } else {
-                                wrongFunction();
-                            }
+                                } 
                         }
                     }
                     }
@@ -1599,8 +1526,8 @@ export default class LevelFour extends Component {
         
         return (
             <div style={{
-                marginLeft: "20%",
-                marginRight: "20%",
+                marginLeft: "10%",
+                marginRight: "10%",
             }}>
                 <h1>Level Three</h1>
                 <h2>MergeSort Algorithm</h2>
