@@ -1529,7 +1529,7 @@ export default class LevelFour extends Component {
                 marginLeft: "10%",
                 marginRight: "10%",
             }}>
-                <h1>Level Three</h1>
+                <h1>Level Four</h1>
                 <h2>MergeSort Algorithm</h2>
                 <h5>Ensure NOT to double click buttons</h5>
                 <h5>ONLY FIREFOX COMPATIBLE</h5>
