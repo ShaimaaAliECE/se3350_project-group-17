@@ -1460,6 +1460,7 @@ export default class LevelTwo extends Component {
                 <Link to="/levels">
                     <Button style={{ marginTop: "2%" }} variant="secondary" >Return to Level Select</Button>
                 </Link>
+                
                 <br />
             </div>
         )
