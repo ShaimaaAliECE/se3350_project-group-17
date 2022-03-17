@@ -4,7 +4,7 @@ import Draggable from 'react-draggable';
 import { wrongFunction, correctFunction } from '../../functions/SoundFunctions';
 import { Link } from 'react-router-dom';
 
-export default class LevelFour extends Component {
+export default class LevelFive extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -53,9 +53,9 @@ export default class LevelFour extends Component {
             arrayNine: null,
             arrayTen: null,
         }
-        for (let i=0; i<20; i++) {
-            // add 10 random integers between 1 and 20 to nums array
-            this.state.nums.push(Math.floor(Math.random() * 51));
+        for (let i=0; i<50; i++) {
+            // add 50 random integers between 1 and 100 to nums array
+            this.state.nums.push(Math.floor(Math.random() * 101));
         }
     }
 
@@ -67,8 +67,8 @@ export default class LevelFour extends Component {
                         () => {
                             if (this.state.counter===0) {
                                 this.state.stepOneLeft.push(value);
-                                if (this.state.stepOneLeft.length>=10) {
-                                    let temp = [...this.state.nums].slice(0, 10);
+                                if (this.state.stepOneLeft.length>=25) {
+                                    let temp = [...this.state.nums].slice(0, 25);
                                     // allows zero mistakes for now
                                     for (let i=0; i<10; i++) {
                                         if (!temp.includes(this.state.stepOneLeft[i])) {
@@ -85,10 +85,10 @@ export default class LevelFour extends Component {
                                 }
                             } else if (this.state.counter===1) {
                                 this.state.stepOneRight.push(value);
-                                if (this.state.stepOneRight.length>=10) {
-                                    let temp = [...this.state.nums].slice(10);
+                                if (this.state.stepOneRight.length>=25) {
+                                    let temp = [...this.state.nums].slice(25);
                                     // allows zero mistakes for now
-                                    for (let i=0; i<10; i++) {
+                                    for (let i=0; i<25; i++) {
                                         if (!temp.includes(this.state.stepOneRight[i])) {
                                             wrongFunction();
                                             window.location.reload();
@@ -1529,7 +1529,7 @@ export default class LevelFour extends Component {
                 marginLeft: "10%",
                 marginRight: "10%",
             }}>
-                <h1>Level Four</h1>
+                <h1>Level Five</h1>
                 <h2>MergeSort Algorithm</h2>
                 <h5>Ensure NOT to double click buttons</h5>
                 <h5>ONLY FIREFOX COMPATIBLE</h5>
