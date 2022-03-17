@@ -5,6 +5,7 @@ export default class LevelOne extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            mistakes: 0, 
             counter: 0,
             arrayTwo: null,
             arrayThree: null,
