@@ -1146,6 +1146,7 @@ export default class LevelFive extends Component {
                                                                                                                         wrongFunction();
                                                                                                                     }
                                                                                                                     
+
                                                                                                                     correctFunction();
                                                                                                                     // 5th row 2, 2, 2, 2
                                                                                                                     let arrayFive1 = [...this.state.nums].slice(0, 2).map((value, index) => {
@@ -1153,21 +1154,21 @@ export default class LevelFive extends Component {
                                                                                                                             <Draggable>
                                                                                                                                 <Button key={index} onClick={
                                                                                                                                     () => {
-                                                                                                                                        if (this.state.counter===30) {
+                                                                                                                                        if (this.state.counter===53) {
                                                                                                                                             if (value!==this.state.nums[0]) {
                                                                                                                                                 wrongFunction();
                                                                                                                                             }
                                                                                                                                             correctFunction();
                                                                                                                                             this.setState({
-                                                                                                                                                counter: 31,
+                                                                                                                                                counter: 53,
                                                                                                                                             })
-                                                                                                                                        } else if (this.state.counter===31) {
+                                                                                                                                        } else if (this.state.counter===53) {
                                                                                                                                             if (value!==this.state.nums[1]) {
                                                                                                                                                 wrongFunction();
                                                                                                                                             }
                                                                                                                                             correctFunction();
                                                                                                                                             this.setState({
-                                                                                                                                                counter: 32,
+                                                                                                                                                counter: 54,
                                                                                                                                             })
                                                                                                                                         }
                                                                                                                                     }
@@ -1177,26 +1178,26 @@ export default class LevelFive extends Component {
                                                                                                                             </Draggable>
                                                                                                                         )
                                                                                                                     });
-                                                                                                                    let arrayFive2 = [...this.state.nums].slice(5, 7).map((value, index) => {
+                                                                                                                    let arrayFive2 = [...this.state.nums].slice(2, 4).map((value, index) => {
                                                                                                                         return (
                                                                                                                             <Draggable>
                                                                                                                                 <Button key={index} onClick={
                                                                                                                                     () => {
-                                                                                                                                        if (this.state.counter===32) {
+                                                                                                                                        if (this.state.counter===54) {
                                                                                                                                             if (value!==this.state.nums[5]) {
                                                                                                                                                 wrongFunction();
                                                                                                                                             }
                                                                                                                                             correctFunction();
                                                                                                                                             this.setState({
-                                                                                                                                                counter: 33,
+                                                                                                                                                counter: 55,
                                                                                                                                             })
-                                                                                                                                        } else if (this.state.counter===33) {
+                                                                                                                                        } else if (this.state.counter===55) {
                                                                                                                                             if (value!==this.state.nums[6]) {
                                                                                                                                                 wrongFunction();
                                                                                                                                             }
                                                                                                                                             correctFunction();
                                                                                                                                             this.setState({
-                                                                                                                                                counter: 34,
+                                                                                                                                                counter: 56,
                                                                                                                                             })
                                                                                                                                         }
                                                                                                                                     }
@@ -1206,26 +1207,26 @@ export default class LevelFive extends Component {
                                                                                                                             </Draggable>
                                                                                                                         )
                                                                                                                     })
-                                                                                                                    let arrayFive3 = [...this.state.nums].slice(10, 12).map((value, index) => {
+                                                                                                                    let arrayFive3 = [...this.state.nums].slice(4, 6).map((value, index) => {
                                                                                                                         return (
                                                                                                                             <Draggable>
                                                                                                                                 <Button key={index} onClick={
                                                                                                                                     () => {
-                                                                                                                                        if (this.state.counter===34) {
+                                                                                                                                        if (this.state.counter===56) {
                                                                                                                                             if (value!==this.state.nums[10]) {
                                                                                                                                                 wrongFunction();
                                                                                                                                             }
                                                                                                                                             correctFunction();
                                                                                                                                             this.setState({
-                                                                                                                                                counter: 35,
+                                                                                                                                                counter: 57,
                                                                                                                                             })
-                                                                                                                                        } else if (this.state.counter===35) {
+                                                                                                                                        } else if (this.state.counter===57) {
                                                                                                                                             if (value!==this.state.nums[11]) {
                                                                                                                                                 wrongFunction();
                                                                                                                                             }
                                                                                                                                             correctFunction();
                                                                                                                                             this.setState({
-                                                                                                                                                counter: 36,
+                                                                                                                                                counter: 58,
                                                                                                                                             })
                                                                                                                                         }
                                                                                                                                     }
@@ -1235,20 +1236,427 @@ export default class LevelFive extends Component {
                                                                                                                             </Draggable>
                                                                                                                         )
                                                                                                                     })
-                                                                                                                    let arrayFive4 = [...this.state.nums].slice(15, 17).map((value, index) => {
+                                                                                                                    let arrayFive4 = [...this.state.nums].slice(7, 9).map((value, index) => {
                                                                                                                         return (
                                                                                                                             <Draggable>
                                                                                                                                 <Button key={index} onClick={
                                                                                                                                     () => {
-                                                                                                                                        if (this.state.counter===36) {
+                                                                                                                                        if (this.state.counter===58) {
+                                                                                                                                            if (value!==this.state.nums[10]) {
+                                                                                                                                                wrongFunction();
+                                                                                                                                            }
+                                                                                                                                            correctFunction();
+                                                                                                                                            this.setState({
+                                                                                                                                                counter: 59,
+                                                                                                                                            })
+                                                                                                                                        } else if (this.state.counter===59) {
+                                                                                                                                            if (value!==this.state.nums[11]) {
+                                                                                                                                                wrongFunction();
+                                                                                                                                            }
+                                                                                                                                            correctFunction();
+                                                                                                                                            this.setState({
+                                                                                                                                                counter: 60,
+                                                                                                                                            })
+                                                                                                                                        }
+                                                                                                                                    }
+                                                                                                                                }>
+                                                                                                                                    {value}
+                                                                                                                                </Button>
+                                                                                                                            </Draggable>
+                                                                                                                        )
+                                                                                                                    })
+                                                                                                                    let arrayFive5 = [...this.state.nums].slice(10, 12).map((value, index) => {
+                                                                                                                        return (
+                                                                                                                            <Draggable>
+                                                                                                                                <Button key={index} onClick={
+                                                                                                                                    () => {
+                                                                                                                                        if (this.state.counter===60) {
+                                                                                                                                            if (value!==this.state.nums[10]) {
+                                                                                                                                                wrongFunction();
+                                                                                                                                            }
+                                                                                                                                            correctFunction();
+                                                                                                                                            this.setState({
+                                                                                                                                                counter: 61,
+                                                                                                                                            })
+                                                                                                                                        } else if (this.state.counter===61) {
+                                                                                                                                            if (value!==this.state.nums[11]) {
+                                                                                                                                                wrongFunction();
+                                                                                                                                            }
+                                                                                                                                            correctFunction();
+                                                                                                                                            this.setState({
+                                                                                                                                                counter: 62,
+                                                                                                                                            })
+                                                                                                                                        }
+                                                                                                                                    }
+                                                                                                                                }>
+                                                                                                                                    {value}
+                                                                                                                                </Button>
+                                                                                                                            </Draggable>
+                                                                                                                        )
+                                                                                                                    })
+                                                                                                                    let arrayFive6 = [...this.state.nums].slice(13, 15).map((value, index) => {
+                                                                                                                        return (
+                                                                                                                            <Draggable>
+                                                                                                                                <Button key={index} onClick={
+                                                                                                                                    () => {
+                                                                                                                                        if (this.state.counter===62) {
+                                                                                                                                            if (value!==this.state.nums[10]) {
+                                                                                                                                                wrongFunction();
+                                                                                                                                            }
+                                                                                                                                            correctFunction();
+                                                                                                                                            this.setState({
+                                                                                                                                                counter: 63,
+                                                                                                                                            })
+                                                                                                                                        } else if (this.state.counter===63) {
+                                                                                                                                            if (value!==this.state.nums[11]) {
+                                                                                                                                                wrongFunction();
+                                                                                                                                            }
+                                                                                                                                            correctFunction();
+                                                                                                                                            this.setState({
+                                                                                                                                                counter: 64,
+                                                                                                                                            })
+                                                                                                                                        }
+                                                                                                                                    }
+                                                                                                                                }>
+                                                                                                                                    {value}
+                                                                                                                                </Button>
+                                                                                                                            </Draggable>
+                                                                                                                        )
+                                                                                                                    })
+                                                                                                                    let arrayFive7 = [...this.state.nums].slice(16, 18).map((value, index) => {
+                                                                                                                        return (
+                                                                                                                            <Draggable>
+                                                                                                                                <Button key={index} onClick={
+                                                                                                                                    () => {
+                                                                                                                                        if (this.state.counter===64) {
+                                                                                                                                            if (value!==this.state.nums[10]) {
+                                                                                                                                                wrongFunction();
+                                                                                                                                            }
+                                                                                                                                            correctFunction();
+                                                                                                                                            this.setState({
+                                                                                                                                                counter: 65,
+                                                                                                                                            })
+                                                                                                                                        } else if (this.state.counter===65) {
+                                                                                                                                            if (value!==this.state.nums[11]) {
+                                                                                                                                                wrongFunction();
+                                                                                                                                            }
+                                                                                                                                            correctFunction();
+                                                                                                                                            this.setState({
+                                                                                                                                                counter: 66,
+                                                                                                                                            })
+                                                                                                                                        }
+                                                                                                                                    }
+                                                                                                                                }>
+                                                                                                                                    {value}
+                                                                                                                                </Button>
+                                                                                                                            </Draggable>
+                                                                                                                        )
+                                                                                                                    })
+                                                                                                                    let arrayFive8 = [...this.state.nums].slice(19, 21).map((value, index) => {
+                                                                                                                        return (
+                                                                                                                            <Draggable>
+                                                                                                                                <Button key={index} onClick={
+                                                                                                                                    () => {
+                                                                                                                                        if (this.state.counter===66) {
+                                                                                                                                            if (value!==this.state.nums[10]) {
+                                                                                                                                                wrongFunction();
+                                                                                                                                            }
+                                                                                                                                            correctFunction();
+                                                                                                                                            this.setState({
+                                                                                                                                                counter: 67,
+                                                                                                                                            })
+                                                                                                                                        } else if (this.state.counter===67) {
+                                                                                                                                            if (value!==this.state.nums[11]) {
+                                                                                                                                                wrongFunction();
+                                                                                                                                            }
+                                                                                                                                            correctFunction();
+                                                                                                                                            this.setState({
+                                                                                                                                                counter: 68,
+                                                                                                                                            })
+                                                                                                                                        }
+                                                                                                                                    }
+                                                                                                                                }>
+                                                                                                                                    {value}
+                                                                                                                                </Button>
+                                                                                                                            </Draggable>
+                                                                                                                        )
+                                                                                                                    })
+                                                                                                                    let arrayFive9 = [...this.state.nums].slice(22, 24).map((value, index) => {
+                                                                                                                        return (
+                                                                                                                            <Draggable>
+                                                                                                                                <Button key={index} onClick={
+                                                                                                                                    () => {
+                                                                                                                                        if (this.state.counter===68) {
+                                                                                                                                            if (value!==this.state.nums[10]) {
+                                                                                                                                                wrongFunction();
+                                                                                                                                            }
+                                                                                                                                            correctFunction();
+                                                                                                                                            this.setState({
+                                                                                                                                                counter: 69,
+                                                                                                                                            })
+                                                                                                                                        } else if (this.state.counter===69) {
+                                                                                                                                            if (value!==this.state.nums[11]) {
+                                                                                                                                                wrongFunction();
+                                                                                                                                            }
+                                                                                                                                            correctFunction();
+                                                                                                                                            this.setState({
+                                                                                                                                                counter: 70,
+                                                                                                                                            })
+                                                                                                                                        }
+                                                                                                                                    }
+                                                                                                                                }>
+                                                                                                                                    {value}
+                                                                                                                                </Button>
+                                                                                                                            </Draggable>
+                                                                                                                        )
+                                                                                                                    })
+                                                                                                                    let arrayFive10 = [...this.state.nums].slice(25, 27).map((value, index) => {
+                                                                                                                        return (
+                                                                                                                            <Draggable>
+                                                                                                                                <Button key={index} onClick={
+                                                                                                                                    () => {
+                                                                                                                                        if (this.state.counter===70) {
+                                                                                                                                            if (value!==this.state.nums[10]) {
+                                                                                                                                                wrongFunction();
+                                                                                                                                            }
+                                                                                                                                            correctFunction();
+                                                                                                                                            this.setState({
+                                                                                                                                                counter: 71,
+                                                                                                                                            })
+                                                                                                                                        } else if (this.state.counter===71) {
+                                                                                                                                            if (value!==this.state.nums[11]) {
+                                                                                                                                                wrongFunction();
+                                                                                                                                            }
+                                                                                                                                            correctFunction();
+                                                                                                                                            this.setState({
+                                                                                                                                                counter: 72,
+                                                                                                                                            })
+                                                                                                                                        }
+                                                                                                                                    }
+                                                                                                                                }>
+                                                                                                                                    {value}
+                                                                                                                                </Button>
+                                                                                                                            </Draggable>
+                                                                                                                        )
+                                                                                                                    })
+                                                                                                                    let arrayFive11 = [...this.state.nums].slice(27, 29).map((value, index) => {
+                                                                                                                        return (
+                                                                                                                            <Draggable>
+                                                                                                                                <Button key={index} onClick={
+                                                                                                                                    () => {
+                                                                                                                                        if (this.state.counter===72) {
+                                                                                                                                            if (value!==this.state.nums[10]) {
+                                                                                                                                                wrongFunction();
+                                                                                                                                            }
+                                                                                                                                            correctFunction();
+                                                                                                                                            this.setState({
+                                                                                                                                                counter: 73,
+                                                                                                                                            })
+                                                                                                                                        } else if (this.state.counter===73) {
+                                                                                                                                            if (value!==this.state.nums[11]) {
+                                                                                                                                                wrongFunction();
+                                                                                                                                            }
+                                                                                                                                            correctFunction();
+                                                                                                                                            this.setState({
+                                                                                                                                                counter: 74,
+                                                                                                                                            })
+                                                                                                                                        }
+                                                                                                                                    }
+                                                                                                                                }>
+                                                                                                                                    {value}
+                                                                                                                                </Button>
+                                                                                                                            </Draggable>
+                                                                                                                        )
+                                                                                                                    })
+                                                                                                                    let arrayFive12 = [...this.state.nums].slice(29, 31).map((value, index) => {
+                                                                                                                        return (
+                                                                                                                            <Draggable>
+                                                                                                                                <Button key={index} onClick={
+                                                                                                                                    () => {
+                                                                                                                                        if (this.state.counter===74) {
+                                                                                                                                            if (value!==this.state.nums[10]) {
+                                                                                                                                                wrongFunction();
+                                                                                                                                            }
+                                                                                                                                            correctFunction();
+                                                                                                                                            this.setState({
+                                                                                                                                                counter: 75,
+                                                                                                                                            })
+                                                                                                                                        } else if (this.state.counter===75) {
+                                                                                                                                            if (value!==this.state.nums[11]) {
+                                                                                                                                                wrongFunction();
+                                                                                                                                            }
+                                                                                                                                            correctFunction();
+                                                                                                                                            this.setState({
+                                                                                                                                                counter: 76,
+                                                                                                                                            })
+                                                                                                                                        }
+                                                                                                                                    }
+                                                                                                                                }>
+                                                                                                                                    {value}
+                                                                                                                                </Button>
+                                                                                                                            </Draggable>
+                                                                                                                        )
+                                                                                                                    })
+                                                                                                                    let arrayFive13 = [...this.state.nums].slice(32, 34).map((value, index) => {
+                                                                                                                        return (
+                                                                                                                            <Draggable>
+                                                                                                                                <Button key={index} onClick={
+                                                                                                                                    () => {
+                                                                                                                                        if (this.state.counter===76) {
+                                                                                                                                            if (value!==this.state.nums[10]) {
+                                                                                                                                                wrongFunction();
+                                                                                                                                            }
+                                                                                                                                            correctFunction();
+                                                                                                                                            this.setState({
+                                                                                                                                                counter: 77,
+                                                                                                                                            })
+                                                                                                                                        } else if (this.state.counter===77) {
+                                                                                                                                            if (value!==this.state.nums[11]) {
+                                                                                                                                                wrongFunction();
+                                                                                                                                            }
+                                                                                                                                            correctFunction();
+                                                                                                                                            this.setState({
+                                                                                                                                                counter: 78,
+                                                                                                                                            })
+                                                                                                                                        }
+                                                                                                                                    }
+                                                                                                                                }>
+                                                                                                                                    {value}
+                                                                                                                                </Button>
+                                                                                                                            </Draggable>
+                                                                                                                        )
+                                                                                                                    })
+                                                                                                                    let arrayFive14 = [...this.state.nums].slice(35, 37).map((value, index) => {
+                                                                                                                        return (
+                                                                                                                            <Draggable>
+                                                                                                                                <Button key={index} onClick={
+                                                                                                                                    () => {
+                                                                                                                                        if (this.state.counter===78) {
+                                                                                                                                            if (value!==this.state.nums[10]) {
+                                                                                                                                                wrongFunction();
+                                                                                                                                            }
+                                                                                                                                            correctFunction();
+                                                                                                                                            this.setState({
+                                                                                                                                                counter: 79,
+                                                                                                                                            })
+                                                                                                                                        } else if (this.state.counter===79) {
+                                                                                                                                            if (value!==this.state.nums[11]) {
+                                                                                                                                                wrongFunction();
+                                                                                                                                            }
+                                                                                                                                            correctFunction();
+                                                                                                                                            this.setState({
+                                                                                                                                                counter: 80,
+                                                                                                                                            })
+                                                                                                                                        }
+                                                                                                                                    }
+                                                                                                                                }>
+                                                                                                                                    {value}
+                                                                                                                                </Button>
+                                                                                                                            </Draggable>
+                                                                                                                        )
+                                                                                                                    })
+                                                                                                                    let arrayFive15 = [...this.state.nums].slice(38, 40).map((value, index) => {
+                                                                                                                        return (
+                                                                                                                            <Draggable>
+                                                                                                                                <Button key={index} onClick={
+                                                                                                                                    () => {
+                                                                                                                                        if (this.state.counter===80) {
+                                                                                                                                            if (value!==this.state.nums[10]) {
+                                                                                                                                                wrongFunction();
+                                                                                                                                            }
+                                                                                                                                            correctFunction();
+                                                                                                                                            this.setState({
+                                                                                                                                                counter: 81,
+                                                                                                                                            })
+                                                                                                                                        } else if (this.state.counter===81) {
+                                                                                                                                            if (value!==this.state.nums[11]) {
+                                                                                                                                                wrongFunction();
+                                                                                                                                            }
+                                                                                                                                            correctFunction();
+                                                                                                                                            this.setState({
+                                                                                                                                                counter: 82,
+                                                                                                                                            })
+                                                                                                                                        }
+                                                                                                                                    }
+                                                                                                                                }>
+                                                                                                                                    {value}
+                                                                                                                                </Button>
+                                                                                                                            </Draggable>
+                                                                                                                        )
+                                                                                                                    })
+                                                                                                                    let arrayFive16 = [...this.state.nums].slice(41, 43).map((value, index) => {
+                                                                                                                        return (
+                                                                                                                            <Draggable>
+                                                                                                                                <Button key={index} onClick={
+                                                                                                                                    () => {
+                                                                                                                                        if (this.state.counter===82) {
+                                                                                                                                            if (value!==this.state.nums[10]) {
+                                                                                                                                                wrongFunction();
+                                                                                                                                            }
+                                                                                                                                            correctFunction();
+                                                                                                                                            this.setState({
+                                                                                                                                                counter: 83,
+                                                                                                                                            })
+                                                                                                                                        } else if (this.state.counter===83) {
+                                                                                                                                            if (value!==this.state.nums[11]) {
+                                                                                                                                                wrongFunction();
+                                                                                                                                            }
+                                                                                                                                            correctFunction();
+                                                                                                                                            this.setState({
+                                                                                                                                                counter: 84,
+                                                                                                                                            })
+                                                                                                                                        }
+                                                                                                                                    }
+                                                                                                                                }>
+                                                                                                                                    {value}
+                                                                                                                                </Button>
+                                                                                                                            </Draggable>
+                                                                                                                        )
+                                                                                                                    })
+                                                                                                                    let arrayFive17 = [...this.state.nums].slice(44, 46).map((value, index) => {
+                                                                                                                        return (
+                                                                                                                            <Draggable>
+                                                                                                                                <Button key={index} onClick={
+                                                                                                                                    () => {
+                                                                                                                                        if (this.state.counter===84) {
+                                                                                                                                            if (value!==this.state.nums[10]) {
+                                                                                                                                                wrongFunction();
+                                                                                                                                            }
+                                                                                                                                            correctFunction();
+                                                                                                                                            this.setState({
+                                                                                                                                                counter: 85,
+                                                                                                                                            })
+                                                                                                                                        } else if (this.state.counter===57) {
+                                                                                                                                            if (value!==this.state.nums[11]) {
+                                                                                                                                                wrongFunction();
+                                                                                                                                            }
+                                                                                                                                            correctFunction();
+                                                                                                                                            this.setState({
+                                                                                                                                                counter: 89,
+                                                                                                                                            })
+                                                                                                                                        }
+                                                                                                                                    }
+                                                                                                                                }>
+                                                                                                                                    {value}
+                                                                                                                                </Button>
+                                                                                                                            </Draggable>
+                                                                                                                        )
+                                                                                                                    })
+                                                                                                                    
+                                                                                                                    let arrayFive18 = [...this.state.nums].slice(47, 49).map((value, index) => {
+                                                                                                                        return (
+                                                                                                                            <Draggable>
+                                                                                                                                <Button key={index} onClick={
+                                                                                                                                    () => {
+                                                                                                                                        if (this.state.counter===90) {
                                                                                                                                             if (value!==this.state.nums[15]) {
                                                                                                                                                 wrongFunction();
                                                                                                                                             }
                                                                                                                                             correctFunction();
                                                                                                                                             this.setState({
-                                                                                                                                                counter: 37,
+                                                                                                                                                counter: 91,
                                                                                                                                             })
-                                                                                                                                        } else if (this.state.counter===37) {
+                                                                                                                                        } else if (this.state.counter===91) {
                                                                                                                                             if (value!==this.state.nums[16]) {
                                                                                                                                                 wrongFunction();
                                                                                                                                             }
