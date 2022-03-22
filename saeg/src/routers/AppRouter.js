@@ -4,6 +4,7 @@ import LevelOne from '../components/levels/LevelOne';
 import LevelTwo from '../components/levels/LevelTwo';
 import LevelThree from '../components/levels/LevelThree';
 import LevelFour from '../components/levels/LevelFour';
+import LevelFive from '../components/levels/LevelFive';
 import CreateAccount from '../components/CreateAccount';
 import {HashRouter as Router, Route, Routes} from 'react-router-dom';
 
@@ -18,6 +19,7 @@ const AppRouter = () => (
                 <Route path="/level_three" element={<LevelThree />} />
                 <Route path = "/createAccount" element={<CreateAccount />} />
                 <Route path="/level_four" element={<LevelFour />} />
+                <Route path="/level_five" element={<LevelFive />} />
             </Routes>
         </div>
     </Router>
