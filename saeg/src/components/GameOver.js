@@ -8,7 +8,16 @@ export default class GameOver extends Component {
         return (
             <div style={{marginLeft: "20%", marginTop: "2%"}}>
                 <h1>Game Over</h1>
-                <h4>you can try again</h4>
+                <h5>Sorry, you made too many mistakes. You can retry this level or go back to any other level.</h5>
+                <h4>Good Luck Next Time!</h4>
+                
+                <ButtonGroup style={{marginTop: "2%"}}>
+                <Button variant="secondary" onClick={() => window.history.back() }>Retry Level</Button>
+                <Button variant="secondary" >Change Sorting Algorithm</Button> 
+                <Link to="/"> <Button  variant="secondary">Return to Home</Button></Link>
+                <Button variant="secondary" onClick={() => window.close() }>Quit Game</Button> 
+                </ButtonGroup>
+                <br />
                 <ButtonGroup style={{marginTop: "2%"}}>
                 <Link to="/level_one"><Button variant="primary">Level One</Button></Link>
                 <Link to="/level_two"><Button variant="primary">Level Two</Button></Link>
@@ -17,10 +26,6 @@ export default class GameOver extends Component {
                 <Button variant="primary">Level Five</Button>
                 <Button variant="primary">Custom Level</Button>
                 </ButtonGroup>
-                <br />
-                <Link to="/">
-                    <Button style={{marginTop: "2%"}} variant="secondary">Return to Home</Button>
-                </Link>
             </div>
         )
     }
