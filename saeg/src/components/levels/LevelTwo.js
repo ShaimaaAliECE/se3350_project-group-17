@@ -1458,10 +1458,10 @@ export default class LevelTwo extends Component {
                 {this.state.answer}
                 <br />
                 <ButtonGroup style={{marginTop: "2%"}} >
-                <button variant="primary" onClick={() => window.location.reload() }>Restart Level</button>
-                <button variant="primary" >Change Sorting Algorithm</button>  
-                <Link to ="/levels"><button variant="primary">Return to Level Select</button></Link>
-                <button variant="primary" onClick={() => window.close() }>Quit Game</button> 
+                <Button variant="primary" onClick={() => window.location.reload() }>Restart Level</Button>
+                <Button variant="primary" >Change Sorting Algorithm</Button>  
+                <Link to ="/levels"><Button variant="primary">Return to Level Select</Button></Link>
+                <Button variant="primary" onClick={() => window.close() }>Quit Game</Button> 
                 </ButtonGroup>
                 
                 <br />
