@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button } from 'react-bootstrap';
+import { Button, ButtonGroup } from 'react-bootstrap'
 import Draggable from 'react-draggable';
 import { wrongFunction, correctFunction } from '../../functions/SoundFunctions';
 import { Link } from 'react-router-dom';
@@ -1546,9 +1546,12 @@ export default class LevelFour extends Component {
                 {this.state.arrayNine}
                 {this.state.arrayTen}
                 <br />
-                <Link to ="/levels">
-                    <Button style={{marginTop: "2%"}} variant="secondary" >Return to Level Select</Button>
-                </Link>
+                <ButtonGroup style={{marginTop: "2%"}} >
+                <button variant="primary" onClick={() => window.location.reload() }>Restart Level</button>
+                <button variant="primary" >Change Sorting Algorithm</button>  
+                <Link to ="/levels"><button variant="primary">Return to Level Select</button></Link>
+                <button variant="primary" onClick={() => window.close() }>Quit Game</button>  
+                </ButtonGroup>
                 <br />
             </div>
         )
