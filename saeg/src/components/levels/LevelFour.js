@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button } from 'react-bootstrap';
+import { Button, ButtonGroup } from 'react-bootstrap'
 import Draggable from 'react-draggable';
 import { wrongFunction, correctFunction } from '../../functions/SoundFunctions';
 import { Link } from 'react-router-dom';
@@ -8,6 +8,7 @@ export default class LevelFour extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            mistakes: 0, 
             counter: 0,
             nums: [],
             stepOneLeft: [],
@@ -65,6 +66,8 @@ export default class LevelFour extends Component {
                 <Draggable>
                     <Button key={index} onClick={
                         () => {
+                            let wrong = false;
+                            let mistakes = 1;
                             if (this.state.counter===0) {
                                 this.state.stepOneLeft.push(value);
                                 if (this.state.stepOneLeft.length>=10) {
@@ -72,13 +75,24 @@ export default class LevelFour extends Component {
                                     // allows zero mistakes for now
                                     for (let i=0; i<10; i++) {
                                         if (!temp.includes(this.state.stepOneLeft[i])) {
-                                            wrongFunction();
-                                            window.location.reload();
+                                            wrong = true;
                                         } else {
                                             temp.splice(temp.indexOf(this.state.stepOneLeft[i]), 1);
                                         }
                                     }
-                                    correctFunction();
+                                    if (wrong) {
+                                        mistakes++;
+                                        wrongFunction();
+                                        this.setState({
+                                            mistakes: this.state.mistakes + 1,
+                                        })
+                                        if (mistakes >= 3) {
+                                            window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                        }
+                                    } else {
+                                        correctFunction()
+                                    }
+                                    wrong = false;
                                     this.setState({
                                         counter: 1,
                                     });
@@ -90,13 +104,24 @@ export default class LevelFour extends Component {
                                     // allows zero mistakes for now
                                     for (let i=0; i<10; i++) {
                                         if (!temp.includes(this.state.stepOneRight[i])) {
-                                            wrongFunction();
-                                            window.location.reload();
+                                            wrong = true;
                                         } else {
                                             temp.splice(temp.indexOf(this.state.stepOneRight[i]), 1);
                                         }
                                     }
-                                    correctFunction();
+                                    if (wrong) {
+                                        mistakes++;
+                                        wrongFunction();
+                                        this.setState({
+                                            mistakes: this.state.mistakes + 1,
+                                        })
+                                        if (mistakes >= 3) {
+                                            window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                        }
+                                    } else {
+                                        correctFunction()
+                                    }
+                                    wrong = false;
                                     let arrayTwo1 = [...this.state.nums].slice(0, 10).map((value, index) => {
                                         return (
                                             <Draggable>
@@ -108,13 +133,24 @@ export default class LevelFour extends Component {
                                                                 let temp = [...this.state.nums].slice(0, 5);
                                                                 for (let i = 0; i < 5; i++) {
                                                                     if (!temp.includes(this.state.stepTwoLeft1[i])) {
-                                                                        wrongFunction();
-                                                                        window.location.reload();
+                                                                        wrong = true;
                                                                     } else {
                                                                         temp.splice(temp.indexOf(this.state.stepTwoLeft1[i]), 1);
                                                                     }
                                                                 }
-                                                                correctFunction();
+                                                                if (wrong) {
+                                                                    mistakes++;
+                                                                    wrongFunction();
+                                                                    this.setState({
+                                                                        mistakes: this.state.mistakes + 1,
+                                                                    })
+                                                                    if (mistakes >= 3) {
+                                                                        window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                                                    }
+                                                                } else {
+                                                                    correctFunction()
+                                                                }
+                                                                wrong = false;
                                                                 this.setState({
                                                                     counter: 3,
                                                                 })
@@ -125,13 +161,24 @@ export default class LevelFour extends Component {
                                                                 let temp = [...this.state.nums].slice(5, 10);
                                                                 for (let i = 0; i < 5; i++) {
                                                                     if (!temp.includes(this.state.stepTwoLeft2[i])) {
-                                                                        wrongFunction();
-                                                                        window.location.reload();
+                                                                        wrong = true;
                                                                     } else {
                                                                         temp.splice(temp.indexOf(this.state.stepTwoLeft2[i]), 1);
                                                                     }
                                                                 }
-                                                                correctFunction();
+                                                                if (wrong) {
+                                                                    mistakes++;
+                                                                    wrongFunction();
+                                                                    this.setState({
+                                                                        mistakes: this.state.mistakes + 1,
+                                                                    })
+                                                                    if (mistakes >= 3) {
+                                                                        window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                                                    }
+                                                                } else {
+                                                                    correctFunction()
+                                                                }
+                                                                wrong = false;
                                                                 this.setState({
                                                                     counter: 4,
                                                                 });
@@ -155,13 +202,24 @@ export default class LevelFour extends Component {
                                                                 let temp = [...this.state.nums].slice(10, 15);
                                                                 for (let i = 0; i < 5; i++) {
                                                                     if (!temp.includes(this.state.stepTwoRight1[i])) {
-                                                                        wrongFunction();
-                                                                        window.location.reload();
+                                                                        wrong = true;
                                                                     } else {
                                                                         temp.splice(temp.indexOf(this.state.stepTwoRight1[i]), 1);
                                                                     }
                                                                 }
-                                                                correctFunction();
+                                                                if (wrong) {
+                                                                    mistakes++;
+                                                                    wrongFunction();
+                                                                    this.setState({
+                                                                        mistakes: this.state.mistakes + 1,
+                                                                    })
+                                                                    if (mistakes >= 3) {
+                                                                        window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                                                    }
+                                                                } else {
+                                                                    correctFunction()
+                                                                }
+                                                                wrong = false;
                                                                 this.setState({
                                                                     counter: 5,
                                                                 });
@@ -172,13 +230,24 @@ export default class LevelFour extends Component {
                                                                 let temp = [...this.state.nums].slice(15);
                                                                 for (let i = 0; i < 5; i++) {
                                                                     if (!temp.includes(this.state.stepTwoRight2[i])) {
-                                                                        wrongFunction();
-                                                                        window.location.reload();
+                                                                        wrong = true;
                                                                     } else {
                                                                         temp.splice(temp.indexOf(this.state.stepTwoRight2[i]), 1);
                                                                     }
                                                                 }
-                                                                correctFunction();
+                                                                if (wrong) {
+                                                                    mistakes++;
+                                                                    wrongFunction();
+                                                                    this.setState({
+                                                                        mistakes: this.state.mistakes + 1,
+                                                                    })
+                                                                    if (mistakes >= 3) {
+                                                                        window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                                                    }
+                                                                } else {
+                                                                    correctFunction()
+                                                                }
+                                                                wrong = false;
                                                                 let arrayThree1 = [...this.state.nums].slice(0, 5).map((value, index) => {
                                                                     return (
                                                                         <Draggable>
@@ -190,13 +259,24 @@ export default class LevelFour extends Component {
                                                                                             let temp = [...this.state.nums].slice(0, 3);
                                                                                             for (let i = 0; i < 3; i++) {
                                                                                                 if (!temp.includes(this.state.stepThree1[i])) {
-                                                                                                    wrongFunction();
-                                                                                                    window.location.reload();
+                                                                                                    wrong = true;
                                                                                                 } else {
                                                                                                     temp.splice(temp.indexOf(this.state.stepThree1[i]), 1);
                                                                                                 }
                                                                                             }
-                                                                                            correctFunction();
+                                                                                            if (wrong) {
+                                                                                                mistakes++;
+                                                                                                wrongFunction();
+                                                                                                this.setState({
+                                                                                                    mistakes: this.state.mistakes + 1,
+                                                                                                })
+                                                                                                if (mistakes >= 3) {
+                                                                                                    window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                                                                                }
+                                                                                            } else {
+                                                                                                correctFunction()
+                                                                                            }
+                                                                                            wrong = false;
                                                                                             this.setState({
                                                                                                 counter: 7,
                                                                                             })
@@ -207,13 +287,24 @@ export default class LevelFour extends Component {
                                                                                             let temp = [...this.state.nums].slice(3, 5);
                                                                                             for (let i = 0; i < 2; i++) {
                                                                                                 if (!temp.includes(this.state.stepThree2[i])) {
-                                                                                                    wrongFunction();
-                                                                                                    window.location.reload();
+                                                                                                    wrong = true;
                                                                                                 } else {
                                                                                                     temp.splice(temp.indexOf(this.state.stepThree2[i]), 1);
                                                                                                 }
                                                                                             }
-                                                                                            correctFunction();
+                                                                                            if (wrong) {
+                                                                                                mistakes++;
+                                                                                                wrongFunction();
+                                                                                                this.setState({
+                                                                                                    mistakes: this.state.mistakes + 1,
+                                                                                                })
+                                                                                                if (mistakes >= 3) {
+                                                                                                    window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                                                                                }
+                                                                                            } else {
+                                                                                                correctFunction()
+                                                                                            }
+                                                                                            wrong = false;
                                                                                             this.setState({
                                                                                                 counter: 8,
                                                                                             })
@@ -237,13 +328,24 @@ export default class LevelFour extends Component {
                                                                                             let temp = [...this.state.nums].slice(5, 8);
                                                                                             for (let i = 0; i < 3; i++) {
                                                                                                 if (!temp.includes(this.state.stepThree3[i])) {
-                                                                                                    wrongFunction();
-                                                                                                    window.location.reload();
+                                                                                                    wrong = true;
                                                                                                 } else {
                                                                                                     temp.splice(temp.indexOf(this.state.stepThree3[i]), 1);
                                                                                                 }
                                                                                             }
-                                                                                            correctFunction();
+                                                                                            if (wrong) {
+                                                                                                mistakes++;
+                                                                                                wrongFunction();
+                                                                                                this.setState({
+                                                                                                    mistakes: this.state.mistakes + 1,
+                                                                                                })
+                                                                                                if (mistakes >= 3) {
+                                                                                                    window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                                                                                }
+                                                                                            } else {
+                                                                                                correctFunction()
+                                                                                            }
+                                                                                            wrong = false;
                                                                                             this.setState({
                                                                                                 counter: 9,
                                                                                             })
@@ -254,13 +356,24 @@ export default class LevelFour extends Component {
                                                                                             let temp = [...this.state.nums].slice(8, 10);
                                                                                             for (let i = 0; i < 2; i++) {
                                                                                                 if (!temp.includes(this.state.stepThree4[i])) {
-                                                                                                    wrongFunction();
-                                                                                                    window.location.reload();
+                                                                                                    wrong = true;
                                                                                                 } else {
                                                                                                     temp.splice(temp.indexOf(this.state.stepThree4[i]), 1);
                                                                                                 }
                                                                                             }
-                                                                                            correctFunction();
+                                                                                            if (wrong) {
+                                                                                                mistakes++;
+                                                                                                wrongFunction();
+                                                                                                this.setState({
+                                                                                                    mistakes: this.state.mistakes + 1,
+                                                                                                })
+                                                                                                if (mistakes >= 3) {
+                                                                                                    window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                                                                                }
+                                                                                            } else {
+                                                                                                correctFunction()
+                                                                                            }
+                                                                                            wrong = false;
                                                                                             this.setState({
                                                                                                 counter: 10,
                                                                                             })
@@ -284,13 +397,24 @@ export default class LevelFour extends Component {
                                                                                             let temp = [...this.state.nums].slice(10, 13);
                                                                                             for (let i = 0; i < 3; i++) {
                                                                                                 if (!temp.includes(this.state.stepThree5[i])) {
-                                                                                                    wrongFunction();
-                                                                                                    window.location.reload();
+                                                                                                    wrong = true;
                                                                                                 } else {
                                                                                                     temp.splice(temp.indexOf(this.state.stepThree5[i]), 1);
                                                                                                 }
                                                                                             }
-                                                                                            correctFunction();
+                                                                                            if (wrong) {
+                                                                                                mistakes++;
+                                                                                                wrongFunction();
+                                                                                                this.setState({
+                                                                                                    mistakes: this.state.mistakes + 1,
+                                                                                                })
+                                                                                                if (mistakes >= 3) {
+                                                                                                    window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                                                                                }
+                                                                                            } else {
+                                                                                                correctFunction()
+                                                                                            }
+                                                                                            wrong = false;
                                                                                             this.setState({
                                                                                                 counter: 11,
                                                                                             })
@@ -301,13 +425,24 @@ export default class LevelFour extends Component {
                                                                                             let temp = [...this.state.nums].slice(13, 15);
                                                                                             for (let i = 0; i < 2; i++) {
                                                                                                 if (!temp.includes(this.state.stepThree6[i])) {
-                                                                                                    wrongFunction();
-                                                                                                    window.location.reload();
+                                                                                                    wrong = true;
                                                                                                 } else {
                                                                                                     temp.splice(temp.indexOf(this.state.stepThree6[i]), 1);
                                                                                                 }
                                                                                             }
-                                                                                            correctFunction();
+                                                                                            if (wrong) {
+                                                                                                mistakes++;
+                                                                                                wrongFunction();
+                                                                                                this.setState({
+                                                                                                    mistakes: this.state.mistakes + 1,
+                                                                                                })
+                                                                                                if (mistakes >= 3) {
+                                                                                                    window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                                                                                }
+                                                                                            } else {
+                                                                                                correctFunction()
+                                                                                            }
+                                                                                            wrong = false;
                                                                                             this.setState({
                                                                                                 counter: 12,
                                                                                             })
@@ -331,13 +466,24 @@ export default class LevelFour extends Component {
                                                                                             let temp = [...this.state.nums].slice(15, 18);
                                                                                             for (let i = 0; i < 3; i++) {
                                                                                                 if (!temp.includes(this.state.stepThree7[i])) {
-                                                                                                    wrongFunction();
-                                                                                                    window.location.reload();
+                                                                                                    wrong = true;
                                                                                                 } else {
                                                                                                     temp.splice(temp.indexOf(this.state.stepThree7[i]), 1);
                                                                                                 }
                                                                                             }
-                                                                                            correctFunction();
+                                                                                            if (wrong) {
+                                                                                                mistakes++;
+                                                                                                wrongFunction();
+                                                                                                this.setState({
+                                                                                                    mistakes: this.state.mistakes + 1,
+                                                                                                })
+                                                                                                if (mistakes >= 3) {
+                                                                                                    window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                                                                                }
+                                                                                            } else {
+                                                                                                correctFunction()
+                                                                                            }
+                                                                                            wrong = false;
                                                                                             this.setState({
                                                                                                 counter: 13,
                                                                                             })
@@ -348,13 +494,24 @@ export default class LevelFour extends Component {
                                                                                             let temp = [...this.state.nums].slice(18);
                                                                                             for (let i = 0; i < 2; i++) {
                                                                                                 if (!temp.includes(this.state.stepThree8[i])) {
-                                                                                                    wrongFunction();
-                                                                                                    window.location.reload();
+                                                                                                    wrong = true;
                                                                                                 } else {
                                                                                                     temp.splice(temp.indexOf(this.state.stepThree8[i]), 1);
                                                                                                 }
                                                                                             }
-                                                                                            correctFunction();
+                                                                                            if (wrong) {
+                                                                                                mistakes++;
+                                                                                                wrongFunction();
+                                                                                                this.setState({
+                                                                                                    mistakes: this.state.mistakes + 1,
+                                                                                                })
+                                                                                                if (mistakes >= 3) {
+                                                                                                    window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                                                                                }
+                                                                                            } else {
+                                                                                                correctFunction()
+                                                                                            }
+                                                                                            wrong = false;
                                                                                             // 4th array (split into 3, 2, 3, 2, 3, 2, 3, 2)
                                                                                             let arrayFour1 = [...this.state.nums].slice(0, 3).map((value, index) => {
                                                                                                 return (
@@ -367,22 +524,45 @@ export default class LevelFour extends Component {
                                                                                                                         let temp = [...this.state.nums].slice(0, 2);
                                                                                                                         for (let i=0; i < 2; i++) {
                                                                                                                             if (!temp.includes(this.state.stepFour1[i])) {
-                                                                                                                                wrongFunction();
-                                                                                                                                window.location.reload();
+                                                                                                                                wrong = true;
                                                                                                                             } else {
                                                                                                                                 temp.splice(temp.indexOf(this.state.stepFour1[i]), 1);
                                                                                                                             }
                                                                                                                         }
-                                                                                                                        correctFunction();
+                                                                                                                        if (wrong) {
+                                                                                                                            mistakes++;
+                                                                                                                            wrongFunction();
+                                                                                                                            this.setState({
+                                                                                                                                mistakes: this.state.mistakes + 1,
+                                                                                                                            })
+                                                                                                                            if (mistakes >= 3) {
+                                                                                                                                window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                                                                                                            }
+                                                                                                                        } else {
+                                                                                                                            correctFunction()
+                                                                                                                        }
+                                                                                                                        wrong = false;
                                                                                                                         this.setState({
                                                                                                                             counter: 15,
                                                                                                                         })
                                                                                                                     }
                                                                                                                 } else if (this.state.counter===15) {
                                                                                                                     if (value !== this.state.nums[2]) {
-                                                                                                                        wrongFunction();
+                                                                                                                        wrong = true; 
                                                                                                                     }
-                                                                                                                    correctFunction();
+                                                                                                                    if (wrong) {
+                                                                                                                        mistakes++;
+                                                                                                                        wrongFunction();
+                                                                                                                        this.setState({
+                                                                                                                            mistakes: this.state.mistakes + 1,
+                                                                                                                        })
+                                                                                                                        if (mistakes >= 3) {
+                                                                                                                            window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                                                                                                        }
+                                                                                                                    } else {
+                                                                                                                        correctFunction()
+                                                                                                                    }
+                                                                                                                    wrong = false;
                                                                                                                     this.setState({
                                                                                                                         counter: 16,
                                                                                                                     })
@@ -401,17 +581,41 @@ export default class LevelFour extends Component {
                                                                                                             () => {
                                                                                                                 if (this.state.counter===16) {
                                                                                                                     if (value !== this.state.nums[3]) {
-                                                                                                                        wrongFunction();
+                                                                                                                        wrong = true;
                                                                                                                     }
-                                                                                                                    correctFunction();
+                                                                                                                    if (wrong) {
+                                                                                                                        mistakes++;
+                                                                                                                        wrongFunction();
+                                                                                                                        this.setState({
+                                                                                                                            mistakes: this.state.mistakes + 1,
+                                                                                                                        })
+                                                                                                                        if (mistakes >= 3) {
+                                                                                                                            window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                                                                                                        }
+                                                                                                                    } else {
+                                                                                                                        correctFunction()
+                                                                                                                    }
+                                                                                                                    wrong = false;
                                                                                                                     this.setState({
                                                                                                                         counter: 17,
                                                                                                                     })
                                                                                                                 } else if (this.state.counter===17) {
                                                                                                                     if (value !== this.state.nums[4]) {
-                                                                                                                        wrongFunction();
+                                                                                                                        wrong = true;
                                                                                                                     }
-                                                                                                                    correctFunction();
+                                                                                                                    if (wrong) {
+                                                                                                                        mistakes++;
+                                                                                                                        wrongFunction();
+                                                                                                                        this.setState({
+                                                                                                                            mistakes: this.state.mistakes + 1,
+                                                                                                                        })
+                                                                                                                        if (mistakes >= 3) {
+                                                                                                                            window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                                                                                                        }
+                                                                                                                    } else {
+                                                                                                                        correctFunction()
+                                                                                                                    }
+                                                                                                                    wrong = false;
                                                                                                                     this.setState({
                                                                                                                         counter: 18,
                                                                                                                     })
@@ -434,13 +638,24 @@ export default class LevelFour extends Component {
                                                                                                                         let temp = [...this.state.nums].slice(5, 7);
                                                                                                                         for (let i=0; i < 2; i++) {
                                                                                                                             if (!temp.includes(this.state.stepFour2[i])) {
-                                                                                                                                wrongFunction();
-                                                                                                                                window.location.reload();
+                                                                                                                                wrong = true;
                                                                                                                             } else {
                                                                                                                                 temp.splice(temp.indexOf(this.state.stepFour2[i]), 1);
                                                                                                                             }
                                                                                                                         }
-                                                                                                                        correctFunction();
+                                                                                                                        if (wrong) {
+                                                                                                                            mistakes++;
+                                                                                                                            wrongFunction();
+                                                                                                                            this.setState({
+                                                                                                                                mistakes: this.state.mistakes + 1,
+                                                                                                                            })
+                                                                                                                            if (mistakes >= 3) {
+                                                                                                                                window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                                                                                                            }
+                                                                                                                        } else {
+                                                                                                                            correctFunction()
+                                                                                                                        }
+                                                                                                                        wrong = false;
                                                                                                                         this.setState({
                                                                                                                             counter: 19,
                                                                                                                         })
@@ -448,9 +663,21 @@ export default class LevelFour extends Component {
                                                                                                                     
                                                                                                                 } else if (this.state.counter===19) {
                                                                                                                     if (value !== this.state.nums[7]) {
-                                                                                                                        wrongFunction();
+                                                                                                                        wrong = true;
                                                                                                                     }
-                                                                                                                    correctFunction();
+                                                                                                                    if (wrong) {
+                                                                                                                        mistakes++;
+                                                                                                                        wrongFunction();
+                                                                                                                        this.setState({
+                                                                                                                            mistakes: this.state.mistakes + 1,
+                                                                                                                        })
+                                                                                                                        if (mistakes >= 3) {
+                                                                                                                            window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                                                                                                        }
+                                                                                                                    } else {
+                                                                                                                        correctFunction()
+                                                                                                                    }
+                                                                                                                    wrong = false;
                                                                                                                     this.setState({
                                                                                                                         counter: 20,
                                                                                                                     })
@@ -469,17 +696,41 @@ export default class LevelFour extends Component {
                                                                                                             () => {
                                                                                                                 if (this.state.counter===20) {
                                                                                                                     if (value !== this.state.nums[8]) {
-                                                                                                                        wrongFunction();
+                                                                                                                        wrong = true;
                                                                                                                     }
-                                                                                                                    correctFunction();
+                                                                                                                    if (wrong) {
+                                                                                                                        mistakes++;
+                                                                                                                        wrongFunction();
+                                                                                                                        this.setState({
+                                                                                                                            mistakes: this.state.mistakes + 1,
+                                                                                                                        })
+                                                                                                                        if (mistakes >= 3) {
+                                                                                                                            window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                                                                                                        }
+                                                                                                                    } else {
+                                                                                                                        correctFunction()
+                                                                                                                    }
+                                                                                                                    wrong = false;
                                                                                                                     this.setState({
                                                                                                                         counter: 21,
                                                                                                                     })
                                                                                                                 } else if (this.state.counter===21) {
                                                                                                                     if (value !== this.state.nums[9]) {
-                                                                                                                        wrongFunction();
+                                                                                                                        wrong = true;
                                                                                                                     }
-                                                                                                                    correctFunction();
+                                                                                                                    if (wrong) {
+                                                                                                                        mistakes++;
+                                                                                                                        wrongFunction();
+                                                                                                                        this.setState({
+                                                                                                                            mistakes: this.state.mistakes + 1,
+                                                                                                                        })
+                                                                                                                        if (mistakes >= 3) {
+                                                                                                                            window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                                                                                                        }
+                                                                                                                    } else {
+                                                                                                                        correctFunction()
+                                                                                                                    }
+                                                                                                                    wrong = false;
                                                                                                                     this.setState({
                                                                                                                         counter: 22,
                                                                                                                     })
@@ -503,13 +754,24 @@ export default class LevelFour extends Component {
                                                                                                                         let temp = [...this.state.nums].slice(10, 12);
                                                                                                                         for (let i=0; i < 2; i++) {
                                                                                                                             if (!temp.includes(this.state.stepFour3[i])) {
-                                                                                                                                wrongFunction();
-                                                                                                                                window.location.reload();
+                                                                                                                                wrong = true;
                                                                                                                             } else {
                                                                                                                                 temp.splice(temp.indexOf(this.state.stepFour3[i]), 1);
                                                                                                                             }
                                                                                                                         }
-                                                                                                                        correctFunction();
+                                                                                                                        if (wrong) {
+                                                                                                                            mistakes++;
+                                                                                                                            wrongFunction();
+                                                                                                                            this.setState({
+                                                                                                                                mistakes: this.state.mistakes + 1,
+                                                                                                                            })
+                                                                                                                            if (mistakes >= 3) {
+                                                                                                                                window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                                                                                                            }
+                                                                                                                        } else {
+                                                                                                                            correctFunction()
+                                                                                                                        }
+                                                                                                                        wrong = false;
                                                                                                                         this.setState({
                                                                                                                             counter: 23,
                                                                                                                         })
@@ -517,9 +779,21 @@ export default class LevelFour extends Component {
                                                                                                                     
                                                                                                                 } else if (this.state.counter===23) {
                                                                                                                     if (value !== this.state.nums[12]) {
-                                                                                                                        wrongFunction();
+                                                                                                                        wrong = true;
                                                                                                                     }
-                                                                                                                    correctFunction();
+                                                                                                                    if (wrong) {
+                                                                                                                        mistakes++;
+                                                                                                                        wrongFunction();
+                                                                                                                        this.setState({
+                                                                                                                            mistakes: this.state.mistakes + 1,
+                                                                                                                        })
+                                                                                                                        if (mistakes >= 3) {
+                                                                                                                            window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                                                                                                        }
+                                                                                                                    } else {
+                                                                                                                        correctFunction()
+                                                                                                                    }
+                                                                                                                    wrong = false;
                                                                                                                     this.setState({
                                                                                                                         counter: 24,
                                                                                                                     })
@@ -538,17 +812,41 @@ export default class LevelFour extends Component {
                                                                                                             () => {
                                                                                                                 if (this.state.counter===24) {
                                                                                                                     if (value !== this.state.nums[13]) {
-                                                                                                                        wrongFunction();
+                                                                                                                        wrong = true;
                                                                                                                     }
-                                                                                                                    correctFunction();
+                                                                                                                    if (wrong) {
+                                                                                                                        mistakes++;
+                                                                                                                        wrongFunction();
+                                                                                                                        this.setState({
+                                                                                                                            mistakes: this.state.mistakes + 1,
+                                                                                                                        })
+                                                                                                                        if (mistakes >= 3) {
+                                                                                                                            window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                                                                                                        }
+                                                                                                                    } else {
+                                                                                                                        correctFunction()
+                                                                                                                    }
+                                                                                                                    wrong = false;
                                                                                                                     this.setState({
                                                                                                                         counter: 25,
                                                                                                                     })
                                                                                                                 } else if (this.state.counter===25) {
                                                                                                                     if (value !== this.state.nums[14]) {
-                                                                                                                        wrongFunction();
+                                                                                                                        wrong = true;
                                                                                                                     }
-                                                                                                                    correctFunction();
+                                                                                                                    if (wrong) {
+                                                                                                                        mistakes++;
+                                                                                                                        wrongFunction();
+                                                                                                                        this.setState({
+                                                                                                                            mistakes: this.state.mistakes + 1,
+                                                                                                                        })
+                                                                                                                        if (mistakes >= 3) {
+                                                                                                                            window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                                                                                                        }
+                                                                                                                    } else {
+                                                                                                                        correctFunction()
+                                                                                                                    }
+                                                                                                                    wrong = false;
                                                                                                                     this.setState({
                                                                                                                         counter: 26,
                                                                                                                     })
@@ -571,13 +869,25 @@ export default class LevelFour extends Component {
                                                                                                                         let temp = [...this.state.nums].slice(15, 17);
                                                                                                                         for (let i=0; i < 2; i++) {
                                                                                                                             if (!temp.includes(this.state.stepFour4[i])) {
-                                                                                                                                wrongFunction();
-                                                                                                                                window.location.reload();
+                                                                                                                                wrong = true;
+                                                                                                                            
                                                                                                                             } else {
                                                                                                                                 temp.splice(temp.indexOf(this.state.stepFour4[i]), 1);
                                                                                                                             }
                                                                                                                         }
-                                                                                                                        correctFunction();
+                                                                                                                        if (wrong) {
+                                                                                                                            mistakes++;
+                                                                                                                            wrongFunction();
+                                                                                                                            this.setState({
+                                                                                                                                mistakes: this.state.mistakes + 1,
+                                                                                                                            })
+                                                                                                                            if (mistakes >= 3) {
+                                                                                                                                window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                                                                                                            }
+                                                                                                                        } else {
+                                                                                                                            correctFunction()
+                                                                                                                        }
+                                                                                                                        wrong = false;
                                                                                                                         this.setState({
                                                                                                                             counter: 27,
                                                                                                                         })
@@ -585,9 +895,21 @@ export default class LevelFour extends Component {
                                                                                                                     
                                                                                                                 } else if (this.state.counter===27) {
                                                                                                                     if (value !== this.state.nums[17]) {
-                                                                                                                        wrongFunction();
+                                                                                                                        wrong = true;
                                                                                                                     }
-                                                                                                                    correctFunction();
+                                                                                                                    if (wrong) {
+                                                                                                                        mistakes++;
+                                                                                                                        wrongFunction();
+                                                                                                                        this.setState({
+                                                                                                                            mistakes: this.state.mistakes + 1,
+                                                                                                                        })
+                                                                                                                        if (mistakes >= 3) {
+                                                                                                                            window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                                                                                                        }
+                                                                                                                    } else {
+                                                                                                                        correctFunction()
+                                                                                                                    }
+                                                                                                                    wrong = false;
                                                                                                                     this.setState({
                                                                                                                         counter: 28,
                                                                                                                     })
@@ -606,17 +928,41 @@ export default class LevelFour extends Component {
                                                                                                             () => {
                                                                                                                 if (this.state.counter===28) {
                                                                                                                     if (value !== this.state.nums[18]) {
-                                                                                                                        wrongFunction();
+                                                                                                                        wrong = true;
                                                                                                                     }
-                                                                                                                    correctFunction();
+                                                                                                                    if (wrong) {
+                                                                                                                        mistakes++;
+                                                                                                                        wrongFunction();
+                                                                                                                        this.setState({
+                                                                                                                            mistakes: this.state.mistakes + 1,
+                                                                                                                        })
+                                                                                                                        if (mistakes >= 3) {
+                                                                                                                            window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                                                                                                        }
+                                                                                                                    } else {
+                                                                                                                        correctFunction()
+                                                                                                                    }
+                                                                                                                    wrong = false;
                                                                                                                     this.setState({
                                                                                                                         counter: 29,
                                                                                                                     })
                                                                                                                 } else if (this.state.counter===29) {
                                                                                                                     if (value !== this.state.nums[19]) {
-                                                                                                                        wrongFunction();
+                                                                                                                        wrong = true;
                                                                                                                     }
-                                                                                                                    correctFunction();
+                                                                                                                    if (wrong) {
+                                                                                                                        mistakes++;
+                                                                                                                        wrongFunction();
+                                                                                                                        this.setState({
+                                                                                                                            mistakes: this.state.mistakes + 1,
+                                                                                                                        })
+                                                                                                                        if (mistakes >= 3) {
+                                                                                                                            window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                                                                                                        }
+                                                                                                                    } else {
+                                                                                                                        correctFunction()
+                                                                                                                    }
+                                                                                                                    wrong = false;
                                                                                                                     // 5th row 2, 2, 2, 2
                                                                                                                     let arrayFive1 = [...this.state.nums].slice(0, 2).map((value, index) => {
                                                                                                                         return (
@@ -625,17 +971,41 @@ export default class LevelFour extends Component {
                                                                                                                                     () => {
                                                                                                                                         if (this.state.counter===30) {
                                                                                                                                             if (value!==this.state.nums[0]) {
-                                                                                                                                                wrongFunction();
+                                                                                                                                                wrong = true;
                                                                                                                                             }
-                                                                                                                                            correctFunction();
+                                                                                                                                            if (wrong) {
+                                                                                                                                                mistakes++;
+                                                                                                                                                wrongFunction();
+                                                                                                                                                this.setState({
+                                                                                                                                                    mistakes: this.state.mistakes + 1,
+                                                                                                                                                })
+                                                                                                                                                if (mistakes >= 3) {
+                                                                                                                                                    window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                                                                                                                                }
+                                                                                                                                            } else {
+                                                                                                                                                correctFunction()
+                                                                                                                                            }
+                                                                                                                                            wrong = false;
                                                                                                                                             this.setState({
                                                                                                                                                 counter: 31,
                                                                                                                                             })
                                                                                                                                         } else if (this.state.counter===31) {
                                                                                                                                             if (value!==this.state.nums[1]) {
-                                                                                                                                                wrongFunction();
+                                                                                                                                                wrong = true;
                                                                                                                                             }
-                                                                                                                                            correctFunction();
+                                                                                                                                            if (wrong) {
+                                                                                                                                                mistakes++;
+                                                                                                                                                wrongFunction();
+                                                                                                                                                this.setState({
+                                                                                                                                                    mistakes: this.state.mistakes + 1,
+                                                                                                                                                })
+                                                                                                                                                if (mistakes >= 3) {
+                                                                                                                                                    window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                                                                                                                                }
+                                                                                                                                            } else {
+                                                                                                                                                correctFunction()
+                                                                                                                                            }
+                                                                                                                                            wrong = false;
                                                                                                                                             this.setState({
                                                                                                                                                 counter: 32,
                                                                                                                                             })
@@ -654,17 +1024,41 @@ export default class LevelFour extends Component {
                                                                                                                                     () => {
                                                                                                                                         if (this.state.counter===32) {
                                                                                                                                             if (value!==this.state.nums[5]) {
-                                                                                                                                                wrongFunction();
+                                                                                                                                                wrong = true;
                                                                                                                                             }
-                                                                                                                                            correctFunction();
+                                                                                                                                            if (wrong) {
+                                                                                                                                                mistakes++;
+                                                                                                                                                wrongFunction();
+                                                                                                                                                this.setState({
+                                                                                                                                                    mistakes: this.state.mistakes + 1,
+                                                                                                                                                })
+                                                                                                                                                if (mistakes >= 3) {
+                                                                                                                                                    window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                                                                                                                                }
+                                                                                                                                            } else {
+                                                                                                                                                correctFunction()
+                                                                                                                                            }
+                                                                                                                                            wrong = false;
                                                                                                                                             this.setState({
                                                                                                                                                 counter: 33,
                                                                                                                                             })
                                                                                                                                         } else if (this.state.counter===33) {
                                                                                                                                             if (value!==this.state.nums[6]) {
-                                                                                                                                                wrongFunction();
+                                                                                                                                                wrong = true;
                                                                                                                                             }
-                                                                                                                                            correctFunction();
+                                                                                                                                            if (wrong) {
+                                                                                                                                                mistakes++;
+                                                                                                                                                wrongFunction();
+                                                                                                                                                this.setState({
+                                                                                                                                                    mistakes: this.state.mistakes + 1,
+                                                                                                                                                })
+                                                                                                                                                if (mistakes >= 3) {
+                                                                                                                                                    window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                                                                                                                                }
+                                                                                                                                            } else {
+                                                                                                                                                correctFunction()
+                                                                                                                                            }
+                                                                                                                                            wrong = false;
                                                                                                                                             this.setState({
                                                                                                                                                 counter: 34,
                                                                                                                                             })
@@ -683,17 +1077,41 @@ export default class LevelFour extends Component {
                                                                                                                                     () => {
                                                                                                                                         if (this.state.counter===34) {
                                                                                                                                             if (value!==this.state.nums[10]) {
-                                                                                                                                                wrongFunction();
+                                                                                                                                                wrong = true;
                                                                                                                                             }
-                                                                                                                                            correctFunction();
+                                                                                                                                            if (wrong) {
+                                                                                                                                                mistakes++;
+                                                                                                                                                wrongFunction();
+                                                                                                                                                this.setState({
+                                                                                                                                                    mistakes: this.state.mistakes + 1,
+                                                                                                                                                })
+                                                                                                                                                if (mistakes >= 3) {
+                                                                                                                                                    window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                                                                                                                                }
+                                                                                                                                            } else {
+                                                                                                                                                correctFunction()
+                                                                                                                                            }
+                                                                                                                                            wrong = false;
                                                                                                                                             this.setState({
                                                                                                                                                 counter: 35,
                                                                                                                                             })
                                                                                                                                         } else if (this.state.counter===35) {
                                                                                                                                             if (value!==this.state.nums[11]) {
-                                                                                                                                                wrongFunction();
+                                                                                                                                                wrong = true;
                                                                                                                                             }
-                                                                                                                                            correctFunction();
+                                                                                                                                            if (wrong) {
+                                                                                                                                                mistakes++;
+                                                                                                                                                wrongFunction();
+                                                                                                                                                this.setState({
+                                                                                                                                                    mistakes: this.state.mistakes + 1,
+                                                                                                                                                })
+                                                                                                                                                if (mistakes >= 3) {
+                                                                                                                                                    window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                                                                                                                                }
+                                                                                                                                            } else {
+                                                                                                                                                correctFunction()
+                                                                                                                                            };
+                                                                                                                                            wrong = false;
                                                                                                                                             this.setState({
                                                                                                                                                 counter: 36,
                                                                                                                                             })
@@ -712,17 +1130,41 @@ export default class LevelFour extends Component {
                                                                                                                                     () => {
                                                                                                                                         if (this.state.counter===36) {
                                                                                                                                             if (value!==this.state.nums[15]) {
-                                                                                                                                                wrongFunction();
+                                                                                                                                                wrong = true;
                                                                                                                                             }
-                                                                                                                                            correctFunction();
+                                                                                                                                            if (wrong) {
+                                                                                                                                                mistakes++;
+                                                                                                                                                wrongFunction();
+                                                                                                                                                this.setState({
+                                                                                                                                                    mistakes: this.state.mistakes + 1,
+                                                                                                                                                })
+                                                                                                                                                if (mistakes >= 3) {
+                                                                                                                                                    window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                                                                                                                                }
+                                                                                                                                            } else {
+                                                                                                                                                correctFunction()
+                                                                                                                                            };
+                                                                                                                                            wrong = false;
                                                                                                                                             this.setState({
                                                                                                                                                 counter: 37,
                                                                                                                                             })
                                                                                                                                         } else if (this.state.counter===37) {
                                                                                                                                             if (value!==this.state.nums[16]) {
-                                                                                                                                                wrongFunction();
+                                                                                                                                                wrong = true;
                                                                                                                                             }
-                                                                                                                                            correctFunction();
+                                                                                                                                            if (wrong) {
+                                                                                                                                                mistakes++;
+                                                                                                                                                wrongFunction();
+                                                                                                                                                this.setState({
+                                                                                                                                                    mistakes: this.state.mistakes + 1,
+                                                                                                                                                })
+                                                                                                                                                if (mistakes >= 3) {
+                                                                                                                                                    window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                                                                                                                                }
+                                                                                                                                            } else {
+                                                                                                                                                correctFunction()
+                                                                                                                                            };
+                                                                                                                                            wrong = false;
                                                                                                                                             // first merging step
                                                                                                                                             let arraySix1 = [...this.state.nums].slice(0, 2).map((value, index) => {
                                                                                                                                                 return (
@@ -737,17 +1179,41 @@ export default class LevelFour extends Component {
                                                                                                                                                             let order = [...this.state.nums].slice(0, 2).sort((a, b) => a - b);
                                                                                                                                                             if (this.state.counter===38) {
                                                                                                                                                                 if (value !== order[0]) {
-                                                                                                                                                                    wrongFunction();
+                                                                                                                                                                    wrong = true;
                                                                                                                                                                 }
-                                                                                                                                                                correctFunction();
+                                                                                                                                                                if (wrong) {
+                                                                                                                                                                    mistakes++;
+                                                                                                                                                                    wrongFunction();
+                                                                                                                                                                    this.setState({
+                                                                                                                                                                        mistakes: this.state.mistakes + 1,
+                                                                                                                                                                    })
+                                                                                                                                                                    if (mistakes >= 3) {
+                                                                                                                                                                        window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                                                                                                                                                    }
+                                                                                                                                                                } else {
+                                                                                                                                                                    correctFunction()
+                                                                                                                                                                };
+                                                                                                                                                                wrong = false;
                                                                                                                                                                 this.setState({
                                                                                                                                                                     counter: 39,
                                                                                                                                                                 })
                                                                                                                                                             } else if (this.state.counter===39) {
                                                                                                                                                                 if (value!== order[1]) {
-                                                                                                                                                                    wrongFunction();
+                                                                                                                                                                    wrong = true;
                                                                                                                                                                 }
-                                                                                                                                                                correctFunction();
+                                                                                                                                                                if (wrong) {
+                                                                                                                                                                    mistakes++;
+                                                                                                                                                                    wrongFunction();
+                                                                                                                                                                    this.setState({
+                                                                                                                                                                        mistakes: this.state.mistakes + 1,
+                                                                                                                                                                    })
+                                                                                                                                                                    if (mistakes >= 3) {
+                                                                                                                                                                        window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                                                                                                                                                    }
+                                                                                                                                                                } else {
+                                                                                                                                                                    correctFunction()
+                                                                                                                                                                };
+                                                                                                                                                                wrong = false;
                                                                                                                                                                 this.setState({
                                                                                                                                                                     counter: 40,
                                                                                                                                                                 })
@@ -772,17 +1238,41 @@ export default class LevelFour extends Component {
                                                                                                                                                             let order = [...this.state.nums].slice(5, 7).sort((a, b) => a - b);
                                                                                                                                                             if (this.state.counter===40) {
                                                                                                                                                                 if (value !== order[0]) {
-                                                                                                                                                                    wrongFunction();
+                                                                                                                                                                    wrong = true;
                                                                                                                                                                 }
-                                                                                                                                                                correctFunction();
+                                                                                                                                                                if (wrong) {
+                                                                                                                                                                    mistakes++;
+                                                                                                                                                                    wrongFunction();
+                                                                                                                                                                    this.setState({
+                                                                                                                                                                        mistakes: this.state.mistakes + 1,
+                                                                                                                                                                    })
+                                                                                                                                                                    if (mistakes >= 3) {
+                                                                                                                                                                        window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                                                                                                                                                    }
+                                                                                                                                                                } else {
+                                                                                                                                                                    correctFunction()
+                                                                                                                                                                };
+                                                                                                                                                                wrong = false;
                                                                                                                                                                 this.setState({
                                                                                                                                                                     counter:41,
                                                                                                                                                                 })
                                                                                                                                                             } else if (this.state.counter===41) {
                                                                                                                                                                 if (value!== order[1]) {
-                                                                                                                                                                    wrongFunction();
+                                                                                                                                                                    wrong = true;
                                                                                                                                                                 }
-                                                                                                                                                                correctFunction();
+                                                                                                                                                                if (wrong) {
+                                                                                                                                                                    mistakes++;
+                                                                                                                                                                    wrongFunction();
+                                                                                                                                                                    this.setState({
+                                                                                                                                                                        mistakes: this.state.mistakes + 1,
+                                                                                                                                                                    })
+                                                                                                                                                                    if (mistakes >= 3) {
+                                                                                                                                                                        window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                                                                                                                                                    }
+                                                                                                                                                                } else {
+                                                                                                                                                                    correctFunction()
+                                                                                                                                                                };
+                                                                                                                                                                wrong = false;
                                                                                                                                                                 this.setState({
                                                                                                                                                                     counter: 42,
                                                                                                                                                                 })
@@ -807,17 +1297,41 @@ export default class LevelFour extends Component {
                                                                                                                                                             let order = [...this.state.nums].slice(10, 12).sort((a, b) => a - b);
                                                                                                                                                             if (this.state.counter===42) {
                                                                                                                                                                 if (value !== order[0]) {
-                                                                                                                                                                    wrongFunction();
+                                                                                                                                                                    wrong = true;
                                                                                                                                                                 }
-                                                                                                                                                                correctFunction();
+                                                                                                                                                                if (wrong) {
+                                                                                                                                                                    mistakes++;
+                                                                                                                                                                    wrongFunction();
+                                                                                                                                                                    this.setState({
+                                                                                                                                                                        mistakes: this.state.mistakes + 1,
+                                                                                                                                                                    })
+                                                                                                                                                                    if (mistakes >= 3) {
+                                                                                                                                                                        window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                                                                                                                                                    }
+                                                                                                                                                                } else {
+                                                                                                                                                                    correctFunction()
+                                                                                                                                                                };
+                                                                                                                                                                wrong = false;
                                                                                                                                                                 this.setState({
                                                                                                                                                                     counter:43,
                                                                                                                                                                 })
                                                                                                                                                             } else if (this.state.counter===43) {
                                                                                                                                                                 if (value!== order[1]) {
-                                                                                                                                                                    wrongFunction();
+                                                                                                                                                                    wrong = true;
                                                                                                                                                                 }
-                                                                                                                                                                correctFunction();
+                                                                                                                                                                if (wrong) {
+                                                                                                                                                                    mistakes++;
+                                                                                                                                                                    wrongFunction();
+                                                                                                                                                                    this.setState({
+                                                                                                                                                                        mistakes: this.state.mistakes + 1,
+                                                                                                                                                                    })
+                                                                                                                                                                    if (mistakes >= 3) {
+                                                                                                                                                                        window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                                                                                                                                                    }
+                                                                                                                                                                } else {
+                                                                                                                                                                    correctFunction()
+                                                                                                                                                                };
+                                                                                                                                                                wrong = false;
                                                                                                                                                                 this.setState({
                                                                                                                                                                     counter: 44,
                                                                                                                                                                 })
@@ -842,17 +1356,41 @@ export default class LevelFour extends Component {
                                                                                                                                                             let order = [...this.state.nums].slice(15, 17).sort((a, b) => a - b);
                                                                                                                                                             if (this.state.counter===44) {
                                                                                                                                                                 if (value !== order[0]) {
-                                                                                                                                                                    wrongFunction();
+                                                                                                                                                                    wrong = true;
                                                                                                                                                                 }
-                                                                                                                                                                correctFunction();
+                                                                                                                                                                if (wrong) {
+                                                                                                                                                                    mistakes++;
+                                                                                                                                                                    wrongFunction();
+                                                                                                                                                                    this.setState({
+                                                                                                                                                                        mistakes: this.state.mistakes + 1,
+                                                                                                                                                                    })
+                                                                                                                                                                    if (mistakes >= 3) {
+                                                                                                                                                                        window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                                                                                                                                                    }
+                                                                                                                                                                } else {
+                                                                                                                                                                    correctFunction()
+                                                                                                                                                                };
+                                                                                                                                                                wrong = false;
                                                                                                                                                                 this.setState({
                                                                                                                                                                     counter:45,
                                                                                                                                                                 })
                                                                                                                                                             } else if (this.state.counter===45) {
                                                                                                                                                                 if (value!== order[1]) {
-                                                                                                                                                                    wrongFunction();
+                                                                                                                                                                    wrong = true;
                                                                                                                                                                 }
-                                                                                                                                                                correctFunction();
+                                                                                                                                                                if (wrong) {
+                                                                                                                                                                    mistakes++;
+                                                                                                                                                                    wrongFunction();
+                                                                                                                                                                    this.setState({
+                                                                                                                                                                        mistakes: this.state.mistakes + 1,
+                                                                                                                                                                    })
+                                                                                                                                                                    if (mistakes >= 3) {
+                                                                                                                                                                        window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                                                                                                                                                    }
+                                                                                                                                                                } else {
+                                                                                                                                                                    correctFunction()
+                                                                                                                                                                };
+                                                                                                                                                                wrong = false;
                                                                                                                                                                 // 2nd merging step (3, 2, 3, 2, 3, 2, 3, 2)
                                                                                                                                                                 let a7One = [...this.state.nums].slice(0, 2).sort((a, b) => a - b);
                                                                                                                                                                 a7One.push(this.state.nums[2]);
@@ -872,10 +1410,22 @@ export default class LevelFour extends Component {
                                                                                                                                                                                             let order = [...this.state.nums].slice(0, 3).sort((a, b) => a - b);
                                                                                                                                                                                             for (let i = 0; i < order.length; i++) {
                                                                                                                                                                                                 if (order[i] !== this.state.stepSeven1[i]) {
-                                                                                                                                                                                                    wrongFunction();
+                                                                                                                                                                                                    wrong = true;
                                                                                                                                                                                                 }
                                                                                                                                                                                             }
-                                                                                                                                                                                            correctFunction();
+                                                                                                                                                                                            if (wrong) {
+                                                                                                                                                                                                mistakes++;
+                                                                                                                                                                                                wrongFunction();
+                                                                                                                                                                                                this.setState({
+                                                                                                                                                                                                    mistakes: this.state.mistakes + 1,
+                                                                                                                                                                                                })
+                                                                                                                                                                                                if (mistakes >= 3) {
+                                                                                                                                                                                                    window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                                                                                                                                                                                }
+                                                                                                                                                                                            } else {
+                                                                                                                                                                                                correctFunction()
+                                                                                                                                                                                            };
+                                                                                                                                                                                            wrong = false;
                                                                                                                                                                                             this.setState({
                                                                                                                                                                                                 counter: 47,
                                                                                                                                                                                             })
@@ -906,10 +1456,22 @@ export default class LevelFour extends Component {
                                                                                                                                                                                             let order = [...this.state.nums].slice(3, 5).sort((a, b) => a - b);
                                                                                                                                                                                             for (let i = 0; i < order.length; i++) {
                                                                                                                                                                                                 if (order[i] !== this.state.stepSeven2[i]) {
-                                                                                                                                                                                                    wrongFunction();
+                                                                                                                                                                                                    wrong = true;
                                                                                                                                                                                                 }
                                                                                                                                                                                             }
-                                                                                                                                                                                            correctFunction();
+                                                                                                                                                                                            if (wrong) {
+                                                                                                                                                                                                mistakes++;
+                                                                                                                                                                                                wrongFunction();
+                                                                                                                                                                                                this.setState({
+                                                                                                                                                                                                    mistakes: this.state.mistakes + 1,
+                                                                                                                                                                                                })
+                                                                                                                                                                                                if (mistakes >= 3) {
+                                                                                                                                                                                                    window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                                                                                                                                                                                }
+                                                                                                                                                                                            } else {
+                                                                                                                                                                                                correctFunction()
+                                                                                                                                                                                            };
+                                                                                                                                                                                            wrong = false;
                                                                                                                                                                                             this.setState({
                                                                                                                                                                                                 counter: 48,
                                                                                                                                                                                             })
@@ -942,11 +1504,23 @@ export default class LevelFour extends Component {
                                                                                                                                                                                             let order = [...this.state.nums].slice(5, 8).sort((a, b) => a - b);
                                                                                                                                                                                             for (let i = 0; i < order.length; i++) {
                                                                                                                                                                                                 if (order[i] !== this.state.stepSeven3[i]) {
-                                                                                                                                                                                                    wrongFunction();
+                                                                                                                                                                                                    wrong = true;
 
                                                                                                                                                                                                 }
                                                                                                                                                                                             }
-                                                                                                                                                                                            correctFunction();
+                                                                                                                                                                                            if (wrong) {
+                                                                                                                                                                                                mistakes++;
+                                                                                                                                                                                                wrongFunction();
+                                                                                                                                                                                                this.setState({
+                                                                                                                                                                                                    mistakes: this.state.mistakes + 1,
+                                                                                                                                                                                                })
+                                                                                                                                                                                                if (mistakes >= 3) {
+                                                                                                                                                                                                    window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                                                                                                                                                                                }
+                                                                                                                                                                                            } else {
+                                                                                                                                                                                                correctFunction()
+                                                                                                                                                                                            };
+                                                                                                                                                                                            wrong = false;
                                                                                                                                                                                             this.setState({
                                                                                                                                                                                                 counter: 49,
                                                                                                                                                                                             })
@@ -977,10 +1551,22 @@ export default class LevelFour extends Component {
                                                                                                                                                                                             let order = [...this.state.nums].slice(8, 10).sort((a, b) => a - b);
                                                                                                                                                                                             for (let i = 0; i < order.length; i++) {
                                                                                                                                                                                                 if (order[i] !== this.state.stepSeven4[i]) {
-                                                                                                                                                                                                    wrongFunction();
+                                                                                                                                                                                                    wrong = true;
                                                                                                                                                                                                 }
                                                                                                                                                                                             }
-                                                                                                                                                                                            correctFunction();
+                                                                                                                                                                                            if (wrong) {
+                                                                                                                                                                                                mistakes++;
+                                                                                                                                                                                                wrongFunction();
+                                                                                                                                                                                                this.setState({
+                                                                                                                                                                                                    mistakes: this.state.mistakes + 1,
+                                                                                                                                                                                                })
+                                                                                                                                                                                                if (mistakes >= 3) {
+                                                                                                                                                                                                    window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                                                                                                                                                                                }
+                                                                                                                                                                                            } else {
+                                                                                                                                                                                                correctFunction()
+                                                                                                                                                                                            };
+                                                                                                                                                                                            wrong = false;
                                                                                                                                                                                             this.setState({
                                                                                                                                                                                                 counter: 50,
                                                                                                                                                                                             })
@@ -1012,11 +1598,23 @@ export default class LevelFour extends Component {
                                                                                                                                                                                             let order = [...this.state.nums].slice(10, 13).sort((a, b) => a - b);
                                                                                                                                                                                             for (let i = 0; i < order.length; i++) {
                                                                                                                                                                                                 if (order[i] !== this.state.stepSeven5[i]) {
-                                                                                                                                                                                                    wrongFunction();
+                                                                                                                                                                                                    wrong = true;
 
                                                                                                                                                                                                 }
                                                                                                                                                                                             }
-                                                                                                                                                                                            correctFunction();
+                                                                                                                                                                                            if (wrong) {
+                                                                                                                                                                                                mistakes++;
+                                                                                                                                                                                                wrongFunction();
+                                                                                                                                                                                                this.setState({
+                                                                                                                                                                                                    mistakes: this.state.mistakes + 1,
+                                                                                                                                                                                                })
+                                                                                                                                                                                                if (mistakes >= 3) {
+                                                                                                                                                                                                    window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                                                                                                                                                                                }
+                                                                                                                                                                                            } else {
+                                                                                                                                                                                                correctFunction()
+                                                                                                                                                                                            };
+                                                                                                                                                                                            wrong = false;
                                                                                                                                                                                             this.setState({
                                                                                                                                                                                                 counter: 51,
                                                                                                                                                                                             })
@@ -1047,10 +1645,22 @@ export default class LevelFour extends Component {
                                                                                                                                                                                             let order = [...this.state.nums].slice(13, 15).sort((a, b) => a - b);
                                                                                                                                                                                             for (let i = 0; i < order.length; i++) {
                                                                                                                                                                                                 if (order[i] !== this.state.stepSeven6[i]) {
-                                                                                                                                                                                                    wrongFunction();
+                                                                                                                                                                                                    wrong = true;
                                                                                                                                                                                                 }
                                                                                                                                                                                             }
-                                                                                                                                                                                            correctFunction();
+                                                                                                                                                                                            if (wrong) {
+                                                                                                                                                                                                mistakes++;
+                                                                                                                                                                                                wrongFunction();
+                                                                                                                                                                                                this.setState({
+                                                                                                                                                                                                    mistakes: this.state.mistakes + 1,
+                                                                                                                                                                                                })
+                                                                                                                                                                                                if (mistakes >= 3) {
+                                                                                                                                                                                                    window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                                                                                                                                                                                }
+                                                                                                                                                                                            } else {
+                                                                                                                                                                                                correctFunction()
+                                                                                                                                                                                            };
+                                                                                                                                                                                            wrong = false;
                                                                                                                                                                                             this.setState({
                                                                                                                                                                                                 counter: 52,
                                                                                                                                                                                             })
@@ -1082,11 +1692,23 @@ export default class LevelFour extends Component {
                                                                                                                                                                                             let order = [...this.state.nums].slice(15, 18).sort((a, b) => a - b);
                                                                                                                                                                                             for (let i = 0; i < order.length; i++) {
                                                                                                                                                                                                 if (order[i] !== this.state.stepSeven7[i]) {
-                                                                                                                                                                                                    wrongFunction();
+                                                                                                                                                                                                    wrong = true;
 
                                                                                                                                                                                                 }
                                                                                                                                                                                             }
-                                                                                                                                                                                            correctFunction();
+                                                                                                                                                                                            if (wrong) {
+                                                                                                                                                                                                mistakes++;
+                                                                                                                                                                                                wrongFunction();
+                                                                                                                                                                                                this.setState({
+                                                                                                                                                                                                    mistakes: this.state.mistakes + 1,
+                                                                                                                                                                                                })
+                                                                                                                                                                                                if (mistakes >= 3) {
+                                                                                                                                                                                                    window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                                                                                                                                                                                }
+                                                                                                                                                                                            } else {
+                                                                                                                                                                                                correctFunction()
+                                                                                                                                                                                            };
+                                                                                                                                                                                            wrong = false;
                                                                                                                                                                                             this.setState({
                                                                                                                                                                                                 counter: 53,
                                                                                                                                                                                             })
@@ -1118,11 +1740,23 @@ export default class LevelFour extends Component {
                                                                                                                                                                                             let order = [...this.state.nums].slice(18, 20).sort((a, b) => a - b);
                                                                                                                                                                                             for (let i = 0; i < order.length; i++) {
                                                                                                                                                                                                 if (order[i] !== this.state.stepSeven8[i]) {
-                                                                                                                                                                                                    wrongFunction();
+                                                                                                                                                                                                    wrong = true;
                                                                                                                                                                                                 }
                                                                                                                                                                                             }
                                                                                                                                                                                         
-                                                                                                                                                                                        correctFunction();
+                                                                                                                                                                                            if (wrong) {
+                                                                                                                                                                                                mistakes++;
+                                                                                                                                                                                                wrongFunction();
+                                                                                                                                                                                                this.setState({
+                                                                                                                                                                                                    mistakes: this.state.mistakes + 1,
+                                                                                                                                                                                                })
+                                                                                                                                                                                                if (mistakes >= 3) {
+                                                                                                                                                                                                    window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                                                                                                                                                                                }
+                                                                                                                                                                                            } else {
+                                                                                                                                                                                                correctFunction()
+                                                                                                                                                                                            };
+                                                                                                                                                                                            wrong = false;
                                                                                                                                                                                         // 3rd merging step (5, 5, 5, 5)
                                                                                                                                                                                         let a8One = [...this.state.nums].slice(0, 3).sort((a, b) => a - b);
                                                                                                                                                                                         a8One.push([...this.state.nums].slice(3, 5).sort((a, b) => a - b)[0]);
@@ -1144,10 +1778,22 @@ export default class LevelFour extends Component {
                                                                                                                                                                                                                         let order = [...this.state.nums].slice(0, 5).sort((a, b) => a-b);
                                                                                                                                                                                                                         for (let i = 0; i < order.length; i++) {
                                                                                                                                                                                                                             if (order[i] !== this.state.stepEight1[i]) {
-                                                                                                                                                                                                                                wrongFunction();
+                                                                                                                                                                                                                                wrong = true;
                                                                                                                                                                                                                             }
                                                                                                                                                                                                                         }
-                                                                                                                                                                                                                        correctFunction();
+                                                                                                                                                                                                                        if (wrong) {
+                                                                                                                                                                                                                            mistakes++;
+                                                                                                                                                                                                                            wrongFunction();
+                                                                                                                                                                                                                            this.setState({
+                                                                                                                                                                                                                                mistakes: this.state.mistakes + 1,
+                                                                                                                                                                                                                            })
+                                                                                                                                                                                                                            if (mistakes >= 3) {
+                                                                                                                                                                                                                                window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                        } else {
+                                                                                                                                                                                                                            correctFunction()
+                                                                                                                                                                                                                        };
+                                                                                                                                                                                                                        wrong = false;
                                                                                                                                                                                                                         this.setState({
                                                                                                                                                                                                                             counter: 55,
                                                                                                                                                                                                                         })
@@ -1181,10 +1827,22 @@ export default class LevelFour extends Component {
                                                                                                                                                                                                                         let order = [...this.state.nums].slice(5, 10).sort((a, b) => a-b);
                                                                                                                                                                                                                         for (let i = 0; i < order.length; i++) {
                                                                                                                                                                                                                             if (order[i] !== this.state.stepEight2[i]) {
-                                                                                                                                                                                                                                wrongFunction();
+                                                                                                                                                                                                                                wrong = true;
                                                                                                                                                                                                                             }
                                                                                                                                                                                                                         }
-                                                                                                                                                                                                                        correctFunction();
+                                                                                                                                                                                                                        if (wrong) {
+                                                                                                                                                                                                                            mistakes++;
+                                                                                                                                                                                                                            wrongFunction();
+                                                                                                                                                                                                                            this.setState({
+                                                                                                                                                                                                                                mistakes: this.state.mistakes + 1,
+                                                                                                                                                                                                                            })
+                                                                                                                                                                                                                            if (mistakes >= 3) {
+                                                                                                                                                                                                                                window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                        } else {
+                                                                                                                                                                                                                            correctFunction()
+                                                                                                                                                                                                                        };
+                                                                                                                                                                                                                        wrong = false;
                                                                                                                                                                                                                         this.setState({
                                                                                                                                                                                                                             counter: 56,
                                                                                                                                                                                                                         })
@@ -1219,10 +1877,22 @@ export default class LevelFour extends Component {
                                                                                                                                                                                                                         let order = [...this.state.nums].slice(10, 15).sort((a, b) => a-b);
                                                                                                                                                                                                                         for (let i = 0; i < order.length; i++) {
                                                                                                                                                                                                                             if (order[i] !== this.state.stepEight3[i]) {
-                                                                                                                                                                                                                                wrongFunction();
+                                                                                                                                                                                                                                wrong = true;
                                                                                                                                                                                                                             }
                                                                                                                                                                                                                         }
-                                                                                                                                                                                                                        correctFunction();
+                                                                                                                                                                                                                        if (wrong) {
+                                                                                                                                                                                                                            mistakes++;
+                                                                                                                                                                                                                            wrongFunction();
+                                                                                                                                                                                                                            this.setState({
+                                                                                                                                                                                                                                mistakes: this.state.mistakes + 1,
+                                                                                                                                                                                                                            })
+                                                                                                                                                                                                                            if (mistakes >= 3) {
+                                                                                                                                                                                                                                window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                        } else {
+                                                                                                                                                                                                                            correctFunction()
+                                                                                                                                                                                                                        };
+                                                                                                                                                                                                                        wrong = false;
                                                                                                                                                                                                                         this.setState({
                                                                                                                                                                                                                             counter: 57,
                                                                                                                                                                                                                         })
@@ -1257,10 +1927,22 @@ export default class LevelFour extends Component {
                                                                                                                                                                                                                             let order = [...this.state.nums].slice(15, 20).sort((a, b) => a-b);
                                                                                                                                                                                                                         for (let i = 0; i < order.length; i++) {
                                                                                                                                                                                                                             if (order[i] !== this.state.stepEight4[i]) {
-                                                                                                                                                                                                                                wrongFunction();
+                                                                                                                                                                                                                                wrong = true;
                                                                                                                                                                                                                             }
                                                                                                                                                                                                                         }
-                                                                                                                                                                                                                        correctFunction();
+                                                                                                                                                                                                                        if (wrong) {
+                                                                                                                                                                                                                            mistakes++;
+                                                                                                                                                                                                                            wrongFunction();
+                                                                                                                                                                                                                            this.setState({
+                                                                                                                                                                                                                                mistakes: this.state.mistakes + 1,
+                                                                                                                                                                                                                            })
+                                                                                                                                                                                                                            if (mistakes >= 3) {
+                                                                                                                                                                                                                                window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                        } else {
+                                                                                                                                                                                                                            correctFunction()
+                                                                                                                                                                                                                        };
+                                                                                                                                                                                                                        wrong = false;
                                                                                                                                                                                                                         // 4th merging step (10, 10)
                                                                                                                                                                                                                         let aNine1 = [...this.state.nums].slice(0, 5).sort((a, b) => a-b);
                                                                                                                                                                                                                         let tempNine1 = [...this.state.nums].slice(5, 10).sort((a, b) => a-b);
@@ -1284,10 +1966,22 @@ export default class LevelFour extends Component {
                                                                                                                                                                                                                                                         let order = [...this.state.nums].slice(0, 10).sort((a, b) => a-b);
                                                                                                                                                                                                                                                         for (let i=0; i < 10; i++) {
                                                                                                                                                                                                                                                             if (order[i]!==this.state.stepNine1[i]) {
-                                                                                                                                                                                                                                                                wrongFunction();
+                                                                                                                                                                                                                                                                wrong = true;
                                                                                                                                                                                                                                                             }
                                                                                                                                                                                                                                                         }
-                                                                                                                                                                                                                                                        correctFunction();
+                                                                                                                                                                                                                                                        if (wrong) {
+                                                                                                                                                                                                                                                            mistakes++;
+                                                                                                                                                                                                                                                            wrongFunction();
+                                                                                                                                                                                                                                                            this.setState({
+                                                                                                                                                                                                                                                                mistakes: this.state.mistakes + 1,
+                                                                                                                                                                                                                                                            })
+                                                                                                                                                                                                                                                            if (mistakes >= 3) {
+                                                                                                                                                                                                                                                                window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                                        } else {
+                                                                                                                                                                                                                                                            correctFunction()
+                                                                                                                                                                                                                                                        };
+                                                                                                                                                                                                                                                        wrong = false;
                                                                                                                                                                                                                                                         this.setState({
                                                                                                                                                                                                                                                             counter: 59,
                                                                                                                                                                                                                                                         })
@@ -1323,10 +2017,22 @@ export default class LevelFour extends Component {
                                                                                                                                                                                                                                                         let order = [...this.state.nums].slice(10, 20).sort((a, b) => a-b);
                                                                                                                                                                                                                                                         for (let i=0; i < 10; i++) {
                                                                                                                                                                                                                                                             if (order[i]!==this.state.stepNine2[i]) {
-                                                                                                                                                                                                                                                                wrongFunction();
+                                                                                                                                                                                                                                                                wrong = true;
                                                                                                                                                                                                                                                             }
                                                                                                                                                                                                                                                         }
-                                                                                                                                                                                                                                                        correctFunction();
+                                                                                                                                                                                                                                                        if (wrong) {
+                                                                                                                                                                                                                                                            mistakes++;
+                                                                                                                                                                                                                                                            wrongFunction();
+                                                                                                                                                                                                                                                            this.setState({
+                                                                                                                                                                                                                                                                mistakes: this.state.mistakes + 1,
+                                                                                                                                                                                                                                                            })
+                                                                                                                                                                                                                                                            if (mistakes >= 3) {
+                                                                                                                                                                                                                                                                window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                                        } else {
+                                                                                                                                                                                                                                                            correctFunction()
+                                                                                                                                                                                                                                                        };
+                                                                                                                                                                                                                                                        wrong = false;
                                                                                                                                                                                                                                                          // final merging step
                                                                                                                                                                                                                                                     let aTen = [...this.state.nums].slice(0, 10).sort((a,b)=>a-b);
                                                                                                                                                                                                                                                     let temp10 = [...this.state.nums].slice(10, 20).sort((a, b)=>a-b);
@@ -1350,10 +2056,22 @@ export default class LevelFour extends Component {
                                                                                                                                                                                                                                                                                     let order = [...this.state.nums].sort((a,b) => a-b);
                                                                                                                                                                                                                                                                                     for (let i = 0; i < 20; i++) {
                                                                                                                                                                                                                                                                                         if (this.state.stepTen[i] !== order[i]) {
-                                                                                                                                                                                                                                                                                            wrongFunction();
+                                                                                                                                                                                                                                                                                            wrong = true;
                                                                                                                                                                                                                                                                                         }
                                                                                                                                                                                                                                                                                     }
-                                                                                                                                                                                                                                                                                    correctFunction();
+                                                                                                                                                                                                                                                                                    if (wrong) {
+                                                                                                                                                                                                                                                                                        mistakes++;
+                                                                                                                                                                                                                                                                                        wrongFunction();
+                                                                                                                                                                                                                                                                                        this.setState({
+                                                                                                                                                                                                                                                                                            mistakes: this.state.mistakes + 1,
+                                                                                                                                                                                                                                                                                        })
+                                                                                                                                                                                                                                                                                        if (mistakes >= 3) {
+                                                                                                                                                                                                                                                                                            window.location.replace(window.location.href.split("level")[0] + "GameOver");
+                                                                                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                                                                                    } else {
+                                                                                                                                                                                                                                                                                        correctFunction()
+                                                                                                                                                                                                                                                                                    };
+                                                                                                                                                                                                                                                                                    wrong = false;
                                                                                                                                                                                                                                                                                 }
                                                                                                                                                                                                                                                                             }
                                                                                                                                                                                                                                                                         }
@@ -1532,7 +2250,7 @@ export default class LevelFour extends Component {
                 <h1>Level Four</h1>
                 <h2>MergeSort Algorithm</h2>
                 <h5>Ensure NOT to double click buttons</h5>
-                <h5>ONLY FIREFOX COMPATIBLE</h5>
+                <h5>Mistakes made: {this.state.mistakes}</h5>
                 <h4>Perform all steps of the MergeSort Algorithm taught to you in Levels 1 and 2 to complete this level. Feedback will be given to help you.</h4>
                 {arrayOne}
                 {this.state.arrayTwo}
@@ -1545,9 +2263,12 @@ export default class LevelFour extends Component {
                 {this.state.arrayNine}
                 {this.state.arrayTen}
                 <br />
-                <Link to ="/levels">
-                    <Button style={{marginTop: "2%"}} variant="secondary" >Return to Level Select</Button>
-                </Link>
+                <ButtonGroup style={{marginTop: "2%"}} >
+                <Button variant="primary" onClick={() => window.location.reload() }>Restart Level</Button>
+                <Button variant="primary" >Change Sorting Algorithm</Button>  
+                <Link to ="/levels"><Button variant="primary">Return to Level Select</Button></Link>
+                <Button variant="primary" onClick={() => window.close() }>Quit Game</Button>  
+                </ButtonGroup>
                 <br />
             </div>
         )
