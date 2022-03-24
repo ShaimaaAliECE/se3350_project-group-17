@@ -3,6 +3,7 @@ import { Button } from 'react-bootstrap';
 import Draggable from 'react-draggable';
 import { wrongFunction, correctFunction } from '../../functions/SoundFunctions';
 import { Link } from 'react-router-dom';
+import Timer from '../timer/Timer';
 
 export default class LevelFour extends Component {
     constructor(props) {
@@ -1546,6 +1547,7 @@ export default class LevelFour extends Component {
                 {this.state.arrayEight}
                 {this.state.arrayNine}
                 {this.state.arrayTen}
+                <Timer />
                 <br />
                 <Link to ="/levels">
                     <Button style={{marginTop: "2%"}} variant="secondary" >Return to Level Select</Button>

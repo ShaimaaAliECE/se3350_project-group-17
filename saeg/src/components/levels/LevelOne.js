@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Button } from 'react-bootstrap';
+import Timer from '../timer/Timer';
 
 export default class LevelOne extends Component {
     constructor(props) {
@@ -375,6 +376,7 @@ export default class LevelOne extends Component {
                 {this.state.arrayEight}
                 <br />
                 <p>{this.state.arrayNine}</p>
+                <Timer />
                 <br />
                 {previousButton} {nextButton}
             </div>
