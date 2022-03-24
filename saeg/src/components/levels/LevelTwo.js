@@ -3,6 +3,7 @@ import { Button, ButtonGroup } from 'react-bootstrap';
 import Draggable from 'react-draggable';
 import { wrongFunction, correctFunction } from '../../functions/SoundFunctions';
 import { Link } from 'react-router-dom';
+import Timer from '../timer/Timer';
 
 export default class LevelTwo extends Component {
     constructor(props) {
@@ -42,6 +43,7 @@ export default class LevelTwo extends Component {
         }
     }
     render() {
+        this.RedirectAfterTimetout();
         /*TODO: whole component is bad practice (too many indents), fix if u want */
 
         const arrayOne = [...this.state.nums].map((value, index) => {
@@ -1456,7 +1458,9 @@ export default class LevelTwo extends Component {
                 {this.state.arraySeven}
                 {this.state.arrayEight}
                 {this.state.answer}
+                <Timer />
                 <br />
+
                 <ButtonGroup style={{marginTop: "2%"}} >
                 <Button variant="primary" onClick={() => window.location.reload() }>Restart Level</Button>
                 <Link to="/SelectAlgorithm"><Button variant="primary">Change Sorting Algorithm</Button></Link> 
@@ -1467,5 +1471,29 @@ export default class LevelTwo extends Component {
                 <br />
             </div>
         )
-    }
+    }  
+    
+    RedirectAfterTimetout() {
+
+        const idleDurationSecs = 60*5;    // X number of seconds --- 5 minutes
+        const redirectUrl = window.location.href.split("level")[0];  // Redirect idle users to this URL
+        let idleTimeout; // variable to hold the timeout, do not modify
+    
+        const resetIdleTimeout = function() {
+    
+            // Clears the existing timeout
+            if(idleTimeout) clearTimeout(idleTimeout);
+    
+            // Set a new idle timeout to load the redirectUrl after idleDurationSecs
+            idleTimeout = setTimeout(() => window.location.href = redirectUrl, idleDurationSecs * 1000);
+        };
+        // Init on page load
+        resetIdleTimeout();
+    
+        // Reset the idle timeout on any of the events listed below
+        ['click', 'mousemove'].forEach(evt => 
+            document.addEventListener(evt, resetIdleTimeout, false)
+        );  
+    } 
+     
 }

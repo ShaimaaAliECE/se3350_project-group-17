@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Timer from '../timer/Timer';
 import { Button, ButtonGroup  } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
@@ -27,6 +28,7 @@ export default class LevelOne extends Component {
         }
     }
     render() {
+        this.RedirectAfterTimetout();
         const arrayOne = this.state.nums.map((value) => {
             return (
                 <Button variant="outline-warning" >{value}</Button>
@@ -375,6 +377,7 @@ export default class LevelOne extends Component {
                 {this.state.arrayEight}
                 <br />
                 <p>{this.state.arrayNine}</p>
+                <Timer />
                 <br />
                 {previousButton} {nextButton}
                 <br />
@@ -386,5 +389,34 @@ export default class LevelOne extends Component {
                 </ButtonGroup>
             </div>
         )
-    }
+    } 
+  //  setTimeout(function(){ window.location = "<URL HERE>";}, 30000);
+
+   
+
+    RedirectAfterTimetout() {
+
+        const idleDurationSecs = 60*5;    // X number of seconds --- 5 minutes
+        const redirectUrl = window.location.href.split("level")[0];  // Redirect idle users to this URL
+        let idleTimeout; // variable to hold the timeout, do not modify
+    
+        const resetIdleTimeout = function() {
+    
+            // Clears the existing timeout
+            if(idleTimeout) clearTimeout(idleTimeout);
+    
+            // Set a new idle timeout to load the redirectUrl after idleDurationSecs
+            idleTimeout = setTimeout(() => window.location.href = redirectUrl, idleDurationSecs * 1000);
+        };
+        // Init on page load
+        resetIdleTimeout();
+    
+        // Reset the idle timeout on any of the events listed below
+        ['click', 'mousemove'].forEach(evt => 
+            document.addEventListener(evt, resetIdleTimeout, false)
+        );  
+    } 
+     
+  
 }
+
