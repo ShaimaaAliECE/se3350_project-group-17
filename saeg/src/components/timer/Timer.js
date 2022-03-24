@@ -1,73 +1,57 @@
 import React, { Component } from 'react';
 
-let timerInterval = 80;
- let mseconds=0;
- let Seconds=0;
- let minutes=0;
- let hours=0;
-    let timer; 
-    function makeTimer(){
-      mseconds+=1;
-     /* for (var i = 0; i < 1000; i++) {
-  Seconds ++;
-mseconds =0;
-} */
-   if(mseconds!== 0 && mseconds==10000){
-          Seconds++;
-          mseconds =0;
-      }
-     if(Seconds!== 0 && Seconds==60){
-          minutes++;
-          Seconds =0;
-      }
-     if (minutes!= 0 && minutes==60){
-          hours++;
-          minutes=0;
-      }
-  }
 export default class Timer extends Component {
    
    constructor(props){
-    super(props)
-    this.state = {Number : 0}
-    this.makeTimer()
-  }
+        super(props)
+        this.state = {
+            sec: 0,
+            min: 0,
+            hour: 0 //is this necessary
+        };
+        setInterval(() => {
+            this.setState((prevState) => {
+                let newSec = prevState.sec + 1;
+                let newMin = prevState.min;
+                let newHour = prevState.hour;
+                if (newSec > 59) {
+                    newMin += 1;
+                    newSec = 0;
+                } 
+                if (newMin > 59) {
+                    newHour += 1;
+                    newMin = 0;
+                }
+    
+                return {
+                    sec: newSec,
+                    min: newMin,
+                    hour: newHour
+                }
+            });
+        }, 1000);
+    }
   
-  makeTimer(){
-    setInterval(() => {
-        this.setState(prevState =>{
-            
-        })
-       /* let seconds;
-        let minutes =0;
-        let hours=0;
-        let timerInterval=10;
-        seconds++;
-    if (seconds == 60) {
-        seconds = 0;
-        minutes ++;// reset timer to be within 32 bit size
-    }*/
-    //setInterval(makeTimer, timerInterval);
-        this.setState({number: mseconds})
-    })
-  }
-
   render(){
-     setInterval(makeTimer,timerInterval);
     return (
       <div>
         <h1>
-         Time: {hours}:{minutes}:{Seconds}:{mseconds}
+            {this.state.sec < 10 && 
+                <div>
+                    Time: {this.state.min}:0{this.state.sec}
+                </div>
+            }
+            {this.state.sec > 9 &&
+                <div>
+                    Time: {this.state.min}:{this.state.sec}
+                </div>
+            }
         </h1>
       </div>
     )
   }
 }
-//give tag to head
-//document.innerHTML
-//reference the ID of the tag by using GetElementById
-//input the tag of the header field that you are using
-//
+
    /*constructor(props){
 
     super(props)
