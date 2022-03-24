@@ -50,7 +50,7 @@ export default class LevelTwo extends Component {
                     <Button key={index} onClick={
                         () => {
                             let wrong = false;
-                            let mistakes = 0;
+                            let mistakes = 1;
                             if (this.state.counter === 0) {
                                 this.state.stepOneLeft.push(value);
                                 if (this.state.stepOneLeft.length >= 5) {
