@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-import { Button } from 'react-bootstrap';
 import Timer from '../timer/Timer';
+import { Button, ButtonGroup  } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 export default class LevelOne extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            mistakes: 0, 
             counter: 0,
             arrayTwo: null,
             arrayThree: null,
@@ -356,7 +358,6 @@ export default class LevelOne extends Component {
             <div style={{marginLeft: "20%", marginRight: "20%", marginTop: "2%", height: "80%"}}>
                 <h1 >Level One</h1>
                 <h2>MergeSort Algorithm</h2>
-                <h4>ONLY FIREFOX COMPATIBLE</h4>
                 <p1>Instructions: </p1>
                 <p2>{this.state.message}</p2> 
                 <p>{arrayOne}</p>
@@ -379,6 +380,13 @@ export default class LevelOne extends Component {
                 <Timer />
                 <br />
                 {previousButton} {nextButton}
+                <br />
+                <ButtonGroup style={{marginTop: "2%"}} >
+                <Button variant="primary" onClick={() => window.location.reload() }>Restart Level</Button>
+                <Button variant="primary" >Change Sorting Algorithm</Button> 
+                <Link to ="/levels"><Button variant="primary">Return to Level Select</Button></Link>
+                <Button variant="primary" onClick={() => window.close() }>Quit Game</Button> 
+                </ButtonGroup>
             </div>
         )
     } 

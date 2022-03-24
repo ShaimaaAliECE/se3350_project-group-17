@@ -11,6 +11,5 @@ export function wrongFunction() {
     var wrongAnswer = new Audio(require('./sounds/wrongAnswer.mp3'));
     wrongAnswer.play();
     //"Wrong." browser alert
-    alert("Wrong."); 
-    window.location.reload();
+    alert("Wrong.");
 }
