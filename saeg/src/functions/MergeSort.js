@@ -15,7 +15,7 @@ export function merge(left, right) {
 
 export function mergeSort(array, storeResults) {
     const half = array.length / 2
-    storeResults.push([... array]);
+    storeResults.push([ ...array]);
 
     if(array.length < 2){
       return array 
