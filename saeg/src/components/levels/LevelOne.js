@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
-import { Button } from 'react-bootstrap';
+import Timer from '../timer/Timer';
+import { Button, ButtonGroup  } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 export default class LevelOne extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            mistakes: 0, 
             counter: 0,
             arrayTwo: null,
             arrayThree: null,
@@ -25,6 +28,7 @@ export default class LevelOne extends Component {
         }
     }
     render() {
+        this.RedirectAfterTimetout();
         const arrayOne = this.state.nums.map((value) => {
             return (
                 <Button variant="outline-warning" >{value}</Button>
@@ -354,7 +358,6 @@ export default class LevelOne extends Component {
             <div style={{marginLeft: "20%", marginRight: "20%", marginTop: "2%", height: "80%"}}>
                 <h1 >Level One</h1>
                 <h2>MergeSort Algorithm</h2>
-                <h4>ONLY FIREFOX COMPATIBLE</h4>
                 <p1>Instructions: </p1>
                 <p2>{this.state.message}</p2> 
                 <p>{arrayOne}</p>
@@ -374,9 +377,46 @@ export default class LevelOne extends Component {
                 {this.state.arrayEight}
                 <br />
                 <p>{this.state.arrayNine}</p>
+                <Timer />
                 <br />
                 {previousButton} {nextButton}
+                <br />
+                <ButtonGroup style={{marginTop: "2%"}} >
+                <Button variant="primary" onClick={() => window.location.reload() }>Restart Level</Button>
+                <Button variant="primary" >Change Sorting Algorithm</Button> 
+                <Link to ="/levels"><Button variant="primary">Return to Level Select</Button></Link>
+                <Button variant="primary" onClick={() => window.close() }>Quit Game</Button> 
+                </ButtonGroup>
             </div>
         )
-    }
+    } 
+  //  setTimeout(function(){ window.location = "<URL HERE>";}, 30000);
+
+   
+
+    RedirectAfterTimetout() {
+
+        const idleDurationSecs = 60*5;    // X number of seconds --- 5 minutes
+        const redirectUrl = window.location.href.split("level")[0];  // Redirect idle users to this URL
+        let idleTimeout; // variable to hold the timeout, do not modify
+    
+        const resetIdleTimeout = function() {
+    
+            // Clears the existing timeout
+            if(idleTimeout) clearTimeout(idleTimeout);
+    
+            // Set a new idle timeout to load the redirectUrl after idleDurationSecs
+            idleTimeout = setTimeout(() => window.location.href = redirectUrl, idleDurationSecs * 1000);
+        };
+        // Init on page load
+        resetIdleTimeout();
+    
+        // Reset the idle timeout on any of the events listed below
+        ['click', 'mousemove'].forEach(evt => 
+            document.addEventListener(evt, resetIdleTimeout, false)
+        );  
+    } 
+     
+  
 }
+
