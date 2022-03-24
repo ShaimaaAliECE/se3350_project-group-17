@@ -380,7 +380,7 @@ export default class LevelOne extends Component {
                 <br />
                 <ButtonGroup style={{marginTop: "2%"}} >
                 <Button variant="primary" onClick={() => window.location.reload() }>Restart Level</Button>
-                <Button variant="primary" >Change Sorting Algorithm</Button> 
+                <Link to="/SelectAlgorithm"><Button variant="primary">Change Sorting Algorithm</Button></Link>
                 <Link to ="/levels"><Button variant="primary">Return to Level Select</Button></Link>
                 <Button variant="primary" onClick={() => window.close() }>Quit Game</Button> 
                 </ButtonGroup>

@@ -20,6 +20,9 @@ export default class LevelSelect extends Component {
                 <Link to="/">
                     <Button style={{marginTop: "2%"}} variant="secondary">Return to Home</Button>
                 </Link>
+                <Link to="/SelectAlgorithm">
+                    <Button style={{marginTop: "2%"}} variant="secondary">Change Sorting Algorithm</Button>
+                </Link>
             </div>
         )
     }

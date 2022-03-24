@@ -7,6 +7,7 @@ import LevelFour from '../components/levels/LevelFour';
 import LevelFive from '../components/levels/LevelFive';
 import CreateAccount from '../components/CreateAccount';
 import GameOver from '../components/GameOver';
+import ChangeSortingAlgorithm from '../components/ChangeSortingAlgorithm';
 import {HashRouter as Router, Route, Routes} from 'react-router-dom';
 
 const AppRouter = () => (
@@ -22,6 +23,8 @@ const AppRouter = () => (
                 <Route path="/level_four" element={<LevelFour />} />
                 <Route path="/level_five" element={<LevelFive />} />
                 <Route path="/GameOver" element={<GameOver />} />
+                <Route path="/SelectAlgorithm" element={<ChangeSortingAlgorithm />} />
+
             </Routes>
         </div>
     </Router>
