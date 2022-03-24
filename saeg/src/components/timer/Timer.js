@@ -1,23 +1,183 @@
 import React, { Component } from 'react';
 
-            var sec =0;
-            var min = 0;
-            var hour = 0;
+           let timerInterval = 10;
+
+ let mseconds=0
+ let seconds =0;
+ let minutes =0;
+ let hours=0;
+    let timer; 
+    function makeTimer(){
+      seconds++;
+      if(seconds==60000){
+          minutes++;
+          seconds =0;
+      }
+      if (minutes==60){
+          hours++;
+      }
+  }
 export default class Timer extends Component {
    
-    constructor()
-    {
-        
-        super();
-         function TimerFunction(){
+   constructor(props){
 
-            var sec=0;
-       
-            var hour=0;
+    super(props)
+    this.state = {Number : 0}
+    this.makeTimer()
+  }
+  
+  makeTimer(){
+    setInterval(() => {
+        this.setState(prevState =>{
+            
+        })
+        let seconds;
+        let minutes =0;
+        let hours=0;
+        let timerInterval=10;
+        seconds++;
+    if (seconds == 60) {
+        seconds = 0;
+        minutes ++;// reset timer to be within 32 bit size
+    }
+    setInterval(makeTimer, timerInterval);
+        this.setState({number: seconds})
+    }, 900)
+  }
+
+  render(){
+      setInterval(makeTimer,timerInterval);
+    return (
+      <div>
+        <h1>
+         Time: {hours}:{minutes}:{seconds/1000}
+        </h1>
+      </div>
+    )
+  }
+}
+//give tag to head
+//document.innerHTML
+//reference the ID of the tag by using GetElementById
+//input the tag of the header field that you are using
+//
+   /*constructor(props){
+
+    super(props)
+    this.state = {Number : 0}
+    this.makeTimer()
+  }
+  
+  makeTimer(){
+    setInterval(() => {
+        this.setState(prevState =>{
+            
+        })
+        let timer;
+        let timerInterval=10;
+        timer++;
+    if (timer == 4294967295) {
+        timer = Math.floor(1000 * Math.random()); // reset timer to be within 32 bit size
+    }
+    setInterval(makeTimer, timerInterval);
+      /*let rand = 0
+      rand += 1
+      rand += 1
+      rand += 1
+      rand += 1
+        this.setState({number: timer})
+    }, 300)
+  }
+
+  render(){
+    return (
+      <div>
+        <h1>
+          Random Number : 
+          {this.state.number}
+        </h1>
+      </div>
+    )
+  }
+}*/
+        /*constructor(props){
+          super(props)
+          this.state = {sec: 0}
+          this.TimerFunction()
+        }
         
+        TimerFunction(){
+          setInterval(() => {
+            let Seconds = 0
+           for (var i = 0; i < 10; i++) {
+  Seconds ++;
+} 
+for (var i = 10; i < 20; i++) {
+  Seconds ++;
+} 
+              this.setState({sec: Seconds})
+          }, 4000)
+        }
+        render(){
+          return (
+            <div className="Timer">
+              <h4>
+            
+                {this.state.sec}
+              </h4>
+            </div>
+          )
+        
+      }
+    }*/////////////////////////
+        
+      
+               /* if(sec=60){
+                    min = prevState.min +1;
+                    sec=0
+                }
+                if (min=60){
+                    hour= prevState.hour +1;
+                    min=0;
+                }*/
+        /*constructor(){
+             super();
+                     
+                    this.state={
+                        sec: 0,
+                        min: 0,
+                        hour:0,
+                        
+                     }
+                     
+                }
+        setInterval=()=>{
+            
+            this.setState(prevState =>{
+                return{sec:prevState.sec +1,
+                }
+                },1000);
+                
+            };
+    
+    render(){
+        return (
+        <div className="Timer">
+        <h4>{this.state.sec}:{this.state.min}:{this.state.hour}</h4>
+        </div>
+        ) 
+    }
+}*/
+
+
+
+    /*constructor(){
+        super();
+         function TimerFunction (){
+            var sec=0;
+            var hour=0;
             while(true){
                  sec+=1;
-                 
                  if(sec==60){
                     var min= min +1;
                      sec=0;
@@ -25,20 +185,45 @@ export default class Timer extends Component {
                  if(min==60){
                      hour = hour +1;
                      min=0;
-                 }
-                 //print(hour+":"+min+":"+sec);
+                 } 
             }
             return sec,min,hour
-            
-        
         }
         this.state={
-            sec: TimerFunction.sec,
+            sec: 0,
             min: 0,
             hour:0,
-        }
+         }
+         
     }
-    /*componentDidMount(){
+   
+    render(){
+
+        return (
+        <div className="Timer">
+        <h4>{this.state.sec}:{this.state.min}:{this.state.hour}</h4>
+        </div>
+        ) 
+    }
+    
+
+}*/
+/*ComponentDidMount(){
+        
+    setInterval(() => {
+                
+        this.setState(prevState => {
+             return{
+                 sec,
+                 min,
+                 hour,
+             }
+            
+        },1000);
+     }
+     )
+}*/
+ /*componentDidMount(){
         
         setInterval(() => {
             
@@ -53,17 +238,6 @@ export default class Timer extends Component {
         }
         )
    }*/
-
-    render(){
-      
-        return (
-        <div className="Timer">
-        <h4>{this.state.sec}:{this.state.min}:{this.state.hour}</h4>
-        </div>
-        ) 
-    }
-    
-}
 /*
 function TimerFunction(){
 
@@ -202,4 +376,3 @@ function Timer(){
 
 
 } */
- 
