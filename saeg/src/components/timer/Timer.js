@@ -1,26 +1,33 @@
 import React, { Component } from 'react';
 
-           let timerInterval = 10;
-
- let mseconds=0
- let seconds =0;
- let minutes =0;
+let timerInterval = 80;
+ let mseconds=0;
+ let Seconds=0;
+ let minutes=0;
  let hours=0;
     let timer; 
     function makeTimer(){
-      seconds++;
-      if(seconds==60000){
-          minutes++;
-          seconds =0;
+      mseconds+=1;
+     /* for (var i = 0; i < 1000; i++) {
+  Seconds ++;
+mseconds =0;
+} */
+   if(mseconds!== 0 && mseconds==10000){
+          Seconds++;
+          mseconds =0;
       }
-      if (minutes==60){
+     if(Seconds!== 0 && Seconds==60){
+          minutes++;
+          Seconds =0;
+      }
+     if (minutes!= 0 && minutes==60){
           hours++;
+          minutes=0;
       }
   }
 export default class Timer extends Component {
    
    constructor(props){
-
     super(props)
     this.state = {Number : 0}
     this.makeTimer()
@@ -31,7 +38,7 @@ export default class Timer extends Component {
         this.setState(prevState =>{
             
         })
-        let seconds;
+       /* let seconds;
         let minutes =0;
         let hours=0;
         let timerInterval=10;
@@ -39,18 +46,18 @@ export default class Timer extends Component {
     if (seconds == 60) {
         seconds = 0;
         minutes ++;// reset timer to be within 32 bit size
-    }
-    setInterval(makeTimer, timerInterval);
-        this.setState({number: seconds})
-    }, 900)
+    }*/
+    //setInterval(makeTimer, timerInterval);
+        this.setState({number: mseconds})
+    })
   }
 
   render(){
-      setInterval(makeTimer,timerInterval);
+     setInterval(makeTimer,timerInterval);
     return (
       <div>
         <h1>
-         Time: {hours}:{minutes}:{seconds/1000}
+         Time: {hours}:{minutes}:{Seconds}:{mseconds}
         </h1>
       </div>
     )
