@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Timer from '../timer/Timer';
 import { Button, ButtonGroup  } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-
 export default class LevelOne extends Component {
     constructor(props) {
         super(props);
