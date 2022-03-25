@@ -1,0 +1,13 @@
+import firebaseApp, { auth, database } from '../firebase/firebase';
+import { ref, set } from 'firebase/database';
+
+export function SaveLevel(level, sec, min) {
+    if (auth.currentUser) {
+        console.log(auth.currentUser.uid);
+        set(ref(database, `users/${auth.currentUser.uid}/times/${level}`), {
+            level: "m" + min + " s" + sec
+        });
+    } else { //user not logged in
+
+    }
+};
