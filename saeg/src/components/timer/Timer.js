@@ -35,7 +35,7 @@ export default class Timer extends Component {
   render(){
     return (
       <div>
-        <h1>
+        <h3>
             {this.state.sec < 10 && 
                 <div>
                     Time: {this.state.min}:0{this.state.sec}
@@ -46,7 +46,7 @@ export default class Timer extends Component {
                     Time: {this.state.min}:{this.state.sec}
                 </div>
             }
-        </h1>
+        </h3>
       </div>
     )
   }

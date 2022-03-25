@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
-import { Button } from 'react-bootstrap';
+import { Button, ButtonGroup} from 'react-bootstrap';
 import Draggable from 'react-draggable';
 import { wrongFunction, correctFunction } from '../../functions/SoundFunctions';
 import { Link } from 'react-router-dom';
+import Timer from '../timer/Timer';
 
 export default class LevelFive extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            mistakes: 0, 
             counter: 0,
             nums: [],
             stepOneLeft: [],
@@ -3834,12 +3836,13 @@ export default class LevelFive extends Component {
                 marginLeft: "10%",
                 marginRight: "10%",
             }}>
-                <h1>Level Four</h1>
+                <h1>Level Five</h1>
                 <h2>MergeSort Algorithm</h2>
                 <h5>Ensure NOT to double click buttons</h5>
-                <h5>ONLY FIREFOX COMPATIBLE</h5>
                 <h4>Perform all steps of the MergeSort Algorithm taught to you in Levels 1 and 2 to complete this level. Feedback will be given to help you.</h4>
                 {arrayOne}
+                <h3>_____________________________________________________________________________________</h3>
+                <h3>_____________________________________________________________________________________</h3>
                 {this.state.arrayTwo}
                 {this.state.arrayThree}
                 {this.state.arrayFour}
@@ -3851,12 +3854,39 @@ export default class LevelFive extends Component {
                 {this.state.arrayTen}
                 {this.state.arrayEleven}
                 {this.state.arrayTwelve}
+                <h3>Mistakes made: {this.state.mistakes}</h3>
+                <Timer />
                 <br />
-                <Link to ="/levels">
-                    <Button style={{marginTop: "2%"}} variant="secondary" >Return to Level Select</Button>
-                </Link>
+                <ButtonGroup style={{marginTop: "2%"}} >
+                <Button variant="primary" onClick={() => window.location.reload() }>Restart Level</Button>
+                <Link to="/SelectAlgorithm"><Button variant="primary">Change Sorting Algorithm</Button></Link>
+                <Link to ="/levels"><Button variant="primary">Return to Level Select</Button></Link>
+                <Button variant="primary" onClick={() => window.close() }>Quit Game</Button>  
+                </ButtonGroup>
                 <br />
             </div>
         )
+    }
+    RedirectAfterTimetout() {
+
+        const idleDurationSecs = 60*5;    // X number of seconds --- 5 minutes
+        const redirectUrl = window.location.href.split("level")[0];  // Redirect idle users to this URL
+        let idleTimeout; // variable to hold the timeout, do not modify
+    
+        const resetIdleTimeout = function() {
+    
+            // Clears the existing timeout
+            if(idleTimeout) clearTimeout(idleTimeout);
+    
+            // Set a new idle timeout to load the redirectUrl after idleDurationSecs
+            idleTimeout = setTimeout(() => window.location.href = redirectUrl, idleDurationSecs * 1000);
+        };
+        // Init on page load
+        resetIdleTimeout();
+    
+        // Reset the idle timeout on any of the events listed below
+        ['click', 'mousemove'].forEach(evt => 
+            document.addEventListener(evt, resetIdleTimeout, false)
+        );  
     }
 }

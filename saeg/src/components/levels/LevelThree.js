@@ -1450,7 +1450,6 @@ export default class LevelThree extends Component {
                 <h1>Level Three</h1>
                 <h2>MergeSort Algorithm</h2>
                 <h5>Ensure NOT to double click buttons</h5>
-                <h5>Mistakes made: {this.state.mistakes}</h5>
                 <h4>Perform all steps of the MergeSort Algortim taught to you in Levels 1 and 2 to complete this level. Feedback will be given to help you.</h4>
                 {arrayOne}
                 <h3>________________ __________________</h3>
@@ -1462,6 +1461,7 @@ export default class LevelThree extends Component {
                 {this.state.arraySeven}
                 {this.state.arrayEight}
                 {this.state.answer}
+                <h3>Mistakes made: {this.state.mistakes}</h3>
                <Timer />
                 <br />
                 <ButtonGroup style={{marginTop: "2%"}} >

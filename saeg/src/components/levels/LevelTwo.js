@@ -1444,7 +1444,6 @@ export default class LevelTwo extends Component {
                 <h1>Level Two</h1>
                 <h2>MergeSort Algorithm</h2>
                 <h5>Ensure NOT to double click buttons</h5>
-                <h5>Mistakes made: {this.state.mistakes}</h5>
                 <h3>Instructions: </h3>
                 <h5>{this.state.message}</h5>
                 <h1> </h1>
@@ -1458,6 +1457,7 @@ export default class LevelTwo extends Component {
                 {this.state.arraySeven}
                 {this.state.arrayEight}
                 {this.state.answer}
+                <h3>Mistakes made: {this.state.mistakes}</h3>
                 <Timer />
                 <br />
 
