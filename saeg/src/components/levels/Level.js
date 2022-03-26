@@ -137,8 +137,8 @@ export default class Level extends Component {
             <div>
                 {!this.state.loading && 
                     <div>
-                        ------------
-
+                        <br />
+                        <br />
                         <br />
                         {this.state.answers.map((row, rowIndex) => {
                             
