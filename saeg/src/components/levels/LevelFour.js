@@ -2103,6 +2103,7 @@ export default class LevelFour extends Component {
                                                                                                                                                                                                                         const arrayNine = (
                                                                                                                                                                                                                             <div>
                                                                                                                                                                                                                                 {arrayNine1} {arrayNine2}
+                                                                                                                                                                                                                                <h3>___________________________________ ___________________________________</h3>
                                                                                                                                                                                                                             </div>
                                                                                                                                                                                                                         )
                                                                                                                                                                                                                         this.setState({
@@ -2123,6 +2124,7 @@ export default class LevelFour extends Component {
                                                                                                                                                                                         const arrayEight = (
                                                                                                                                                                                             <div>
                                                                                                                                                                                                 {arrayEight1} {arrayEight2} {arrayEight3} {arrayEight4}
+                                                                                                                                                                                                <h3>________________   ________________   ________________   ________________</h3>
                                                                                                                                                                                             </div>
                                                                                                                                                                                         )
                                                                                                                                                                                         this.setState({
@@ -2141,6 +2143,7 @@ export default class LevelFour extends Component {
                                                                                                                                                                 const arraySeven = (
                                                                                                                                                                     <div>
                                                                                                                                                                         {arraySeven1} {arraySeven2} {arraySeven3} {arraySeven4} {arraySeven5} {arraySeven6} {arraySeven7} {arraySeven8}
+                                                                                                                                                                        <h3>__________  _______    __________  _______    __________  _______   __________  _______</h3>
                                                                                                                                                                     </div>
                                                                                                                                                                 )
                                                                                                                                                                 this.setState({
@@ -2158,6 +2161,7 @@ export default class LevelFour extends Component {
                                                                                                                                             const arraySix = (
                                                                                                                                                 <div>
                                                                                                                                                     {arraySix1} {arraySix2} {arraySix3} {arraySix4}
+                                                                                                                                                    <h3>_______ _______  _______ _______</h3>
                                                                                                                                                 </div>
                                                                                                                                             );
                                                                                                                                             this.setState({
@@ -2175,6 +2179,7 @@ export default class LevelFour extends Component {
                                                                                                                     const arrayFive = (
                                                                                                                         <div>
                                                                                                                             {arrayFive1} {arrayFive2} {arrayFive3} {arrayFive4}
+                                                                                                                            <h3>___  ___    ___  ___   ___  ___    ___  ___</h3>
                                                                                                                         </div>
                                                                                                                     )
                                                                                                                     this.setState({
@@ -2192,6 +2197,7 @@ export default class LevelFour extends Component {
                                                                                             const arrayFour = (
                                                                                                 <div>
                                                                                                     {arrayFour1} {arrayFour2} {arrayFour3} {arrayFour4} {arrayFour5} {arrayFour6} {arrayFour7} {arrayFour8}
+                                                                                                    <h3>_______  ___  ___    ___  ___    _______  ___  ___    ___  ___    _______  ___  ___    ___  ___    _______  ___  ___    ___  ___ </h3>
                                                                                                 </div>
                                                                                             )
                                                                                             this.setState({
@@ -2210,6 +2216,7 @@ export default class LevelFour extends Component {
                                                                 const arrayThree = (
                                                                     <div>
                                                                         {arrayThree1} {arrayThree2} {arrayThree3} {arrayThree4}
+                                                                        <h3>__________  _______    __________  _______    __________  _______   __________  _______</h3>
                                                                     </div>
                                                                 )
                                                                 this.setState({
@@ -2228,6 +2235,7 @@ export default class LevelFour extends Component {
                                     const arrayTwo = (
                                         <div>
                                             {arrayTwo1} {arrayTwo2}
+                                            <h3>________________   ________________   ________________   ________________</h3>
                                         </div>
                                     );
                                     this.setState({
