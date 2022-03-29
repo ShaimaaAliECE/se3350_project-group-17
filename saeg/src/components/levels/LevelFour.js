@@ -54,6 +54,7 @@ export default class LevelFour extends Component {
             arrayEight: null,
             arrayNine: null,
             arrayTen: null,
+            tenHeader: null,
         }
         for (let i=0; i<20; i++) {
             // add 10 random integers between 1 and 20 to nums array
@@ -2075,6 +2076,7 @@ export default class LevelFour extends Component {
                                                                                                                                                                                                                                                                                         correctFunction()
                                                                                                                                                                                                                                                                                     };
                                                                                                                                                                                                                                                                                     wrong = false;
+                                                                                                                                                                                                                                                                                    
                                                                                                                                                                                                                                                                                 }
                                                                                                                                                                                                                                                                             }
                                                                                                                                                                                                                                                                         }
@@ -2088,6 +2090,7 @@ export default class LevelFour extends Component {
                                                                                                                                                                                                                                                     this.setState({
                                                                                                                                                                                                                                                         counter: 60,
                                                                                                                                                                                                                                                         arrayTen: arrayTen,
+                                                                                                                                                                                                                                                        tenHeader: <h3>______________________________________________________________________</h3>
                                                                                                                                                                                                                                                     })
                                                                                                                                                                                                                                                     }
                                                                                                                                                                                                                                                    
@@ -2273,6 +2276,7 @@ export default class LevelFour extends Component {
                 {this.state.arrayEight}
                 {this.state.arrayNine}
                 {this.state.arrayTen}
+                {this.state.tenHeader}
                 <h3>Mistakes made: {this.state.mistakes}</h3>
                 <Timer />
                 <br />
