@@ -25,15 +25,6 @@ export default class Level extends Component {
         }
         let sorted = mergeSort(arrayToFill, answersStorage, answersStorage2);
 
-        //maybe not needed? idk
-        // let singlesArray = []; //array to keep track of arrays with only 1 element
-        // for (let i = 0; i < answersStorage.length; i++) { //loop through once to find arrays with only 1 value
-        //     if (answersStorage[i].length == 1) {
-        //         singlesArray.push(answersStorage[i][0]);
-        //     }
-        // }
-        // answersStorage.push([...singlesArray]); //so that when merging the subarrays, users can 
-
         //sort first half in descending order (by length)
         answersStorage.sort((a, b) => {
             return b.length - a.length;
@@ -92,8 +83,6 @@ export default class Level extends Component {
             answersStorage.push([...answersStorage2[i]]);
         }
         answersStorage.push([[...sorted]]); //push the final sorted array
-        //console.log(answersStorage);
-
 
         //creating the grid inputs array
         let emptyArray = Array(answersStorage.length).fill(null);
@@ -102,7 +91,6 @@ export default class Level extends Component {
         emptyArray[0] = [ ...answersStorage[0]]; //first array will be filled automatically
         for (let i = 1; i < answersStorage.length; i++) {
             for (let j = 0; j < answersStorage[i].length; j++) {
-                //console.log(i + "-" + j + " ... " + answersStorage[i][j]);
                 for (let k = 0; k < answersStorage[i][j].length; k++) {
                     tempInnerArray.push(null);
                 }
@@ -112,8 +100,7 @@ export default class Level extends Component {
             emptyArray[i] = [...tempArray];
             tempArray = [];
         }
-        //console.log([...emptyArray]);
-        
+ 
         this.setState({ answers: [ ...answersStorage], loading: false, inputs: [ ...emptyArray] }, () => {
 
         });
@@ -163,21 +150,18 @@ export default class Level extends Component {
                                 inputted: [...prevState.inputted, key],
                                 completed: winStatus
                             };
-                        }, () => {
-                            //console.log(this.state.inputs);
+                        }, () => { //callback func 
+                            
                         });
-                    } else { //incorrect input
-                        // console.log("incorrect");
-                        // console.log("guess value: " + val)
-                        // console.log("answer: " + this.state.answers[this.state.currentPos[0]][this.state.currentPos[1]]);
-                        // console.log(this.state.answers);
+                    } else { //incorrect input (play wrong function)
+                        
                     }
                 });
             } else { //if the tile was already clicked
-                //console.log("already clicked")
+                
             }
         } else { //if either the first row or a future cell is clicked (idt this has any use)
-            //console.log("first row or unclickable");
+            
         }
     }
 
