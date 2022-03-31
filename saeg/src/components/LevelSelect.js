@@ -17,13 +17,14 @@ export default class LevelSelect extends Component {
                     Each level contains a mistake counter. If you make 3 mistakes, 
                     it will be "game over" and you will be prompted to restart the level.
                 </p1>
+                <br />
                 <ButtonGroup style={{marginTop: "2%"}}>
-                <Link to="/level_one"><Button variant="primary">Level One</Button></Link>
-                <Link to="/level_two"><Button variant="primary">Level Two</Button></Link>
-                <Link to="/level_three"><Button variant="primary">Level Three</Button></Link>
-                <Link to="/level_four"><Button variant="primary">Level Four</Button></Link>
-                <Link to="/level_five"><Button variant="primary">Level Five</Button></Link>
-                <Button variant="primary">Custom Level</Button>
+                <Link to="/level_one"><Button variant="primary" style={{marginRight: "10px"}}>Level One</Button></Link>
+                <Link to="/level_two"><Button variant="primary" style={{marginRight: "10px"}}>Level Two</Button></Link>
+                <Link to="/level_three"><Button variant="primary" style={{marginRight: "10px"}}>Level Three</Button></Link>
+                <Link to="/level_four"><Button variant="primary" style={{marginRight: "10px"}}>Level Four</Button></Link>
+                <Link to="/level_five"><Button variant="primary" style={{marginRight: "10px"}}>Level Five</Button></Link>
+                <Link to="/level_custom"><Button variant="primary" style={{marginRight: "10px"}}>Custom Level</Button></Link>
                 </ButtonGroup>
                 <br />
                 <Link to="/">

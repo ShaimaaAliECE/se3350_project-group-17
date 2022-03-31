@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { mergeSort } from '../../functions/MergeSort';
-
+import { wrongFunction, correctFunction } from '../../functions/SoundFunctions';
 export default class Level extends Component {
     constructor(props) {
         super(props);
@@ -120,6 +120,7 @@ export default class Level extends Component {
                     }
                 }, () => {
                     if (val === this.state.answers[this.state.currentPos[0]][this.state.currentPos[1]][this.state.currentPos[2]]) { //correct input
+                        correctFunction();
                         this.setState((prevState) => {
                             let winStatus = false;
                             let temp2 = [...prevState.inputs];
@@ -154,7 +155,7 @@ export default class Level extends Component {
                             
                         });
                     } else { //incorrect input (play wrong function)
-                        
+                        wrongFunction();
                     }
                 });
             } else { //if the tile was already clicked
